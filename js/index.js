@@ -3,194 +3,144 @@
 // 메인배너
 
 $(document).ready(function () {
-    $('main .pager li').first().css('color', '#FAAD6D');
+    // 1. 변수 및 슬라이드 복사 설정
+    var $gallery = $('main .slide-box .gallery');
+    var $pager = $('main .pager li');
+    
+    // 첫 번째 슬라이드(li)를 복사해서 맨 뒤에 붙이기 (자연스러운 무한 루프용)
+    var $firstClone = $gallery.find('li').first().clone();
+    $gallery.append($firstClone);
 
-    var page = 0;
-    var slideCount = $('.gallery li').length; // 이미지 개수 (현재 5개)
+    var page = 0; // 현재 인덱스
+    var realSlideCount = $gallery.find('li').length - 1; // 원본 이미지 개수 (5개)
+    
+    // 초기 페이저 색상 설정
+    $pager.first().css('color', '#FAAD6D');
 
+    // 2. 이동 함수 (setInterval 파일 로직 기반)
     function leftmove() {
         page++;
-
-        // 현재 부모 박스의 너비를 가져옴 (반응형 대응)
-        var sliderWidth = $('.slide-box').width();
-
-        if (page === slideCount) {
-            $('.gallery').css('left', 0);
-            page = 1;
-        }
-
-        $('.gallery').stop().animate({
-            left: -(sliderWidth * page)
-        }, 500);
-
-        // 페이저 색상 변경
-        $('main .pager li').css('color', 'white');
-        
-        // 마지막 이미지(1번 복사본)일 때는 첫 번째 점에 불 들어오게 처리
-        if (page === slideCount - 1) {
-            $('main .pager li').eq(0).css('color', '#FAAD6D');
-        } else {
-            $('main .pager li').eq(page).css('color', '#FAAD6D');
-        }
+        moveSlider();
     }
 
-    var timer = setInterval(leftmove, 3000);
+    // 공통 이동 실행 함수
+    function moveSlider() {
+        var sliderWidth = $('.slide-box').width();
+
+        $gallery.stop().animate({
+            left: -(sliderWidth * page)
+        }, 500, function () {
+            // 마지막 복사본 이미지(6번째)에 도착하면 애니메이션 없이 실제 1번으로 순간이동
+            if (page === realSlideCount) {
+                $gallery.css('left', 0);
+                page = 0;
+            }
+        });
+
+        // 페이저 번호 계산 (마지막 복사본일 때는 0번 점을 활성화)
+        var currentIdx = page;
+        if (currentIdx === realSlideCount) {
+            currentIdx = 0;
+        }
+
+        // 페이저 색상 업데이트
+        $pager.css('color', 'white');
+        $pager.eq(currentIdx).css('color', '#FAAD6D');
+    }
+
+    // 3. 자동 실행 (3초마다 무조건 실행)
+    var autocall = setInterval(leftmove, 3000);
+
+    // 4. 페이저 클릭 시 이동
+    $pager.click(function () {
+        page = $(this).index(); // 클릭한 인덱스로 page 번호 교체
+        moveSlider();
+
+        // 클릭 시 타이머 리셋 (클릭하자마자 다음장으로 넘어가는 현상 방지)
+        clearInterval(autocall);
+        autocall = setInterval(leftmove, 3000);
+    });
+
+    // 5. 브라우저 리사이즈 대응
+    $(window).resize(function () {
+        var sliderWidth = $('.slide-box').width();
+        $gallery.css('left', -(sliderWidth * page));
+    });
 });
 
 
 
-//rooms 이미지
-
-/* 
-.rooms-con .room-gal 
-.rooms-con .room-gal div
-
-.rooms-con .room-gal .rooms-cons
 
 
-*/
-
-/*     <!-- 
-    슬라이드 기본 구조 
-
-    .slider : 실제 슬라이드가 보여질 영역!
-    .slider ul : 슬라이드 전체를 담는 부모! (움직이는 대상!!!)
-    .slider ul li : 각각의 슬라이드!
-    --> */
 
 
-$(document).ready(function () {
 
-    //초기설정 - 슬라이드 배치 설정
-    //이전 버튼 클릭을 대비해서 마지막 li를 첫 번째로 이동
-    $('.rooms-con .room-gal div:last').prependTo('.rooms-con .room-gal');
+// rooms
 
-    //li 한 칸의 크기 구하기 = 슬라이드 하나의 크기 구하기 
-    var liW = $('.rooms-con .room-gal div').width();
-    console.log('li하나의 너비: ' + liW); //900
 
-    $('.rooms-con .room-gal').css('margin-left', -liW);
+$(function() {
+    let currentIdx = 0;
+    const $container = $('.rooms-con');
+    const $items = $('.rooms-item');
+    const $pager = $('.rooms .pager li');
+    const slideCount = $items.length; // 4개
+    const maxIdx = slideCount - 3; // 최대 이동 가능 인덱스 (1)
 
-    //다음 버튼을 클릭했을 때!
-    $('.arr-btn .right-a').click(function (e) {
+    function moveSlide(idx) {
+        // 인덱스 범위 제한 (0 ~ 1)
+        if (idx > maxIdx) idx = maxIdx;
+        if (idx < 0) idx = 0;
 
-        //a의 기본기능 막기!
+        currentIdx = idx;
+        
+        // 이동 거리 = (아이템 너비 + gap 20px) * 인덱스
+        const moveDistance = ($items.outerWidth() + 20) * currentIdx;
+        $container.css('transform', 'translateX(' + (-moveDistance) + 'px)');
+        
+        // Pager 업데이트 (현재 슬라이드 위치에 맞게 강조)
+        $pager.removeClass('active');
+        $pager.eq(currentIdx).addClass('active');
+    }
+
+    // 화살표 클릭 이벤트
+    $('.rooms-nav .right-a').on('click', function(e) {
         e.preventDefault();
-
-        console.log('다음버튼 클릭!!');
-
-        $('.rooms-con .room-gal').animate({
-            marginLeft: '-=' + liW
-        }, 800, function () {
-            //다음(두번째 클릭)을 위한 준비!!!
-            //1) 첫 번째 li(슬라이드)를 맨 뒤로 보내기! >> append()
-            //2) 슬라이드 순서 변경에 따른 ul의 위치 조절하기 >> margin
-
-            $('.rooms-con .room-gal div').first().appendTo('.rooms-con .room-gal');
-            $('.rooms-con .room-gal').css('margin-left', -liW);
-        });
+        moveSlide(currentIdx + 1);
     });
 
-    //이전 버튼을 클릭했을 때
-    $('.arr-btn .left-a').click(function (evt) {
-
-        evt.preventDefault();
-
-        $('.rooms-con .room-gal').animate({
-            marginLeft: '+=' + liW
-        }, 800, function () {
-            //다음을 위한 준비!!!
-            $('.rooms-con .room-gal div:last').prependTo('.rooms-con .room-gal');
-            $('.rooms-con .room-gal').css('margin-left', -liW);
-        });
+    $('.rooms-nav .left-a').on('click', function(e) {
+        e.preventDefault();
+        moveSlide(currentIdx - 1);
     });
 
+    // 페이저 클릭 이벤트 (모든 페이저 클릭 시 이동 가능 범위 내로 매칭)
+    $pager.on('click', function() {
+        const targetIdx = $(this).index();
+        
+        // 4개의 페이저 중 뒷번호를 눌러도 슬라이드는 마지막 위치(maxIdx)까지만 이동
+        if(targetIdx >= maxIdx) {
+            moveSlide(maxIdx);
+        } else {
+            moveSlide(targetIdx);
+        }
+        
+        // 클릭한 페이저 자체는 활성화 표시
+        $pager.removeClass('active');
+        $(this).addClass('active');
+    });
 });
 
 
 
 
 
-// 시설 이미지
-
-
-/* 
-.facilities .fac-con
-.facilities .fac-con .gallery
-.facilities .fac-con .gallery ul li
-
-*/
-
-/*     <!-- 
-    슬라이드 기본 구조 
-
-    .slider : 실제 슬라이드가 보여질 영역!
-    .slider ul : 슬라이드 전체를 담는 부모! (움직이는 대상!!!)
-    .slider ul li : 각각의 슬라이드!
-    --> */
-
-
-// $(document).ready(function (){
-
-//     //초기설정 - 슬라이드 배치 설정
-//     //이전 버튼 클릭을 대비해서 마지막 li를 첫 번째로 이동
-//     $('.facilities .fac-con .gallery li:last').prependTo('.facilities .fac-con .gallery');
-
-//     //li 한 칸의 크기 구하기 = 슬라이드 하나의 크기 구하기 
-//     var liW = $('.facilities .fac-con .gallery li').width();
-//     console.log('li하나의 너비: ' + liW); //900
-
-//     $('.facilities .fac-con .gallery').css('margin-left',-liW);
-
-//     //다음 버튼을 클릭했을 때!
-//     $('.fac-arr .right').click(function(e){
-
-//         //a의 기본기능 막기!
-//         e.preventDefault();
-
-//         console.log('다음버튼 클릭!!');
-
-//         $('.facilities .fac-con .gallery').animate({
-//             marginLeft: '-=' + liW
-//         }, 800, function (){
-//             //다음(두번째 클릭)을 위한 준비!!!
-//             //1) 첫 번째 li(슬라이드)를 맨 뒤로 보내기! >> append()
-//             //2) 슬라이드 순서 변경에 따른 ul의 위치 조절하기 >> margin
-
-//             $('.facilities .fac-con .gallery li').first().appendTo('.slider ul');
-//             $('.facilities .fac-con .gallery').css('margin-left', -liW);
-//         });
-//     });
-
-//     //이전 버튼을 클릭했을 때
-//     $('.fac-arr .left').click(function(evt){
-
-//         evt.preventDefault();
-
-//         $('.facilities .fac-con .gallery').animate({
-//             marginLeft: '+=' +liW
-//         }, 800, function(){
-//             //다음을 위한 준비!!!
-//             $('.facilities .fac-con .gallery li:last').prependTo('.facilities .fac-con .gallery');
-//             $('.facilities .fac-con .gallery').css('margin-left',-liW);
-//         });
-//     });
-
-
-// });
 
 
 
 
 
 
-
-
-
-
-
-
-
+//  facilities 
 
 
 

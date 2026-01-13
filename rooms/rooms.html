@@ -1,11 +1,366 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>객실 안내 페이지</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/rooms.css">
+    <link rel="stylesheet" href="css/footer_slogun.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+    <script src="script/header.js"></script>
+    <script src="script/rooms.js"></script>
+
+
+
 </head>
+
 <body>
-    
+
+    <!-- ---------------- header ------------------ -->
+
+    <header>
+        <div class="header-logo">
+            <a href="../index.html"><img src="images/header-img/logo_1.png" alt="꼬순내 로고"></a>
+        </div>
+
+        <nav class="gnb">
+            <ul class="depth01">
+                <li>
+                    <a href="#">ABOUT</a>
+                    <ul class="depth02">
+                        <li><a href="../about/brand.html">브랜드</a></li>
+                        <li><a href="../about/character.html">캐릭터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFOMATION</a>
+                    <ul class="depth02">
+                        <li><a href="../infomation/infomation.html">이용안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ROOMS</a>
+                    <ul class="depth02">
+                        <li><a href="rooms.html">객실안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACILITIES</a>
+                    <ul class="depth02">
+                        <li><a href="../facilities/facility.html">시설안내</a></li>
+                        <li><a href="../facilities/cafe.html">카페안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">EVENT</a>
+                    <ul class="depth02">
+                        <li><a href="../event/checkevent.html">출석이벤트</a></li>
+                        <li><a href="../event/reviewevent.html">후기이벤트</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+    <!-- -------------------- main ----------------- -->
+
+    <main>
+        <div class="mainimg">
+            <img src="images/room-img/roommain.png" alt="브랜드 메인 이미지">
+        </div>
+
+        <div class="title">
+            <img src="images/room-img/paw2.png" alt="강아지 발바닥 아이콘">
+            <h2>Rooms</h2>
+            <p>꼬순내 객실 안내</p>
+        </div>
+    </main>
+
+
+
+
+
+
+    <!-- -------------- rooms  ---------- -->
+
+    <section class="rooms">
+
+        <div class="box">
+            <div class="con">
+                <div class="top">
+                    <a href="#"><img src="images/room-img/arrowtop.png" alt="위 화살표"></a>
+                </div>
+
+                <div class="gallery">
+                    <ul>
+                        <li><img src="images/room-img/room1.png" alt="룸 1 이미지1"></li>
+                        <li><img src="images/room-img/room1-2.png" alt="룸 1 이미지2"></li>
+                        <li><img src="images/room-img/room1-3.png" alt="룸 1 이미지3"></li>
+                        <li><img src="images/room-img/room1-4.png" alt="룸 1 이미지4"></li>
+                    </ul>
+                </div>
+
+                <div class="bottom">
+                    <a href="#"><img src="images/room-img/arrowbottom.png" alt="아래화살표"></a>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="txt">
+                    <h2>101호</h2>
+                    <h3>Room info</h3>
+                    <h4>101 객실 소개</h4>
+                    <div>
+                        <h5>: 유니크한 감성과 화려한 컬러의 조화</h5>
+                        <p>"대담한 컬러와 감각적인 오브제로 채워진 스타일리시한 휴식 공간"</p>
+                        <p>이 객실은 시선을 사로잡는 강렬한 테라코타 컬러의 소파와 유니크한</p>
+                        <p>라운드 사이드 테이블이 조화를 이루는 매력적인 공간입니다.</p>
+                        <p>따뜻한 색감과 세련된 소품들이 어우러져 예술적인 영감을 선사하며,</p>
+                        <p>평범한 일상을 벗어나 특별한 감성을 즐기고 싶은 분들께</p>
+                        <p>최고의 선택이 될 것입니다.</p>
+                    </div>
+                </div>
+
+                <div class="ad">
+                    <div class="adbor">
+                        <a href="#">예약하러 가기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="orange">
+            <div class="box">
+                <div class="con">
+                    <div class="top">
+                        <a href="#"><img src="images/room-img/arrowtop.png" alt="위 화살표"></a>
+                    </div>
+
+                    <div class="gallery">
+                        <ul>
+                            <li><img src="images/room-img/room2.png" alt="룸 2 이미지1"></li>
+                            <li><img src="images/room-img/room2-2.png" alt="룸 2 이미지2"></li>
+                            <li><img src="images/room-img/room2-3.png" alt="룸 2 이미지3"></li>
+                            <li><img src="images/room-img/room2-4.png" alt="룸 2 이미지4"></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="bottom">
+                        <a href="#"><img src="images/room-img/arrowbottom.png" alt="아래화살표"></a>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="txt">
+                        <h2>102호</h2>
+                        <h3>Room info</h3>
+                        <h4>102 객실 소개</h4>
+                        <div>
+                            <h5>: 현대적인 미니멀리즘과 공간의 효율성</h5>
+                            <p>"모던한 인테리어와 스마트한 공간 분리가 돋보이는 어반 라이프 객실"</p>
+                            <p>깨끗한 화이트 톤과 부드러운 그레이 컬러가 베이스가 된</p>
+                            <p>이 객실은 미니멀한 인테리어의 정수를 보여줍니다.</p>
+                            <p>슬라이딩 도어를 활용한 침실과 거실의 분리로 프라이버시와</p>
+                            <p>개방감을 동시에 잡았으며, 차분한 채광 아래서 모던하고</p>
+                            <p>정갈한 휴식을 누릴 수 있는 특별한 객실입니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="ad2">
+                        <div class="adbor">
+                            <a href="#">예약하러 가기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="con">
+                <div class="top">
+                    <a href="#"><img src="images/room-img/arrowtop.png" alt="위 화살표"></a>
+                </div>
+
+                <div class="gallery">
+                    <ul>
+                        <li><img src="images/room-img/room3.png" alt="룸 3 이미지1"></li>
+                        <li><img src="images/room-img/room3-2.png" alt="룸 3 이미지1"></li>
+                        <li><img src="images/room-img/room3-3.png" alt="룸 3 이미지1"></li>
+                        <li><img src="images/room-img/room3-4.png" alt="룸 3 이미지1"></li>
+                    </ul>
+
+                </div>
+
+                <div class="bottom">
+                    <a href="#"><img src="images/room-img/arrowbottom.png" alt="아래화살표"></a>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="txt">
+                    <h2>201호</h2>
+                    <h3>Room info</h3>
+                    <h4>201 객실 소개</h4>
+                    <div>
+                        <h5>: 세련된 럭셔리와 딥컬러의 포인트</h5>
+                        <p>"도시적인 세련미와 화려한 색채 포인트가 어우러진 프리미엄 룸"</p>
+                        <p> 부드러운 조명과 고급스러운 목재 가구가 조화를 이루는 이 객실은</p>
+                        <P>깊이 있는 청록색(Teal) 베딩으로 화룡점정을 찍었습니다.</P>
+                        <P>높은 층고에서 내려다보는 듯한 개방감과 세심하게 배치된</P>
+                        <P>조명들이 밤을 더욱 아름답게 만들어주며, 품격 있는 분위기</P>
+                        <P>속에서 완벽한 프라이빗 무드를 경험할 수 있습니다.</P>
+                    </div>
+                </div>
+
+                <div class="ad">
+                    <div class="adbor">
+                        <a href="#">예약하러 가기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="orange">
+            <div class="box">
+                <div class="con">
+                    <div class="top">
+                        <a href="#"><img src="images/room-img/arrowtop.png" alt="위 화살표"></a>
+                    </div>
+
+                    <div class="gallery">
+                        <ul>
+                            <li><img src="images/room-img/room4.png" alt="룸 4 이미지1"></li>
+                            <li><img src="images/room-img/room4-2.png" alt=""></li>
+                            <li><img src="images/room-img/room4-3.png" alt=""></li>
+                            <li><img src="images/room-img/room4-4.png" alt=""></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="bottom">
+                        <a href="#"><img src="images/room-img/arrowbottom.png" alt="아래화살표"></a>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="txt">
+                        <h2>202호</h2>
+                        <h3>Room info</h3>
+                        <h4>202 객실 소개</h4>
+                        <div>
+                            <h5>: 클래식한 아늑함과 우아한 대칭미</h5>
+                            <p>"정갈한 화이트 톤에 더해진 클래식한 우아함, 마음까지 편안해지는 안식처"</p>
+                            <p>좌우 대칭의 완벽한 밸런스와 포근한 베이지 톤이 어우러진 이 객실은</p>
+                            <P>클래식하면서도 정돈된 아름다움을 지향합니다.</P>
+                            <P>따뜻한 질감의 헤드보드와 고급스러운 암체어가 배치되어 있어</P>
+                            <P>내 집 같은 편안함을 선사하며, 햇살이 가득 들어오는</P>
+                            <P>창가 옆에서 여유로운 오후를 즐기기에 최적화된 공간입니다.</P>
+                        </div>
+                    </div>
+
+                    <div class="ad2">
+                        <div class="adbor">
+                            <a href="#">예약하러 가기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ------- footer-slogun -------- -->
+
+
+    <section class="footer-slogun">
+        <div class="slogunimg">
+            <img src="images/footer-img/sloguntop.png" alt="슬로건 이미지">
+        </div>
+    </section>
+
+
+
+
+    <!-- ------------- footer -------------- -->
+
+    <footer>
+        <div class="footer-ill">
+            <img src="images/footer-img/footer_img.png" alt="푸터 일러스트">
+        </div>
+
+        <div class="address">
+            <div class="add-logo">
+                <img src="images/footer-img/logo_3.png" alt="꼬순내 로고">
+            </div>
+
+            <div>
+                <h2>COMPANY INFOMATION</h2>
+                <p>주식회사 꼬순내
+                <p>서울특별시 강남구 학동로82길 </p>
+                <p>사업자등록번호 : 248-81-00620</p>
+                <p>통신판매업신고번호 : 2020-서울강남-02297</p>
+                <p>대표이사 : 오채원</p>
+            </div>
+
+            <div>
+                <h2>SOCIAL</h2>
+
+                <div class="sns">
+                    <ul>
+                        <li><img src="images/footer-img/x_icon.jpg" alt="x 로고">&nbsp&nbsp x.com</li>
+                        <li><img src="images/footer-img/instar.png" alt="인스타그램 로고">&nbsp&nbsp Instargram</li>
+                        <li><img src="images/footer-img/kakao.png" alt="카카오톡 로고">&nbsp&nbsp KakaoTalk Channel</li>
+                </div>
+            </div>
+
+            <div>
+                <h2>HELP</h2>
+                <p>고객센터 : 1800-6067</p>
+                <p>운영시간 : 평일 9시~12시, 13시~17시(주말/공휴일 제외)</p>
+            </div>
+        </div>
+
+        <div class="rule">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li>
+                    <p>Copyright 2023 © KkoSunNae. All Rights Reseved.</p>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
 </body>
+
 </html>

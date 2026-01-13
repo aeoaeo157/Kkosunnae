@@ -10,14 +10,16 @@ body {
 } */
 
 body {
-background-image: url(../images/mainpage-img/background4.png);
+    background-image: url(../images/mainpage-img/background4.png);
 background-repeat: no-repeat;
 background-position-y: 52px;
 
     background-size: contain;
-
+    
     overflow-x: hidden;
 }
+
+
 
 
 /* ********************main************************* */
@@ -99,20 +101,31 @@ main .main-txt p {
 
 
 main .pager {
-    position: absolute;
-
-    text-align: center;
-    bottom: 8%;
-    left: 46%;
+position: absolute;
+    bottom: 54px;     
+    left: 50%;       
+    transform: translateX(-50%);
+    z-index: 10;      
+    display: flex;     
+    gap: 20px;       
 }
 
 
 
 main .pager li {
-    float: left;
-    margin: 8px;
-    font-size: 1.2rem;
+cursor: pointer;
+    font-size: 1.2rem; 
+    color: white;     /
+    transition: color 0.3s ease; /* 색상 변경 시 부드럽게 */
 }
+
+/* 현재 활성화된 페이지 표시 (JS에서 eq().css()로 제어하지만 클래스로 관리하면 편리합니다) */
+main .pager li.active {
+    color: #FAAD6D;
+}
+
+
+
 
 
 /* ****************************sub-title*********************** */
@@ -424,6 +437,54 @@ section.rooms .sub-title {
 
 
 
+
+
+
+
+
+/* --- ROOMS SECTION 수정 --- */
+/* ROOMS 섹션 전체 컨테이너 */
+section.rooms {
+    width: 100%;
+    max-width: 1280px;
+    margin: 100px auto;
+    position: relative; 
+    /* overflow: hidden; 삭제하여 화살표가 잘리지 않게 함 */
+}
+
+/* 슬라이드 이미지만 가두는 박스 (추가/수정) */
+.rooms-wrapper {
+    width: 100%;
+    overflow: hidden; /* 슬라이드 알맹이만 여기서 잘림 */
+    position: relative;
+}
+
+.rooms-con {
+    display: flex;
+    width: 133.333%; /* 4개 중 3개가 노출되는 비율 */
+    transition: all 0.5s ease;
+    gap: 20px; /* 아이템 사이 간격 */
+}
+
+.rooms-item {
+    /* 1280px 내에서 3개가 보이도록 계산 */
+    width: calc((100% / 4) - 15px); 
+    flex-shrink: 0;
+}
+
+/* 화살표 위치 보정 */
+.rooms-nav a {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 100; /* 이미지보다 위에 오도록 */
+}
+
+.rooms-nav .left-a { left: -70px; }  /* 컨테이너 왼쪽 밖으로 */
+.rooms-nav .right-a { right: -70px; } /* 컨테이너 오른쪽 밖으로 */
+
+
+
 /* **********************facilities********************** */
 
 section.facilities {
@@ -435,34 +496,54 @@ section.facilities {
 
 .fac-nav a {
     position: absolute;
-    top: 51%;
+    top: 49%;
     transform: translateY(-50%);
     z-index: 10;
 }
 
-.fac-nav .left {
-    left: 10px;
+.fac-nav .left-a {
+    left: -70px;
 }
 
-.fac-nav .right {
-    right: 10px;
+.fac-nav .right-a {
+    right: -70px;
 }
 
 .fac-nav img {
     width: 40px;
 }
 
+/* 화살표 위치 보정 */
+.rooms-nav a {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 100; /* 이미지보다 위에 오도록 */
+}
+
+.rooms-nav .left-a { left: -70px; }  /* 컨테이너 왼쪽 밖으로 */
+.rooms-nav .right-a { right: -70px; } /* 컨테이너 오른쪽 밖으로 */
+
+
 .fac-con {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
+
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
 }
 
 .fac-item img {
     border-radius: 50%;
     object-fit: cover;
     transition: 0.3s;
+    width: 350px;
 }
 
 .fac-item.side img {
@@ -513,6 +594,14 @@ section.facilities {
     text-decoration: none;
     font-weight: bold;
 }
+
+
+
+
+
+
+
+
 
 
 

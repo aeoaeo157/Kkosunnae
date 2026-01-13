@@ -1,11 +1,348 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>시설 안내 페이지</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cafe.css">
+    <link rel="stylesheet" href="css/footer_slogun.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+    <script src="script/header.js"></script>
+
 </head>
+
 <body>
-    
+
+
+    <!-- ---------------- header ------------------ -->
+
+    <header>
+        <div class="header-logo">
+            <a href="../index.html"><img src="images/header-img/logo_1.png" alt="꼬순내 로고"></a>
+        </div>
+
+        <nav class="gnb">
+            <ul class="depth01">
+                <li>
+                    <a href="#">ABOUT</a>
+                    <ul class="depth02">
+                        <li><a href="../about/brand.html">브랜드</a></li>
+                        <li><a href="../about/character.html">캐릭터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFOMATION</a>
+                    <ul class="depth02">
+                        <li><a href="../infomation/infomation.html">이용안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ROOMS</a>
+                    <ul class="depth02">
+                        <li><a href="../rooms/rooms.html">객실안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACILITIES</a>
+                    <ul class="depth02">
+                        <li><a href="facility.html">시설안내</a></li>
+                        <li><a href="cafe.html">카페안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">EVENT</a>
+                    <ul class="depth02">
+                        <li><a href="../event/checkevent.html">출석이벤트</a></li>
+                        <li><a href="../event/reviewevent.html">후기이벤트</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+    <!-- -------------------- main ----------------- -->
+
+    <section class="top">
+        <!-- 상단 타이틀 -->
+        <div class="bg">
+            <div class="title">
+                <img src="images/fac-img/paw2.png" alt="강아지 발바닥 아이콘">
+                <h2>Facility</h2>
+                <p>꼬순내 카페 안내</p>
+            </div>
+        </div>
+
+        <!-- 탭메뉴 -->
+        <div class="tab-menu">
+            <ul>
+                <li class="fac"><a href="facility.html">시설 안내</a></li>
+                <li class="cafe active"><a href="cafe.html">카페 안내</a></li>
+            </ul>
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ------------------  cafe info ---------------------- -->
+
+    <section class="cafeinfo">
+        <div class="sub-title">
+            <img src="images/cafe-img/paw3.png" alt="서브 타이틀 발바닥">
+            <h2>카페 이용 안내</h2>
+            <p>Cafe Information</p>
+        </div>
+
+        <div class="info">
+            <div class="clock">
+                <ul>
+                    <li><img src="images/cafe-img/rule1.png" alt="이용 시간"></li>
+                    <li class="txt">
+                        <h2>이용시간</h2>
+                        <ul>
+                            <li>
+                                <p>평일 오전 9시부터 오후 8시까지 운영합니다.</p>
+                                <p>매주 월요일은 휴무입니다.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="price">
+                <ul>
+                    <li><img src="images/cafe-img/rule2.png" alt="이용 요금"></li>
+                    <li class="txt">
+                        <h2>이용요금</h2>
+                        <ul>
+                            <li>
+                                <p>음료에 입장료가 포함되어 있습니다.</p>
+                            </li>
+                            <li>
+                                <p>테이크아웃의 경우 5000원 할인 금액으로 음료를 판매합니다.</p>
+                            </li>
+                            <li>
+                                <p>펜션 이용객일 경우, 카페 이용료는 무료입니다.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="rule">
+                <ul>
+                    <li><img src="images/cafe-img/rule3.png" alt="이용 시간"></li>
+                    <li class="txt">
+                        <h2>이용수칙</h2>
+                        <ul>
+                            <li>
+                                <p> 1인당 1음료를 주문하셔야 이용 가능합니다.</p>
+                            </li>
+                            <li>
+                                <p> 반려견들의 안전을 위하여 각종 안전장치 및 cctv가 설치되어 있습니다.</p>
+                            </li>
+                            <li>
+                                <p>예방접종을 하지 않은 반려견은 입장이 불가합니다.</p>
+                            </li>
+                            <li>
+                                <p> 공격성이 강한 반려견이나 전염성 질환이 있는 반려견은 입장이 불가합니다.</p>
+                            </li>
+                            <li>
+                                <p>강아지들에게 사람의 음식 및 음료를 급여하실 수 없습니다.</p>
+                            </li>
+                            <li>
+                                <p>반려견 간식은 카운터에서 판매하고 있습니다.</p>
+                            </li>
+                            <li>
+                                <p> 13세 미만 어린이는 보호자와 함께 입장이 가능합니다.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="images/cafe-img/banner.png" alt="">
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- --------------- 사람 메뉴 --------------- -->
+
+    <section class="human">
+        <div class="sub-title">
+            <img src="images/cafe-img/paw3.png" alt="서브 타이틀 발바닥">
+            <h2>카페 메뉴</h2>
+            <p>Cafe Menu</p>
+        </div>
+
+        <div class="parent">
+            <h2>보호자 메뉴</h2>
+            <div class="gallery">
+                <ul>
+                    <li>
+                        <img src="images/cafe-img/parent1.png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/cafe-img/parent2.png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/cafe-img/parent3.png" alt="">
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <img src="images/cafe-img/parent4.png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/cafe-img/parent5.png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/cafe-img/parent6.png" alt="">
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <img src="images/cafe-img/parent7.png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/cafe-img/parent8.png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/cafe-img/parent9.png" alt="">
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- ------------- 펫 메뉴 -----------------  -->
+
+    <section class="pet">
+
+        <div class="petmenu">
+            <h2>반려동물 메뉴</h2>
+            <div class="gallery">
+                <ul>
+                    <li><img src="images/cafe-img/pet1.png" alt=""></li>
+                    <li><img src="images/cafe-img/pet2.png" alt=""></li>
+                </ul>
+
+                <ul>
+                    <li><img src="images/cafe-img/pet3.png" alt=""></li>
+                    <li><img src="images/cafe-img/pet4.png" alt=""></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ------- footer-slogun -------- -->
+
+
+    <section class="footer-slogun">
+        <div class="slogunimg">
+            <img src="images/footer-img/sloguntop.png" alt="슬로건 이미지">
+        </div>
+    </section>
+
+
+
+
+    <!-- ------------- footer -------------- -->
+
+    <footer>
+        <div class="footer-ill">
+            <img src="images/footer-img/footer_img.png" alt="푸터 일러스트">
+        </div>
+
+        <div class="address">
+            <div class="add-logo">
+                <img src="images/footer-img/logo_3.png" alt="꼬순내 로고">
+            </div>
+
+            <div>
+                <h2>COMPANY INFOMATION</h2>
+                <p>주식회사 꼬순내
+                <p>서울특별시 강남구 학동로82길 </p>
+                <p>사업자등록번호 : 248-81-00620</p>
+                <p>통신판매업신고번호 : 2020-서울강남-02297</p>
+                <p>대표이사 : 오채원</p>
+            </div>
+
+            <div>
+                <h2>SOCIAL</h2>
+
+                <div class="sns">
+                    <ul>
+                        <li><img src="images/footer-img/x_icon.jpg" alt="x 로고">&nbsp&nbsp x.com</li>
+                        <li><img src="images/footer-img/instar.png" alt="인스타그램 로고">&nbsp&nbsp Instargram</li>
+                        <li><img src="images/footer-img/kakao.png" alt="카카오톡 로고">&nbsp&nbsp KakaoTalk Channel</li>
+                </div>
+            </div>
+
+            <div>
+                <h2>HELP</h2>
+                <p>고객센터 : 1800-6067</p>
+                <p>운영시간 : 평일 9시~12시, 13시~17시(주말/공휴일 제외)</p>
+            </div>
+        </div>
+
+        <div class="rule">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li>
+                    <p>Copyright 2023 © KkoSunNae. All Rights Reseved.</p>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
 </body>
+
 </html>

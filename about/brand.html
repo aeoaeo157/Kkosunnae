@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="css/brand.css">
     <link rel="stylesheet" href="css/footer.css">
 
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+    <script src="script/header.js"></script>
 </head>
 
 <body>
@@ -20,16 +24,44 @@
 
     <header>
         <div class="header-logo">
-            <a href="index.html"><img src="images/header-img/logo_1.png" alt="꼬순내 로고"></a>
+            <a href="../index.html"><img src="images/header-img/logo_1.png" alt="꼬순내 로고"></a>
         </div>
 
         <nav class="gnb">
-            <ul>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">INFOMATION</a></li>
-                <li><a href="#">ROOMS</a></li>
-                <li><a href="#">FACILITIES</a></li>
-                <li><a href="#">EVENT</a></li>
+            <ul class="depth01">
+                <li>
+                    <a href="#">ABOUT</a>
+                    <ul class="depth02">
+                        <li><a href="brand.html">브랜드</a></li>
+                        <li><a href="character.html">캐릭터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFOMATION</a>
+                    <ul class="depth02">
+                        <li><a href="../infomation/infomation.html">이용안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ROOMS</a>
+                    <ul class="depth02">
+                        <li><a href="../rooms/rooms.html">객실안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACILITIES</a>
+                    <ul class="depth02">
+                        <li><a href="../facilities/facility.html">시설안내</a></li>
+                        <li><a href="../facilities/cafe.html">카페안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">EVENT</a>
+                    <ul class="depth02">
+                        <li><a href="../event/checkevent.html">출석이벤트</a></li>
+                        <li><a href="../event/reviewevent.html">후기이벤트</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -37,20 +69,136 @@
 
 
 
-<!-- -------------------- main ----------------- -->
+    <!-- -------------------- main ----------------- -->
 
-<main>
+    <main>
+        <div class="mainimg">
+            <img src="images/brand-img/brandmain.png" alt="브랜드 메인 이미지">
+        </div>
 
-    <div class="mainimg">
-        <img src="images/brand-img/brandmain.png" alt="">
-    </div>
-
-        <div class="sub-title">
-            <img src="images/brand-img/paw.png" alt="강아지 발바닥 아이콘">
+        <div class="title">
+            <img src="images/brand-img/paw2.png" alt="강아지 발바닥 아이콘">
             <h2>About Us</h2>
             <p>꼬순내 소개</p>
         </div>
-</main>
+    </main>
+
+
+
+    <!-- --------------- brand ---------------- -->
+
+    <section class="brand">
+        <div class="logo">
+            <img src="images/brand-img/logo.png" alt="세로형 로고">
+
+            <h2>언제나 행복한 꼬순내 라이프를 위해!</h2>
+        </div>
+
+
+
+        <div class="gallery">
+            <ul>
+                <li class="left">
+                    <div>
+                        <img src="images/brand-img/brand1.png" alt="브랜드 설명 이미지 1">
+                    </div>
+                    <div>
+                        <p>꼬순내는 소중한 반려동물과의 일상을 더욱 풍요롭게<br>
+                            만들어주는 <span>프리미엄 펫 브랜드</span>입니다.</p>
+                    </div>
+                </li>
+
+                <li class="right">
+
+                    <div>
+                        <img src="images/brand-img/brand2.png" alt="브랜드 설명 이미지 2">
+                    </div>
+                    <div>
+                        <p>꼬순내는 소중한 반려동물을 위해 <br>
+                            <span>차별화된 제품과 서비스를 제안</span>합니다.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="left">
+                    <div>
+                        <img src="images/brand-img/brand3.png" alt="브랜드 설명 이미지 3">
+                    </div>
+                    <div>
+                        <p>감각적인 디자인이 돋보이는 의류와 프리미엄
+                            소재의 편안한 홈 아이템을 비롯하여, 천연 재료를 활용한 건강한 애견 간식과 순한 저자극 케어 제품까지, <span>실용성과 사랑스러움을 모두 담아
+                                선보</span>입니다.</p>
+                    </div>
+                </li>
+
+                <li class="right">
+
+                    <div>
+                        <img src="images/brand-img/brand4.png" alt="브랜드 설명 이미지 4">
+                    </div>
+
+                    <div>
+                        <p><span>가장 소중하고 사랑스러운 당신의 가족</span>에게,<br>
+                            꼬순내와 함께 더 나은 일상을 선물하세요.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- --------------- bi --------------- -->
+
+
+    <section class="bi">
+        <div class="bi-con">
+            <h2>BI</h2>
+            <div class="gallery">
+                <img src="images/brand-img/logo2.png" alt="세로형 로고">
+                <img src="images/brand-img/logo3.png" alt="로고 심볼">
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- ------------------ color --------------- -->
+
+    <section class="color">
+        <div class="txt">
+            <h2>Color</h2>
+            <h3>따뜻함과 행복을 담은 <span>옐로우</span></h3>
+            <p>꼬순내의 대표 컬러인 옐로우는 브랜드 마스코트인 코기의 활기찬 이미지와 반려동물의 발에서 느껴지는 포근포근한 꼬순내의 행복한 감성을 상징합니다.</p>
+            <p>이 색상은 고객의 마음에 따뜻함과 편안함을
+                선사하며, 반려동물과 함께하는 모든 일상이 행복하고 안정적이기를 바라는 꼬순내의 염원이자,</p>
+            <p>그 여정에 든든한 도우미가 되겠다는 우리의 약속을 담고 있습니다.</p>
+        </div>
+
+        <div class="code">
+            <ul>
+                <li class="c1">
+                    <div>
+                        <p>E28E50</p>
+                    </div>
+                </li>
+                <li class="c2">
+                    <div>
+                        <p>FAAD6D</p>
+                    </div>
+                </li>
+                <li class="c3">
+                    <div>
+                        <p>F7ACB2</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
 
 
 
@@ -58,12 +206,15 @@
 
 
 
+    <!-- ------- footer-slogun -------- -->
 
 
+    <section class="footer-slogun">
+        <div class="slogunimg">
+            <img src="images/footer-img/sloguntop.png" alt="슬로건 이미지">
+        </div>
 
-
-
-
+    </section>
 
 
 

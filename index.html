@@ -14,7 +14,9 @@
 
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/header.js"></script>
     <script src="js/index.js"></script>
+
 </head>
 
 <body>
@@ -27,15 +29,47 @@
         </div>
 
         <nav class="gnb">
-            <ul>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">INFOMATION</a></li>
-                <li><a href="#">ROOMS</a></li>
-                <li><a href="#">FACILITIES</a></li>
-                <li><a href="#">EVENT</a></li>
+            <ul class="depth01">
+                <li>
+                    <a href="#">ABOUT</a>
+                    <ul class="depth02">
+                        <li><a href="about/brand.html">브랜드</a></li>
+                        <li><a href="about/character.html">캐릭터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFOMATION</a>
+                    <ul class="depth02">
+                        <li><a href="infomation/infomation.html">이용안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ROOMS</a>
+                    <ul class="depth02">
+                        <li><a href="rooms/rooms.html">객실안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACILITIES</a>
+                    <ul class="depth02">
+                        <li><a href="facilities/facility.html">시설안내</a></li>
+                        <li><a href="facilities/cafe.html">카페안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">EVENT</a>
+                    <ul class="depth02">
+                        <li><a href="event/checkevent.html">출석이벤트</a></li>
+                        <li><a href="event/reviewevent.html">후기이벤트</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
+
+
+
+
 
 
 
@@ -48,7 +82,6 @@
                 <li><img src="images/mainpage-img/mainbanner2.png" alt="메인배너2"></li>
                 <li><img src="images/mainpage-img/mainbanner3.png" alt="메인배너3"></li>
                 <li><img src="images/mainpage-img/mainbanner4.png" alt="메인배너4"></li>
-                <li><img src="images/mainpage-img/mainbanner1.png" alt="메인배너1"></li>
             </ul>
         </div>
 
@@ -95,7 +128,7 @@
             </div>
 
             <div class="ab-ad">
-                <a href="#">
+                <a href="about/brand.html">
                     <p>자세히 보기</p>
                 </a>
             </div>
@@ -177,7 +210,7 @@
 
                 <div class="ad">
                     <div class="adbor">
-                        <a href="#">이용안내 보러가기</a>
+                        <a href="infomation/infomation.html">이용안내 보러가기</a>
                     </div>
                 </div>
             </div>
@@ -206,19 +239,24 @@
         <div class="rooms-wrapper">
             <div class="rooms-con">
                 <div class="rooms-item">
-                    <div class="img-box"><img src="images/mainpage-img/rooms1.png" alt="101"></div>
+                    <div class="img-box"><img src="images/mainpage-img/room1.png" alt="101"></div>
                     <h2>101</h2>
                     <p>16평형 / 기준 2명 최대 3명<br>거실1+화장실1+침대룸A(퀸1)</p>
                 </div>
                 <div class="rooms-item">
-                    <div class="img-box"><img src="images/mainpage-img/rooms2.png" alt="102"></div>
+                    <div class="img-box"><img src="images/mainpage-img/room2.png" alt="102"></div>
                     <h2>102</h2>
                     <p>24평형 / 기준 4명 최대 5명<br>룸2+거실(주방)+욕실+개별바비큐장</p>
                 </div>
                 <div class="rooms-item">
-                    <div class="img-box"><img src="images/mainpage-img/rooms3.png" alt="201"></div>
+                    <div class="img-box"><img src="images/mainpage-img/room3.png" alt="201"></div>
                     <h2>201</h2>
                     <p>16평형 / 기준 2명 최대 3명<br>거실1+화장실1+침대룸A(퀸1)</p>
+                </div>
+                <div class="rooms-item">
+                    <div class="img-box"><img src="images/mainpage-img/room4.png" alt="201"></div>
+                    <h2>202</h2>
+                    <p>24평형 / 기준 4명 최대 5명<br>룸2+거실(주방)+욕실+개별바비큐장</p>
                 </div>
             </div>
         </div>
@@ -227,12 +265,10 @@
             <ul class="pager">
                 <li class="active">●</li>
                 <li>●</li>
-                <li>●</li>
-                <li>●</li>
             </ul>
             <div class="ad">
                 <div class="adbor">
-                    <a href="#">객실안내 보러가기</a>
+                    <a href="rooms/rooms.html">객실안내 보러가기</a>
                 </div>
             </div>
         </div>
@@ -268,15 +304,32 @@
         </div>
 
         <div class="fac-nav">
-            <a href="#" class="left"><img src="images/mainpage-img/leftarrow.png" alt="이전"></a>
-            <a href="#" class="right"><img src="images/mainpage-img/rightarrow.png" alt="다음"></a>
+            <a href="#" class="left-a"><img src="images/mainpage-img/leftarrow.png" alt="이전"></a>
+            <a href="#" class="right-a"><img src="images/mainpage-img/rightarrow.png" alt="다음"></a>
         </div>
 
         <div class="fac-wrapper">
             <div class="fac-con">
-                <div class="fac-item side"><img src="images/mainpage-img/facility1.png" alt="카페"></div>
-                <div class="fac-item center"><img src="images/mainpage-img/facility2.png" alt="수영장"></div>
-                <div class="fac-item side"><img src="images/mainpage-img/facility3.png" alt="잔디밭"></div>
+                <div class="fac-item">
+                    <img src="images/mainpage-img/facility1.png" alt="카페">
+                    <div class="desc">카페</div>
+                </div>
+                <div class="fac-item">
+                    <img src="images/mainpage-img/facility2.png" alt="수영장">
+                    <div class="desc">수영장</div>
+                </div>
+                <div class="fac-item">
+                    <img src="images/mainpage-img/facility3.png" alt="잔디밭">
+                    <div class="desc">잔디밭</div>
+                </div>
+                <div class="fac-item">
+                    <img src="images/mainpage-img/facility4.png" alt="훈련장">
+                    <div class="desc">훈련장</div>
+                </div>
+                <div class="fac-item">
+                    <img src="images/mainpage-img/facility5.png" alt="동물병원">
+                    <div class="desc">동물병원</div>
+                </div>
             </div>
         </div>
 
@@ -290,7 +343,7 @@
             </ul>
             <div class="ad">
                 <div class="adbor">
-                    <a href="#">시설안내 보러가기</a>
+                    <a href="facilities/facility.html">시설안내 보러가기</a>
                 </div>
             </div>
         </div>
@@ -327,13 +380,13 @@
             <ul>
                 <li>
                     <div class="fir">
-                        <a href="#"><img src="images/mainpage-img/eventbanner1.png" alt=""></a>
+                        <a href="event/checkevent.html"><img src="images/mainpage-img/eventbanner1.png" alt=""></a>
                     </div>
                 </li>
 
                 <li>
                     <div>
-                        <a href="#"><img src="images/mainpage-img/eventbanner2.png" alt=""></a>
+                        <a href="event/reviewevent.html"><img src="images/mainpage-img/eventbanner2.png" alt=""></a>
                     </div>
                 </li>
             </ul>
@@ -352,7 +405,7 @@
 
     <section class="footer-slogun">
         <div class="slogunimg">
-<img src="images/footer-img/sloguntop.png" alt="">
+            <img src="images/footer-img/sloguntop.png" alt="슬로건 이미지">
         </div>
 
     </section>
@@ -412,6 +465,5 @@
 
 
 
-</body>
 
 </html>

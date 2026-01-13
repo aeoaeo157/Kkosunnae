@@ -1,11 +1,262 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>시설 안내 페이지</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/facility.css">
+    <link rel="stylesheet" href="css/footer_slogun.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+    <script src="script/header.js"></script>
+
 </head>
+
 <body>
-    
+
+
+    <!-- ---------------- header ------------------ -->
+
+    <header>
+        <div class="header-logo">
+            <a href="../index.html"><img src="images/header-img/logo_1.png" alt="꼬순내 로고"></a>
+        </div>
+
+        <nav class="gnb">
+            <ul class="depth01">
+                <li>
+                    <a href="#">ABOUT</a>
+                    <ul class="depth02">
+                        <li><a href="../about/brand.html">브랜드</a></li>
+                        <li><a href="../about/character.html">캐릭터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFOMATION</a>
+                    <ul class="depth02">
+                        <li><a href="../infomation/infomation.html">이용안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ROOMS</a>
+                    <ul class="depth02">
+                        <li><a href="../rooms/rooms.html">객실안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACILITIES</a>
+                    <ul class="depth02">
+                        <li><a href="facility.html">시설안내</a></li>
+                        <li><a href="cafe.html">카페안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">EVENT</a>
+                    <ul class="depth02">
+                        <li><a href="../event/checkevent.html">출석이벤트</a></li>
+                        <li><a href="../event/reviewevent.html">후기이벤트</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+    <!-- -------------------- title ----------------- -->
+
+    <section class="top">
+        <!-- 상단 타이틀 -->
+        <div class="bg">
+            <div class="title">
+                <img src="images/fac-img/paw2.png" alt="강아지 발바닥 아이콘">
+                <h2>Facility</h2>
+                <p>꼬순내 시설 안내</p>
+            </div>
+        </div>
+
+        <!-- 탭메뉴 -->
+        <div class="tab-menu">
+            <ul>
+                <li class="fac active"><a href="facility.html">시설 안내</a></li>
+                <li class="cafe"><a href="cafe.html">카페 안내</a></li>
+            </ul>
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <!-- ------------------  facility ---------------------- -->
+
+    <section class="facility">
+        <article class="box left">
+            <ul class="top">
+                <li class="txt">
+                    <h2>Facility Info</h2>
+                    <h3>정원과 잔디밭</h3>
+                    <h4>Grassy Play Yard</h4>
+                    <p>인공 잔디가 아닌 발바닥에 닿는 촉감이 살아있는 천연 잔디 광장입니다. 탁 트인 야외에서 마음껏 뛰놀며 흙 냄새, 풀 냄새를 맡는 노즈워크 활동을 즐길 수 있습니다. 안전한
+                        펜스가 설치되어 있어 오프리쉬(Off-leash) 상태로 자유로운 힐링 시간을 선물하세요.</p>
+                    <p></p>
+                </li>
+                <li class="imgt">
+                    <img src="images/fac-img/fac1.png" alt="잔디밭 이미지 1">
+                </li>
+            </ul>
+            <li class="imgb">
+                <img src="images/fac-img/fac1-2.png" alt="잔디밭 이미지 2">
+            </li>
+        </article>
+
+        <article class="box right">
+            <ul class="top">
+                <li class="txt">
+                    <h2>Facility Info</h2>
+                    <h3>프리미엄 수영장</h3>
+                    <h4>Premium Pool</h4>
+                    <p>사계절 쾌적한 온도로 관리되는 애견 전용 수영장입니다. 수영이 처음인 아이들을 위한 구명조끼 대여 서비스와 전문가의 세심한 관리가 함께합니다. 물놀이 후에도 걱정 없도록 최신
+                        드라이룸 시설이 완비된 셀프 목욕 공간이 바로 옆에 준비되어 있습니다.</p>
+                    <p></p>
+                </li>
+                <li class="imgt">
+                    <img src="images/fac-img/fac2.png" alt="수영장 이미지 1">
+                </li>
+            </ul>
+            <li class="imgb">
+                <img src="images/fac-img/fac2-2.png" alt="수영장 이미지 2">
+            </li>
+
+        </article>
+
+        <article class="box left">
+            <ul class="top">
+                <li class="txt">
+                    <h2>Facility Info</h2>
+                    <h3>훈련장</h3>
+                    <h4>Training Center</h4>
+                    <p>전문 훈련사와 함께하는 1:1 맞춤형 교육 공간입니다. 기본적인 사회화 교육부터 어질리티(Agility) 체험까지, 반려견의 성향에 맞춘 다양한 프로그램을 운영합니다.
+                        보호자와 반려견이 서로 소통하며 유대감을 쌓을 수 있는 특별한 경험을 만나보세요.</p>
+                    <p></p>
+                </li>
+                <li class="imgt">
+                    <img src="images/fac-img/fac3.png" alt="훈련장 이미지 1">
+                </li>
+            </ul>
+            <li class="imgb">
+                <img src="images/fac-img/fac3-2.png" alt="훈련장 이미지 2">
+            </li>
+
+        </article>
+
+        <article class="box right">
+            <ul class="top">
+                <li class="txt">
+                    <h2>Facility Info</h2>
+                    <h3>전문 동물 병원</h3>
+                    <h4>Medical Care</h4>
+                    <p>예기치 못한 상황에도 신속하게 대응할 수 있도록 단지 내 전문 의료진이 상주하는 동물병원을 운영합니다. 여행 중 건강 체크는 물론, 예방 접종 및 간단한 진료가 가능합니다.
+                        '꼬순내'는 우리 아이의 즐거움뿐만 아니라 건강과 안전을 최우선으로 생각합니다.</p>
+                    <p></p>
+                </li>
+                <li class="imgt">
+                    <img src="images/fac-img/fac4.png" alt="동물병원 이미지 1">
+                </li>
+            </ul>
+            <li class="imgb">
+                <img src="images/fac-img/fac4-2.png" alt="동물병원 이미지 2">
+            </li>
+
+        </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ------- footer-slogun -------- -->
+
+
+        <section class="footer-slogun">
+            <div class="slogunimg">
+                <img src="images/footer-img/sloguntop.png" alt="슬로건 이미지">
+            </div>
+        </section>
+
+
+
+
+        <!-- ------------- footer -------------- -->
+
+        <footer>
+            <div class="footer-ill">
+                <img src="images/footer-img/footer_img.png" alt="푸터 일러스트">
+            </div>
+
+            <div class="address">
+                <div class="add-logo">
+                    <img src="images/footer-img/logo_3.png" alt="꼬순내 로고">
+                </div>
+
+                <div>
+                    <h2>COMPANY INFOMATION</h2>
+                    <p>주식회사 꼬순내
+                    <p>서울특별시 강남구 학동로82길 </p>
+                    <p>사업자등록번호 : 248-81-00620</p>
+                    <p>통신판매업신고번호 : 2020-서울강남-02297</p>
+                    <p>대표이사 : 오채원</p>
+                </div>
+
+                <div>
+                    <h2>SOCIAL</h2>
+
+                    <div class="sns">
+                        <ul>
+                            <li><img src="images/footer-img/x_icon.jpg" alt="x 로고">&nbsp&nbsp x.com</li>
+                            <li><img src="images/footer-img/instar.png" alt="인스타그램 로고">&nbsp&nbsp Instargram</li>
+                            <li><img src="images/footer-img/kakao.png" alt="카카오톡 로고">&nbsp&nbsp KakaoTalk Channel</li>
+                    </div>
+                </div>
+
+                <div>
+                    <h2>HELP</h2>
+                    <p>고객센터 : 1800-6067</p>
+                    <p>운영시간 : 평일 9시~12시, 13시~17시(주말/공휴일 제외)</p>
+                </div>
+            </div>
+
+            <div class="rule">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li>
+                        <p>Copyright 2023 © KkoSunNae. All Rights Reseved.</p>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+
 </body>
+
 </html>

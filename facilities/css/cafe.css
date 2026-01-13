@@ -1,0 +1,382 @@
+@charset "utf-8";
+
+img {
+    display: block;
+}
+
+/*** 수정!! ****/
+/* main + title */
+section.top {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+section.top .bg {
+    height: 660px;
+    /* 배경이미지가 들어갈 공간 확보! */
+    background-image: url(../images/cafe-img/mainimg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+
+    position: relative;
+}
+
+section.top .bg .title {
+    text-align: center;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 160px;
+}
+
+section.top .bg .title img {
+    width: 45px;
+    display: inline-block;
+    /* 글자처럼 취급하게 해서 text-align으로 정렬하려고! */
+}
+
+section.top .bg .title h2 {
+    font-family: 'OngleebDaisy';
+    font-size: 4.9rem;
+    font-weight: normal;
+    color: #fff;
+}
+
+section.top .bg .title p {
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(196, 196, 196);
+}
+
+
+
+
+
+
+
+
+/* **************** menu **************** */
+
+section.top .tab-menu {
+    width: 1280px;
+    /* 컨텐츠 너비! */
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 100px;
+    padding: 12px;
+
+    transform: translateY(-50%);
+
+    /* outline: 2px solid red; */
+}
+
+section.top .tab-menu ul {
+
+    font-family: 'Pretendard';
+    font-size: 1.9rem;
+    font-weight: 600;
+
+    color: #333;
+}
+
+section.top .tab-menu ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+section.top .tab-menu ul li {
+    width: calc(50% - 6px);
+    border-radius: 50px;
+    float: left;
+    text-align: center;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    color: rgb(170, 170, 170);
+}
+
+section.top .tab-menu ul li:first-child {
+    margin-right: 12px;
+}
+
+section.top .tab-menu ul li a {
+    line-height: 70px;
+    font-size: 24px;
+
+}
+
+/* 선택된 탭메뉴 */
+section.top .tab-menu ul li.active {
+    background-color: #FAAD6D;
+    border-color: #FAAD6D;
+}
+
+section.top .tab-menu ul li.active a {
+    color: #fff;
+    font-weight: bold;
+}
+
+section.top .tab-menu ul .cafe:hover {
+    background-color: #ffa256;
+}
+
+section.top .tab-menu ul .fac:hover {
+    background-color: #FAAD6D;
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #FAAD6D;
+}
+
+
+
+
+
+
+
+/* ******** sub title ********** */
+
+.sub-title {
+    padding-top: 200px;
+    padding-bottom: 20px;
+    text-align: center;
+
+}
+
+.sub-title img {
+    width: 30px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.sub-title h2 {
+    font-family: 'Pretendard';
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.sub-title p {
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #555;
+}
+
+
+
+
+
+
+
+
+
+/* **************** cafe info ************** */
+
+.cafeinfo .info {
+    width: 100%;
+    max-width: 980px;
+
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.cafeinfo .info div {
+    margin-bottom: 100px;
+}
+
+.cafeinfo .info div ul li {
+    float: left;
+}
+
+.cafeinfo .info div ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.cafeinfo .info div ul li img {
+    width: 250px;
+}
+
+.cafeinfo .info div ul .txt {
+    float: right;
+    width: 100%;
+    max-width: 560px;
+}
+
+.cafeinfo .info .clock .txt {
+    padding-top: 70px;
+}
+
+.cafeinfo .info .price .txt {
+    padding-top: 55px;
+}
+
+.cafeinfo .info .rule .txt {
+    margin-top: -10px;
+}
+
+.cafeinfo div .txt h2 {
+    font-family: 'Pretendard';
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.cafeinfo div .txt p {
+    font-family: 'Pretendard';
+    font-size: 1.2rem;
+
+    margin-bottom: 10px;
+}
+
+.banner {
+    margin: 0 auto;
+    padding-top: 100px;
+    margin-bottom: 250px;
+}
+
+.banner img {
+    width: 100%;
+}
+
+
+
+
+
+/* 카페 메뉴 */
+
+/* *******************  사람 메뉴 ********************* */
+
+.parent {
+    width: 100%;
+    max-width: 1480px;
+
+    margin: 0 auto;
+    margin-bottom: 250px;
+
+    position: relative;
+}
+
+.parent h2 {
+    text-align: center;
+    font-family: 'OngleebDaisy';
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    margin-top: 80px;
+
+}
+
+.parent .gallery {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    margin-bottom: 80px;
+
+}
+
+.parent .gallery ul {
+    display: flex;
+
+}
+
+.parent .gallery ul li {
+    margin-right: 18px;
+    margin-bottom: 15px;
+
+    border: 3px solid #FAAD6D;
+    border-radius: 30px;
+
+    width: 415px;
+    height: 384px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+.parent .gallery li img {
+    width: 415px;
+}
+
+.parent .gallery li img:hover {
+    position: absolute;
+    bottom: -3px;
+}
+
+
+
+
+
+
+/* *********  펫 메뉴 *********** */
+
+.pet {
+    width: 100%;
+    max-width: 1480px;
+padding-bottom: 100px;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+.pet .petmenu {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+
+}
+
+.pet .petmenu h2 {
+    text-align: center;
+    font-family: 'OngleebDaisy';
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    margin-top: 80px;
+
+}
+
+.pet .petmenu .gallery {
+    width: 1000%;
+    max-width: 1280px;
+    margin: 0 auto;
+
+
+    margin-bottom: 80px;
+
+}
+
+.pet .petmenu .gallery ul {
+    display: flex;
+    margin-bottom: 35px;
+
+
+}
+
+.pet .petmenu .gallery ul li {
+    margin-right: 35px;
+    height: 412px;
+    width: 622px;
+
+    border: 3px solid #FAAD6D;
+    border-radius: 30px;
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+.pet .petmenu .gallery img {
+    width: 622px;
+margin: 0 auto;
+}
+
+.pet .petmenu .gallery img:hover {
+    position: absolute;
+
+    bottom: -3px;
+}

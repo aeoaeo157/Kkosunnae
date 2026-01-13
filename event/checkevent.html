@@ -1,11 +1,266 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>출석체크 이벤트 페이지</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/checkevent.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+    <script src="script/header.js"></script>
+    <script src="script/checkevent.js"></script>
 </head>
+
 <body>
-    
+
+
+    <!-- ---------------- header ------------------ -->
+
+    <header>
+        <div class="header-logo">
+            <a href="../index.html"><img src="images/header-img/logo_1.png" alt="꼬순내 로고"></a>
+        </div>
+
+        <nav class="gnb">
+            <ul class="depth01">
+                <li>
+                    <a href="#">ABOUT</a>
+                    <ul class="depth02">
+                        <li><a href="../about/brand.html">브랜드</a></li>
+                        <li><a href="../about/character.html">캐릭터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFOMATION</a>
+                    <ul class="depth02">
+                        <li><a href="../infomation/infomation.html">이용안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ROOMS</a>
+                    <ul class="depth02">
+                        <li><a href="../rooms/rooms.html">객실안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACILITIES</a>
+                    <ul class="depth02">
+                        <li><a href="../facilities/facility.html">시설안내</a></li>
+                        <li><a href="../facilities/cafe.html">카페안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">EVENT</a>
+                    <ul class="depth02">
+                        <li><a href="checkevent.html">출석이벤트</a></li>
+                        <li><a href="reviewevent.html">후기이벤트</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="top">
+        <div></div>
+    </section>
+
+    <section class="event">
+        <div class="title">
+            <img src="images/check-img/title.png" alt="출석체크 이벤트 타이틀">
+        </div>
+
+        <div class="con">
+            <img src="images/check-img/eventcon.png" alt="이벤트 설명">
+        </div>
+    </section>
+
+
+
+    <section class="check">
+        <div class="checkbox">
+            <div class="week">
+                <ul class="box">
+                    <li>
+                        <p>1일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                        <img src="images/check-img/checkon.png" alt="출석" class="active">
+                    </li>
+                    <li>
+                        <p>2일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>3일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>4일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>5일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>6일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>7일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="week">
+                <ul class="box">
+                    <li>
+                        <p>8일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>9일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>10일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>11일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>12일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>13일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>14일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="week">
+                <ul class="box">
+                    <li>
+                        <p>15일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>16일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>17일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>18일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>19일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>20일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                    <li>
+                        <p>21일차</p>
+                        <img src="images/check-img/checkoff.png" alt="체크박스">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="btn">
+            <a href="#">출석하기!</a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ------------- footer -------------- -->
+
+    <footer>
+        <div class="footer-ill">
+            <img src="images/footer-img/footer_img.png" alt="푸터 일러스트">
+        </div>
+
+        <div class="address">
+            <div class="add-logo">
+                <img src="images/footer-img/logo_3.png" alt="꼬순내 로고">
+            </div>
+
+            <div>
+                <h2>COMPANY INFOMATION</h2>
+                <p>주식회사 꼬순내
+                <p>서울특별시 강남구 학동로82길 </p>
+                <p>사업자등록번호 : 248-81-00620</p>
+                <p>통신판매업신고번호 : 2020-서울강남-02297</p>
+                <p>대표이사 : 오채원</p>
+            </div>
+
+            <div>
+                <h2>SOCIAL</h2>
+
+                <div class="sns">
+                    <ul>
+                        <li><img src="images/footer-img/x_icon.jpg" alt="x 로고">&nbsp&nbsp x.com</li>
+                        <li><img src="images/footer-img/instar.png" alt="인스타그램 로고">&nbsp&nbsp Instargram</li>
+                        <li><img src="images/footer-img/kakao.png" alt="카카오톡 로고">&nbsp&nbsp KakaoTalk Channel</li>
+                </div>
+            </div>
+
+            <div>
+                <h2>HELP</h2>
+                <p>고객센터 : 1800-6067</p>
+                <p>운영시간 : 평일 9시~12시, 13시~17시(주말/공휴일 제외)</p>
+            </div>
+        </div>
+
+        <div class="rule">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li>
+                    <p>Copyright 2023 © KkoSunNae. All Rights Reseved.</p>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
 </body>
+
 </html>

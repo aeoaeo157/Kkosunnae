@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+/*** 수정!! ****/
+/* main + title */
+section.top {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+section.top .bg {
+    height: 660px;
+    /* 배경이미지가 들어갈 공간 확보! */
+    background-image: url(../images/fac-img/mainimg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+
+    position: relative;
+}
+
+section.top .bg .title {
+    text-align: center;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 160px;
+}
+
+section.top .bg .title img {
+    width: 45px;
+    display: inline-block;
+    /* 글자처럼 취급하게 해서 text-align으로 정렬하려고! */
+}
+
+section.top .bg .title h2 {
+    font-family: 'OngleebDaisy';
+    font-size: 4.9rem;
+    font-weight: normal;
+    color: #fff;
+}
+
+section.top .bg .title p {
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(196, 196, 196);
+}
+
+
+
+
+
+
+
+
+/* **************** menu **************** */
+
+section.top .tab-menu {
+    width: 1280px; /* 컨텐츠 너비! */
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 100px;
+    padding: 12px;
+
+    transform: translateY(-50%);
+
+    /* outline: 2px solid red; */
+}
+section.top .tab-menu ul {
+
+       font-family: 'Pretendard';
+    font-size: 1.9rem;
+    font-weight: 600;
+
+    color: #333;
+}
+section.top .tab-menu ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+section.top .tab-menu ul li {
+    width: calc(50% - 6px);
+    border-radius: 50px;
+    float: left;
+    text-align: center;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    color: rgb(170, 170, 170);
+}
+section.top .tab-menu ul li:first-child {
+    margin-right: 12px;
+}
+
+section.top .tab-menu ul li a {
+    line-height: 70px;
+    font-size: 24px;
+    
+}
+
+/* 선택된 탭메뉴 */
+section.top .tab-menu ul li.active {
+    background-color: #FAAD6D;
+    border-color: #FAAD6D;
+}
+section.top .tab-menu ul li.active a {
+    color: #fff;
+    font-weight: bold;
+}
+section.top .tab-menu ul .fac:hover {
+    background-color: #ffa256;
+}
+
+section.top .tab-menu ul .cafe:hover {
+    background-color: #FAAD6D;
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #FAAD6D;
+}
+
+
+
+
+
+
+
+/* *************  facility  ***************** */
+
+.facility {
+    margin-top: 200px;
+}
+
+img {
+    display: block;
+}
+
+.facility .box {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    margin-bottom: 300px;
+}
+ .facility .box.left .top li {
+float: left;
+}
+
+ .facility .box.left .top .imgt {
+    float: right;
+ }
+
+  .facility .box.right .top li {
+float: left;
+}
+ .facility .box.right .top .txt {
+    float: right;
+    text-align: right;
+ }
+
+ .facility .box .top::after {
+    content: "";
+    display: block;
+    clear: both;
+ }
+
+ .facility .box .top .txt {
+    width: 450px;
+    word-break: keep-all;
+ }
+
+.facility .box .top .txt h2 {
+       font-family: 'OngleebDaisy';
+       font-size: 1.5rem;
+       font-weight: normal;
+
+       margin-bottom: 20px;
+
+       color: #FAAD6D;
+}
+
+.facility .box .top .txt h3 {
+        font-family: 'Pretendard';
+     font-weight: 400;
+
+      color: rgb(138, 138, 138);
+      margin-bottom: 8px;
+}
+
+.facility .box .top .txt h4 {
+      font-family: 'JoseonPalace';
+      font-size: 3.5rem;
+      font-weight: 500;
+      color: rgb(197, 178, 71);
+
+      margin-bottom: 30px;
+}
+
+.facility .box .top .txt p {
+     font-family: 'Pretendard';
+     font-size: 1.1rem;
+     font-weight: 400;
+
+      color: rgb(59, 59, 59);
+      line-height: 26px;
+}
+
+.facility .box .imgt img {
+    width: 100%;
+    max-width: 620px;
+}
+
+.facility .box .imgb img {
+    margin-top: 70px;
+    width: 100%;
+    max-width: 1280px;
+}
+
+
+
+

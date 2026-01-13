@@ -1,11 +1,419 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>이용안내 페이지</title>
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/infomation.css">
+    <link rel="stylesheet" href="css/footer_slogun.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+    <script src="script/header.js"></script>
+
+
 </head>
+
 <body>
-    
+
+    <!-- ---------------- header ------------------ -->
+
+    <header>
+        <div class="header-logo">
+            <a href="../index.html"><img src="images/header-img/logo_1.png" alt="꼬순내 로고"></a>
+        </div>
+
+        <nav class="gnb">
+            <ul class="depth01">
+                <li>
+                    <a href="#">ABOUT</a>
+                    <ul class="depth02">
+                        <li><a href="../about/brand.html">브랜드</a></li>
+                        <li><a href="../about/character.html">캐릭터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFOMATION</a>
+                    <ul class="depth02">
+                        <li><a href="infomation.html">이용안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ROOMS</a>
+                    <ul class="depth02">
+                        <li><a href="../rooms/rooms.html">객실안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACILITIES</a>
+                    <ul class="depth02">
+                        <li><a href="../facilities/facility.html">시설안내</a></li>
+                        <li><a href="../facilities/cafe.html">카페안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">EVENT</a>
+                    <ul class="depth02">
+                        <li><a href="../event/checkevent.html">출석이벤트</a></li>
+                        <li><a href="../event/reviewevent.html">후기이벤트</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+
+    <!-- -------------------- main ----------------- -->
+
+    <main>
+        <div class="mainimg">
+            <img src="images/info-img/mainimg.png" alt="브랜드 메인 이미지">
+        </div>
+
+        <div class="title">
+            <img src="images/info-img/paw2.png" alt="강아지 발바닥 아이콘">
+            <h2>Infomation</h2>
+            <p>꼬순내 이용안내</p>
+            <div class="txt">
+                <p>펫카페는 반려견 동반 카페로, 즐거운 시간을 보내 실 수 있도록</p>
+                <p>넓은 야외마당과 편안히 쉴 수 있는 실내 휴게실이 준비되어 있습니다.</p>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- 안내사항 -->
+
+    <section class="reservation">
+
+        <div class="sub-title">
+            <img src="images/info-img/paw3.png" alt="서브 타이틀 발바닥">
+            <h2>안내사항</h2>
+            <p>Pension Reservation</p>
+        </div>
+
+        <div class="pension-reservation">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>객실</th>
+                        <th>넓이(평)</th>
+                        <th>시즌</th>
+                        <th>주중</th>
+                        <th>금요일</th>
+                        <th>주말 공휴일전날</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3">101호<br>(기준2명 ~ 최대3명)</td>
+                        <td rowspan="3">16평형</td>
+                        <td>비수기</td>
+                        <td>200,000</td>
+                        <td>200,000</td>
+                        <td>260,000</td>
+                    </tr>
+                    <tr>
+                        <td>성수기</td>
+                        <td>290,000</td>
+                        <td>290,000</td>
+                        <td>290,000</td>
+                    </tr>
+                    <tr>
+                        <td>지정기간</td>
+                        <td>300,000</td>
+                        <td>300,000</td>
+                        <td>300,000</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="3">102호<br>(기준4명 ~ 최대5명)</td>
+                        <td rowspan="3">24평형</td>
+                        <td>비수기</td>
+                        <td>300,000</td>
+                        <td>300,000</td>
+                        <td>360,000</td>
+                    </tr>
+                    <tr>
+                        <td>성수기</td>
+                        <td>390,000</td>
+                        <td>390,000</td>
+                        <td>390,000</td>
+                    </tr>
+                    <tr>
+                        <td>지정기간</td>
+                        <td>400,000</td>
+                        <td>400,000</td>
+                        <td>400,000</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="3">201호<br>(기준2명 ~ 최대3명)</td>
+                        <td rowspan="3">16평형</td>
+                        <td>비수기</td>
+                        <td>200,000</td>
+                        <td>200,000</td>
+                        <td>260,000</td>
+                    </tr>
+                    <tr>
+                        <td>성수기</td>
+                        <td>290,000</td>
+                        <td>290,000</td>
+                        <td>290,000</td>
+                    </tr>
+                    <tr>
+                        <td>지정기간</td>
+                        <td>300,000</td>
+                        <td>300,000</td>
+                        <td>300,000</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="3">202호<br>(기준4명 ~ 최대5명)</td>
+                        <td rowspan="3">24평형</td>
+                        <td>비수기</td>
+                        <td>300,000</td>
+                        <td>300,000</td>
+                        <td>360,000</td>
+                    </tr>
+                    <tr>
+                        <td>성수기</td>
+                        <td>390,000</td>
+                        <td>390,000</td>
+                        <td>390,000</td>
+                    </tr>
+                    <tr>
+                        <td>지정기간</td>
+                        <td>400,000</td>
+                        <td>400,000</td>
+                        <td>400,000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="txt">
+                <p>1. 기준인원초과시는 1인에 30,000원입니다. (영유아포함)</p>
+                <p>2. 입실은 당일 15시부터 22시까지 가능합니다.</p>
+                <p>3. 퇴실은 마지막날 11시를 원칙으로 합니다.</p>
+                <p>4. 반려견은 2마리까지 입실 무료입니다. (최대 4마리까지 가능, 1마리당 2만원 추가비용)</p>
+                <p>5. 바비큐 비용은 1만원입니다. (숙박 당일 현장결제)</p>
+                <p>6. 11시와 15시 사이에는 청소시간이므로 입실이 불가합니다. 입실시간을 지켜주시기 바랍니다.</p>
+                <p>7. 반려견을 객실에 두고 외출하실 수 없으며, 펜션 내에서 반려견을 방치하여 발생하는 사고에 대해서는 책임을 지지 않습니다.</p>
+                <p>8. 반려견의 돌발행동으로 인한 사고 및 피해보상은 모두 보호자의 책임입니다.</p>
+                <p>9. 견주의 부주의로 인한 사고에 대해 펜션은 어떠한 책임도 지지 않습니다.</p>
+                <p>10. 설악의정원 펜션은 지리적 특성상 다양한 곤충과 벌레가 있을수 있으므로 신중한 예약을 부탁드리며 이로 인한 환불은 불가합니다.</p>
+                <p>11. 예약전 반드시 이용수칙을 확인해주세요. 지키지 않을 시 퇴실이 요구될 수 있습니다.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- ---------- 이용수칙 ---------- -->
+    <section class="pension-note">
+        <div class="sub-title">
+            <img src="images/info-img/paw3.png" alt="발바닥 아이콘">
+            <h2>이용수칙</h2>
+            <p>Pension Note</p>
+        </div>
+
+        <ol class="note-list">
+            <li>1. 예약인원 외 방문객은 펜션시설 출입 금지입니다 적발 시 퇴실처리 합니다. 유의해주세요.</li>
+            <li>2. 객실마다 정해진 기준을 초과하는 인원은 입실불가입니다. (36개월 이하 유아는 제외)</li>
+            <li>3. 바비큐 이용시 1만원의 추가요금이 있습니다.</li>
+            <li>
+                4. 소변실수, 실내마킹이 잦거나 생리중인 반려견의 경우 반드시 매너벨트를 착용시켜 주세요.
+                <span class="caution">※ 기물에 피해를 입힐 시 세탁비용이 청구됩니다.</span>
+            </li>
+            <li>5. 펜션 내의 집기 또는 기물 등이 파손되지 않도록 주의해주세요. 파손시 비용이 청구됩니다.</li>
+            <li>6. 펜션과 운동장 시설 이용 시 동반한 반려견의 배변은 직접 치워주세요.</li>
+            <li>
+                7. 해물류, 육류 등 냄새가 강한 음식은 조리 및 섭취 모두 테라스에서만 가능합니다.
+                <ul class="sub-list">
+                    <li>
+                        객실 내에 냄새가 밴 경우 다음 고객의 피해 보상을 위해 1박 요금이 청구됩니다
+                    </li>
+                </ul>
+            </li>
+            <li>8. 퇴실 시 일반, 음식물, 재활용쓰레기는 분리수거 구역에 분리수거 부탁드립니다.</li>
+            <li>
+                9. 꼬순내는 법규 상의 맹견 5종을 제외한 소,중,대형견 상관 없이 모든 견종이 이용 가능한 공간입니다.
+                <ul class="sub-list">
+                    <li>
+                        이 점이 불편하신 분들은 타 숙박시설 이용을 부탁드립니다.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                10. 야외운동장 및 수영장은 카페와 함께 이용하는 공간입니다.
+                <ul class="sub-list">
+                    <li>이 점이 불편하신 분들은 타 숙박시설 이용을 부탁드립니다.</li>
+                    <li>펜션 내 반려견 수영장은 서비스공간으로 수영장 이용중 고객님의 부주의, 관리 소홀로 인한 발생한 사고(반려견간 다툼, 미끄러짐, 익수 등)는 펜션측에서 책임지지 않습니다.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                11. 꼬순내는 모든 견종이 차별 없이 이용하는 공간이나 다음의 경우는 이용 불가합니다.
+                <ul class="sub-list">
+                    <li>공격성이 심한 경우, 입질이 있는 경우, 법규 상 맹견 5종에 해당하는 경우.</li>
+                    <li>업체의 판단 하에 사회성이 현저히 부족한 경우.</li>
+                </ul>
+            </li>
+            <li>12. 운동장을 제외한 공간에서는 안전을 위해 반려견은 목줄과 리드줄 착용 후 보호자와 함께 이동시켜주세요.</li>
+        </ol>
+    </section>
+
+
+
+
+
+    <!-- Pension Refund -->
+
+    <section class="refund-section">
+        <div class="sub-title">
+            <img src="images/info-img/paw3.png" alt="서브 타이틀 발바닥">
+            <h2>환불규정</h2>
+            <p>Pension Refund</p>
+        </div>
+
+        <table class="refund-table">
+            <tbody>
+                <tr>
+                    <th>7일 전 취소</th>
+                    <th>6일 전 취소</th>
+                    <th>5일 전 취소</th>
+                    <th>4일 전 취소</th>
+                </tr>
+                <tr>
+                    <td>90% 환불</td>
+                    <td>80% 환불</td>
+                    <td>60% 환불</td>
+                    <td>50% 환불</td>
+                </tr>
+                <tr>
+                    <th>3일 전 취소</th>
+                    <th>2일 전 취소</th>
+                    <th>1일 전 취소</th>
+                    <th>당일 취소</th>
+                </tr>
+                <tr>
+                    <td>40% 환불</td>
+                    <td class="no-refund">환불 불가능</td>
+                    <td class="no-refund">환불 불가능</td>
+                    <td class="no-refund">환불 불가능</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="txt">
+            <p>1. 예약 후 날짜변경, 객실변경은 예약취소 후 다시 예약하셔야 합니다.</p>
+            <p>2. 객실과 날짜는 예약 전 신중히 생각하시고 결정해주시기 바랍니다.</p>
+            <p>3. 이용일 당일 포함 2일 전까지 환불 불가입니다.</p>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ------- footer-slogun -------- -->
+
+
+    <section class="footer-slogun">
+        <div class="slogunimg">
+            <img src="images/footer-img/sloguntop.png" alt="슬로건 이미지">
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+    <!-- ------------- footer -------------- -->
+
+    <footer>
+        <div class="footer-ill">
+            <img src="images/footer-img/footer_img.png" alt="푸터 일러스트">
+        </div>
+
+        <div class="address">
+            <div class="add-logo">
+                <img src="images/footer-img/logo_3.png" alt="꼬순내 로고">
+            </div>
+
+            <div>
+                <h2>COMPANY INFOMATION</h2>
+                <p>주식회사 꼬순내
+                <p>서울특별시 강남구 학동로82길 </p>
+                <p>사업자등록번호 : 248-81-00620</p>
+                <p>통신판매업신고번호 : 2020-서울강남-02297</p>
+                <p>대표이사 : 오채원</p>
+            </div>
+
+            <div>
+                <h2>SOCIAL</h2>
+
+                <div class="sns">
+                    <ul>
+                        <li><img src="images/footer-img/x_icon.jpg" alt="x 로고">&nbsp&nbsp x.com</li>
+                        <li><img src="images/footer-img/instar.png" alt="인스타그램 로고">&nbsp&nbsp Instargram</li>
+                        <li><img src="images/footer-img/kakao.png" alt="카카오톡 로고">&nbsp&nbsp KakaoTalk Channel</li>
+                </div>
+            </div>
+
+            <div>
+                <h2>HELP</h2>
+                <p>고객센터 : 1800-6067</p>
+                <p>운영시간 : 평일 9시~12시, 13시~17시(주말/공휴일 제외)</p>
+            </div>
+        </div>
+
+        <div class="rule">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li>
+                    <p>Copyright 2023 © KkoSunNae. All Rights Reseved.</p>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
 </body>
+
 </html>

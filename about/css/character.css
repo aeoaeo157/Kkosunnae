@@ -1,0 +1,468 @@
+@charset "utf-8";
+
+main {
+    width: 100%;
+
+    /* outline: 3px solid red; */
+
+    position: relative;
+    margin: 0 auto;
+}
+
+main .mainimg img {
+    width: 100%;
+    display: block;
+
+}
+
+/* *********************title*********************** */
+main .title {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 55px;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main .title img {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 45px;
+}
+
+main .title h2 {
+    font-family: 'OngleebDaisy';
+    font-size: 4.9rem;
+    font-weight: normal;
+    color: #fff;
+}
+
+main .title p {
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(196, 196, 196);
+}
+
+
+
+
+
+
+/* *********************** sub-title ********************** */
+
+.sub-title {
+    margin-top: 150px;
+    width: 100%;
+    text-align: center;
+}
+
+.sub-title h2 {
+    font-family: 'Pretendard';
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.sub-title p {
+    font-family: 'Pretendard';
+    font-size: 1.2rem;
+    font-weight: 5=400;
+}
+
+
+
+
+
+
+/* **************** 순내  *************** */
+
+.sunnae {
+    width: 100%;
+
+    margin: 0 auto;
+    /* outline: 3px solid red; */
+
+    margin-bottom: 200px;
+}
+
+.sunnae .sun-con {
+
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto 120px;
+
+    /* outline: 3px solid red; */
+    margin-top: 100px;
+    margin-bottom: 250px;
+
+
+    display: flex;
+    /* 가로 정렬 */
+    align-items: end;
+    /* 수직 중앙 정렬 */
+    justify-content: center;
+    /* 중앙으로 모음 */
+    gap: 40px;
+    /* 이미지와 글자 사이 간격 */
+}
+
+
+
+.sunnae .sun-con .txt {
+    width: 600px;
+    word-break: keep-all;
+    /* 단어 단위 줄바꿈 */
+    width: 500px;
+    /* 텍스트 너비 고정 */
+    text-align: left;
+    /* 왼쪽 정렬 */
+}
+
+.sunnae .sun-con .txt h2 {
+    padding-top: 10px;
+    font-family: 'Pretendard';
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+
+.sunnae .sun-con .txt h3 {
+    font-family: 'Pretendard';
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #383838;
+}
+
+.sunnae .sun-con .txt .box div {
+    width: 45px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 1px;
+    background-color: #383838;
+
+    display: inline-block;
+}
+
+.sunnae .sun-con .txt .box .c1 {
+    background-color: #F9A262;
+}
+
+.sunnae .sun-con .txt .box .c2 {
+    background-color: #FAAD6D;
+}
+
+.sunnae .sun-con .txt .box .c3 {
+    background-color: #FACED7;
+}
+
+.sunnae .sun-con .txt h4 {
+    font-family: 'Pretendard';
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #383838;
+    padding-bottom: 20px;
+}
+
+.sunnae .sun-con .txt p {
+    font-family: 'Pretendard';
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #383838;
+    margin-bottom: 3px;
+}
+
+.sunnae .sun-con .txt ul li {
+    margin-bottom: 13px;
+}
+
+.sunnae .sun-con .cimg img {
+    display: block;
+    width: 550px;
+}
+
+.sunnae .sun-con .clogo img {
+    display: block;
+    width: 200px;
+}
+
+.sunnae .char {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.sunnae .char img {
+    display: block;
+    width: 1050px;
+}
+
+.sunnae .char .charbanner {
+    display: block;
+    width: 100%;
+}
+
+.sunnae .charbanner img {
+    width: 100%;
+    max-width: 1920px;
+}
+
+
+
+/* *************** kko  *************** */
+
+
+.kko {
+    width: 100%;
+
+    margin: 0 auto;
+    /* outline: 3px solid red; */
+
+    padding-top: 105px;
+    margin-bottom: 200px;
+}
+
+.kko .kko-con {
+    flex-direction: row-reverse;
+    /* 이미지와 글자 순서 반전 */
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto 120px;
+
+    /* outline: 3px solid red; */
+    margin-top: 100px;
+    margin-bottom: 300px;
+
+    text-align: right;
+    display: flex;
+    /* 가로 정렬 */
+    align-items: end;
+    /* 수직 중앙 정렬 */
+    justify-content: center;
+    /* 중앙으로 모음 */
+    gap: 40px;
+    /* 이미지와 글자 사이 간격 */
+}
+
+
+
+.kko .kko-con .txt {
+    width: 600px;
+    word-break: keep-all;
+    /* 단어 단위 줄바꿈 */
+    width: 500px;
+    /* 텍스트 너비 고정 */
+}
+
+.kko .kko-con .txt h2 {
+    padding-top: 10px;
+    font-family: 'Pretendard';
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+
+.kko .kko-con .txt h3 {
+    font-family: 'Pretendard';
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #383838;
+}
+
+.kko .kko-con .txt .box div {
+    width: 45px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 1px;
+    background-color: #383838;
+
+    display: inline-block;
+}
+
+.kko .kko-con .txt .box .c1 {
+    background-color: #4C4C4D;
+}
+
+.kko .kko-con .txt .box .c2 {
+    background-color: #666766;
+}
+
+.kko .kko-con .txt .box .c3 {
+    background-color: #FACED7;
+}
+
+.kko .kko-con .txt h4 {
+    font-family: 'Pretendard';
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #383838;
+    padding-bottom: 20px;
+}
+
+.kko .kko-con .txt p {
+    font-family: 'Pretendard';
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #383838;
+    margin-bottom: 3px;
+}
+
+.kko .kko-con .txt ul li {
+    margin-bottom: 13px;
+}
+
+.kko .kko-con .cimg img {
+    display: block;
+    height: 200px;
+}
+
+.kko .kko-con .clogo img {
+    display: inline-block; /* block에서 inline-block으로 변경 */
+    height: 50px;
+    margin-right: -3px;
+}
+
+.kko .char {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    margin-top: 120px;
+    margin-bottom: 300px;
+}
+
+.kko .char img {
+    display: block;
+    width: 1050px;
+}
+
+.kko .charbanner {
+    display: block;
+    width: 100%;
+
+    margin-bottom: 400px;
+}
+
+.kko .charbanner img {
+    width: 100%;
+    max-width: 1920px;
+}
+
+
+
+
+/* js 설정 */
+
+/* 1. 공통: 애니메이션이 적용될 모든 요소의 초기 상태 */
+.sunnae .cimg, .sunnae .txt, .sunnae .char, .sunnae .charbanner,
+.kko .cimg, .kko .txt, .kko .char, .kko .charbanner {
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* 부드러운 가속도 */
+}
+
+/* 2. 각 요소별 초기 위치 (슬라이드 시작점) */
+/* 순내 섹션 */
+.sunnae .cimg { transform: translateX(-100px); } /* 이미지 왼쪽에서 */
+.sunnae .txt { transform: translateX(100px); }   /* 텍스트 오른쪽에서 */
+.sunnae .char { transform: translateY(100px); }  /* 상세이미지 아래에서 */
+.sunnae .charbanner { transform: translateX(150px); } /* 배너 오른쪽에서 */
+
+/* 꼬 섹션 */
+.kko .txt { transform: translateX(-100px); }     /* 텍스트 왼쪽에서 (row-reverse 고려) */
+.kko .cimg { transform: translateX(100px); }     /* 이미지 오른쪽에서 */
+.kko .char { transform: translateY(100px); }     /* 상세이미지 아래에서 */
+.kko .charbanner { transform: translateX(-150px); } /* 배너 왼쪽에서 */
+
+/* 3. 등장 순서 (Delay) 설정 - 리듬감 있는 연출 */
+.sunnae .txt, .kko .txt { transition-delay: 0.3s; }
+.sunnae .char, .kko .char { transition-delay: 0.6s; }
+.sunnae .charbanner, .kko .charbanner { transition-delay: 0.9s; }
+
+/* 4. 활성화 상태: 클래스가 추가되면 모두 제자리(0)로! */
+.sunnae.show .cimg, .sunnae.show .txt, .sunnae.show .char, .sunnae.show .charbanner,
+.kko.show .cimg, .kko.show .txt, .kko.show .char, .kko.show .charbanner {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+/* 애니메이션 초기 상태: 투명하고 옆으로 밀려난 상태 */
+.sunnae .cimg, .kko .cimg,
+.sunnae .txt, .kko .txt {
+    opacity: 0;
+    transition: all 1s ease-out; /* 1초 동안 부드럽게 재생 */
+}
+
+/* 왼쪽에서 나타날 요소 (순내 이미지, 꼬 텍스트) */
+.sunnae .cimg, .kko .txt {
+    transform: translateX(-50px);
+}
+
+/* 오른쪽에서 나타날 요소 (순내 텍스트, 꼬 이미지) */
+.sunnae .txt, .kko .cimg {
+    transform: translateX(50px);
+}
+
+/* 텍스트는 이미지보다 조금 더 늦게 나타나도록 지연 시간 추가 */
+.sunnae .txt, .kko .txt {
+    transition-delay: 0.3s; 
+}
+
+/* 클래스가 추가되었을 때의 최종 상태 */
+.sunnae.show .cimg, .sunnae.show .txt,
+.kko.show .cimg, .kko.show .txt {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 1. 애니메이션 전 초기 상태: 아래로 100px 내려가 있고 투명함 */
+.sunnae .char, .kko .char {
+    opacity: 0;
+    transform: translateY(100px); /* Y축(위아래) 이동 */
+    transition: all 1.5s ease-out; /* 부드럽게 1.5초 동안 재생 */
+}
+
+/* 2. 섹션에 show 클래스가 붙었을 때의 상태 */
+.sunnae.show .char, 
+.kko.show .char {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sunnae .char, .kko .char {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1.5s ease-out;
+    transition-delay: 0.9s; /* 캐릭터 소개보다 0.6초 늦게 시작 */
+}
+
+/* 1. 배너 공통 초기 상태 */
+.sunnae .charbanner, 
+.kko .charbanner {
+    opacity: 0;
+    transition: all 1.5s ease-out;
+    transition-delay: 1.8s; /* .char 이미지보다 더 늦게 등장하도록 설정 */
+}
+
+/* 2. 방향 설정 */
+.sunnae .charbanner {
+    transform: translateX(150px); /* 순내는 오른쪽에서 대기 */
+}
+
+.kko .charbanner {
+    transform: translateX(-150px); /* 꼬는 왼쪽에서 대기 */
+}
+
+/* 3. 활성화 상태 (스크롤 시 등장) */
+.sunnae.show .charbanner, 
+.kko.show .charbanner {
+    opacity: 1;
+    transform: translateX(0);
+}
+

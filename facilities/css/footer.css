@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+footer {
+    width: 100%;
+
+    margin: 0 auto;
+
+    position: relative;
+
+}
+
+footer .footer-ill img {
+    display: block;
+    width: 100%;
+
+    margin: 0 auto;
+
+
+}
+
+footer .address {
+
+    width: 1200px;
+
+    position: absolute;
+    left: 20%;
+    top: 9%;
+
+
+}
+
+footer .address .add-logo img {
+    height: 160px;
+    display: block;
+
+
+}
+
+footer .address>div {
+    float: left;
+
+    margin: 30px;
+
+
+}
+
+footer .address>div h2 {
+    font-family: "Noto Sans KR", sans-serif;
+
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(30, 30, 30);
+
+
+}
+
+footer .address div p {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 0.9rem;
+
+    color: rgb(47, 47, 47);
+    margin-bottom: 5px;
+}
+
+footer .address .sns ul li {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 0.9rem;
+
+    color: rgb(47, 47, 47);
+    margin-bottom: 5px;
+
+    /* 추가: 아이콘과 글자를 가로로 나란히, 세로 중앙 정렬 */
+    display: flex;
+    align-items: center;
+}
+
+footer .address>div .sns ul li {
+    margin-bottom: 10px;
+}
+
+footer .rule {
+    width: 800px;
+
+    position: absolute;
+    left: 34%;
+    bottom: 19px;
+}
+
+footer .rule ul {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    color: rgb(47, 47, 47);
+    margin-bottom: 5px;
+}
+
+footer .rule ul li {
+    float: left;
+    display: inline-block;
+    margin: 20px;
+
+    position: relative;
+
+    margin-bottom: 5px;
+}
+
+footer .rule ul li~li {
+    margin-left: 10px;
+}
+
+footer .rule ul li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 14px;
+    background-color: rgb(47, 47, 47);
+
+    position: absolute;
+    left: -16px;
+    bottom: 2px;
+}
+
+footer .rule ul li:first-child::after {
+    display: none;
+}
+
+
+
+footer .address .sns ul li img {
+    /* 기존 &nbsp; 대신 여백(margin)으로 간격 조절 */
+    margin-right: 3px; 
+    
+    /* 인라인 스타일에서의 어긋남 방지 */
+    display: block; 
+}

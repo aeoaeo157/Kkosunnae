@@ -10,6 +10,9 @@ header {
 
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.7); */
 
+    /* 배경 추가: 검은색(불투명도 0.8)에서 투명(0)으로 아래 방향(to bottom)으로 진행 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+
     position: fixed;
     left: 0;
     top: 0;
@@ -32,15 +35,12 @@ header {
     /* line-height: 70px; */
     float: right;
     margin-top: 50px;
-
     /* outline: 2px solid blue; */
 }
 
 
 .gnb ul li {
     display: inline-block;
-
-
 }
 
 .gnb ul li~li {
@@ -56,5 +56,54 @@ header {
 }
 
 .gnb ul li a:hover {
+    color: #FAAD6D;
+}
+
+
+
+
+
+   /* header.css 하단에 추가 또는 수정 */
+
+/* 1. 메인메뉴(li)를 relative로 설정하여 서브메뉴의 기준점으로 잡음 */
+.gnb ul.depth01 > li {
+    display: inline-block;
+    position: relative; /* 중요: depth02의 위치 기준 */
+    vertical-align: top;
+}
+
+/* 2. 기존 마진 제거 (float 대신 inline-block 사용 시 여백 조절) */
+.gnb ul.depth01 > li ~ li {
+    margin-left: 45px;
+}
+
+/* 3. 서브메뉴(depth02) 초기 상태 설정 */
+.gnb ul.depth02 {
+    display: none;      /* 처음에 숨김 */
+    position: absolute; /* 메인메뉴를 기준으로 띄움 */
+    top: 50px;          /* 메인메뉴 텍스트 아래 적당한 위치 */
+    left: 50%;
+    transform: translateX(-50%); /* 가운데 정렬 */
+    width: 120px;       /* 서브메뉴 너비 */
+    background: rgba(0, 0, 0, 0.8); /* 배경색 */
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 10000;
+}
+
+.gnb ul.depth02 li {
+    display: block;     /* 세로로 나열 */
+    margin-left: 0 !important; /* li~li 마진 무효화 */
+    text-align: center;
+}
+
+.gnb ul.depth02 li a {
+    font-size: 15px;    /* 서브메뉴 글자 크기 */
+    padding: 8px 0;
+    display: block;
+    color: #eee;
+}
+
+.gnb ul.depth02 li a:hover {
     color: #FAAD6D;
 }

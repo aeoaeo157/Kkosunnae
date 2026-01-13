@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+body {
+    width: 100%;
+    height: 3500px;
+    background-image: url(../images/review-img/bg.png);
+    background-size: cover;
+  height: 2780px;
+}
+
+.top {
+    width: 100%;
+    height: 130px;
+    background-color: rgb(44, 44, 44);
+}
+
+.title {
+    text-align: center;
+    margin-top: 250px;
+
+}
+
+.title .titlepaw {
+display: inline;
+text-align: center;
+width: 60px;
+margin-bottom: 50px;
+}
+
+.title h2 {
+    font-size: 7.0rem;
+    font-family: 'OngleebDaisy';
+    font-weight: normal;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.title h2 span {
+    color: #FF457A;
+}
+
+.title h3 {
+    font-size: 3.0rem;
+    font-family: 'OngleebDaisy';
+    font-weight: normal;
+    color: black;
+    margin-bottom: 40px;
+}
+
+.title h3 span {
+    color: #F9AB6D;
+
+}
+
+.title .term {
+    margin: 0 auto;
+
+    width: 950px;
+    background-color: #fff;
+    border-top: 3px solid #F9AB6D;
+    margin-bottom: 5px;
+
+}
+
+.title .term img {
+    width: 20px;
+}
+
+.title .term p {
+    font-size: 1.7rem;
+    font-family: 'OngleebDaisy';
+    font-weight: normal;
+    line-height: 20px;
+    color: #666666;
+    padding: 20px 0;
+}
+
+.title .target {
+    margin: 0 auto;
+
+    width: 950px;
+    background-color: #fff;
+    border-bottom: 3px solid #F9AB6D;
+    margin-bottom: 70px;
+}
+
+.title .target p {
+    font-size: 1.7rem;
+    font-family: 'OngleebDaisy';
+    font-weight: normal;
+    line-height: 20px;
+    color: #666666;
+    padding: 20px 0;
+}
+
+
+.con {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+
+    margin-bottom: 200px;
+}
+
+.con ul {
+    margin-bottom: 40px;
+}
+
+.con .box li {
+    margin-right: 50px;
+
+    display: inline-flex;   /* inline-block 대신 inline-flex 사용 */
+    vertical-align: middle; /* 라인 전체의 수직 정렬 기준 설정 */
+    align-items: center;    /* 내부 아이템(이미지와 텍스트)을 수직 중앙 정렬 */
+}
+
+.con .box li div {
+    align-items: center;
+margin-left: 40px;
+}
+
+.con .box li .number {
+    font-size: 3.4rem;
+    font-family: 'OngleebDaisy';
+    font-weight: normal;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.con .box li .price {
+    font-size: 2.2rem;
+    font-family: 'OngleebDaisy';
+    font-weight: normal;
+    color: #3d3d3d;
+}
+
+
+.kko {
+    margin-bottom: 250px;
+}
+
+.kko img {
+    display: block;
+    width: 1000px;
+    margin: 0 auto;
+}

@@ -1,0 +1,242 @@
+@charset "utf-8";
+
+/* **************** main ***************** */
+
+main {
+    width: 100%;
+
+    /* outline: 3px solid red; */
+
+    position: relative;
+    margin: 0 auto;
+}
+
+main .mainimg img {
+    width: 100%;
+    display: block;
+
+}
+
+/* *********************title*********************** */
+main .title {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 55px;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main .title img {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 45px;
+}
+
+main .title h2 {
+    font-family: 'OngleebDaisy';
+    font-size: 4.9rem;
+    font-weight: normal;
+    color: #fff;
+}
+
+main .title p {
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(196, 196, 196);
+}
+
+
+
+
+
+
+
+
+/* ***************** rooms **************** */
+
+.rooms {
+  width: 100%;
+    margin: 0 auto;
+
+    /* outline: 3px solid red; */
+   margin-top: 200px;
+}
+
+.rooms .orange {
+    background-color: #FFD9B9;
+}
+
+.rooms .box {
+      width: 100%;
+    max-width: 1760px;
+display: flex;
+padding: 60px 0;
+
+margin: 0 auto;
+}
+
+.rooms .box .right {
+    margin-top: 119px;
+    margin-left: 60px;
+}
+
+.rooms .box .con {
+    width: 100%;
+    max-width: 1186px;
+}
+
+.rooms .box .con .top {
+text-align: center;
+padding: 40px 0;
+}
+
+.rooms .box .con .top img {
+    width: 45px;
+}
+
+.rooms .box .con .gallery {
+    width: 1186px;
+height: 650px;
+    overflow: hidden;
+
+    /* outline: 3px solid red; */
+}
+
+.rooms .box .con .gallery img{
+    display: block;
+    width: 100%;
+    max-width: 1186px;
+
+    /* border: 5px solid #FAAD6D; */
+}
+
+.rooms .box .con .bottom {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.rooms .box .con .bottom img {
+    width: 45px;
+}
+
+
+.rooms .box .right .txt {}
+.rooms .box .right .txt h2{
+ font-family: 'Pretendard';
+     font-size: 4.0rem;
+     padding-bottom: 20px;
+}
+.rooms .box .right .txt h3{ 
+    font-family: 'Interop';
+     font-size: 1.4rem;
+     padding-bottom: 15px;
+    font-weight: 400;
+    color: rgb(48, 48, 48);
+    }
+.rooms .box .right .txt h4{
+        font-family: 'Interop';
+     font-size: 1.4rem;
+    font-weight: 400;
+    color: rgb(48, 48, 48);
+}
+
+.rooms .box .right .txt h5 {
+      font-family: 'Pretendard';
+           font-size: 1.3rem;
+           font-weight: 700;
+    padding-bottom: 15px;
+      color: rgb(31, 31, 31);
+
+}
+
+.rooms .box .right .txt div{
+    margin-top: 40px;
+          font-family: 'Pretendard';
+     font-size: 1.1rem;
+     padding-bottom: 5px;
+    font-weight: 500;
+    color: rgb(31, 31, 31);
+}
+
+.rooms .box .right .txt div p {
+    margin-bottom: 5px;
+}
+
+
+.rooms .box .right .ad {
+ display: inline-block;
+    margin-top: 50px;
+            font-family: 'Pretendard';
+            font-size: 1.4rem;
+            font-weight: 600;
+color: #fff;
+            background-color: #FAAD6D;
+            padding: 5px;
+
+            border-radius: 20px;
+}
+
+.rooms .box .right .ad .adbor a{
+    border-radius: 15px;
+    border: 3px dotted white;
+     padding: 15px 70px;
+    
+}
+
+
+.rooms .box .right .ad2 {
+ display: inline-block;
+    margin-top: 50px;
+            font-family: 'Pretendard';
+            font-size: 1.4rem;
+            font-weight: 600;
+color: #ff953f;
+            background-color: #fff;
+            padding: 5px;
+
+            border-radius: 20px;
+
+            outline: 2px solid #ffbf8a;
+}
+
+.rooms .box .right .ad2 .adbor a{
+    border-radius: 15px;
+    border: 3px dotted #ff953f;
+     padding: 15px 70px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 세로 슬라이드를 위해 ul의 높이를 충분히 확보합니다 */
+.rooms .box .con .gallery ul {
+    width: 100%;
+    /* li가 4개라면 400% 높이 설정 (세로형) */
+    height: 400%; 
+    display: block;
+}
+
+.rooms .box .con .gallery ul li {
+    width: 100%;
+    /* 이미지가 갤러리 높이(650px)를 꽉 채우도록 설정 */
+    height: 650px; 
+    float: none; /* 좌우 이동이 아니므로 float 해제 */
+}
+
+.rooms .box .con .gallery ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지 비율 유지 */
+}
