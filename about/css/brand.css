@@ -168,36 +168,40 @@ main .title p {
 
 
 
-/* 애니메이션 초기 상태 (준비) */
+/* --- brand.css 수정 --- */
+
+/* 1. 초기 상태: 모든 li 내부의 div들은 투명하고 약간 이동해 있음 */
 .brand .gallery ul li div {
     opacity: 0;
-    transition: all 0.8s ease-out; /* 부드러운 움직임 */
+    transition: all 0.8s ease-out;
 }
 
-/* 이미지는 왼쪽에서 스르륵 (왼쪽 배치는 왼쪽에서, 오른쪽 배치는 오른쪽에서 오게 설정) */
-.brand .gallery ul li div:first-child {
-    transform: translateX(-50px); /* 왼쪽에서 시작 */
+/* 2. 각 타입별 시작 위치 설정 */
+/* 왼쪽 정렬 li: 이미지는 왼쪽(-50px), 텍스트는 오른쪽(50px)에서 대기 */
+.brand .gallery ul li.left div:first-child { transform: translateX(-50px); }
+.brand .gallery ul li.left div:last-child  { transform: translateX(50px); }
+
+/* 오른쪽 정렬 li: 이미지는 오른쪽(50px), 텍스트는 왼쪽(-50px)에서 대기 ★이게 핵심★ */
+.brand .gallery ul li.right div:first-child { transform: translateX(50px); }
+.brand .gallery ul li.right div:last-child  { transform: translateX(-50px); }
+
+
+/* 3. 활성화 상태 (.on 클래스가 붙었을 때) */
+/* 텍스트와 이미지 모두 제자리(0)로 이동. !important를 사용해 우선순위 보장 */
+.brand .gallery ul li.on div:first-child,
+.brand .gallery ul li.on div:last-child {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
 }
 
-/* 텍스트는 오른쪽에서 fade (이미지보다 늦게) */
-.brand .gallery ul li div:last-child {
-    transform: translateX(50px); /* 오른쪽에서 시작 */
-    transition-delay: 0.3s; /* 이미지보다 0.3초 늦게 등장 */
+/* 텍스트 등장 지연 시간 (0.3초 뒤에 스르륵) */
+.brand .gallery ul li.on div:last-child {
+    transition-delay: 0.3s;
 }
 
-/* 오른쪽 정렬된 li(.right)의 경우 반대로 설정하고 싶다면 아래 추가 (선택사항) */
-.brand .gallery ul li.right div:first-child {
-    transform: translateX(50px); /* 이미지가 오른쪽에서 */
-}
-.brand .gallery ul li.right div:last-child {
-    transform: translateX(-50px); /* 텍스트가 왼쪽에서 */
-}
 
-/* 스크롤 시 추가될 클래스 */
-.brand .gallery ul li.on div {
-    opacity: 1;
-    transform: translateX(0); /* 제자리로 */
-}
+
+
 
 
 

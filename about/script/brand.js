@@ -1,22 +1,31 @@
 //brand.js
 
+
 // brand
-
 $(window).on('scroll', function() {
-    $('.brand .gallery ul li').each(function() {
-        var pos = $(this).offset().top; // 각 리스트의 상단 위치
-        var winTop = $(window).scrollTop(); // 현재 스크롤 위치
-        var winHeight = $(window).height(); // 브라우저 높이
+    var winTop = $(window).scrollTop();
+    var winHeight = $(window).height();
 
-        // 화면 하단에서 150px 정도 올라왔을 때 애니메이션 실행
+    // brand 섹션 애니메이션
+    $('.brand .gallery ul li').each(function() {
+        var pos = $(this).offset().top;
         if (pos < winTop + winHeight - 150) {
+            $(this).addClass('on');
+        }
+    });
+
+    // bi 및 color 섹션 애니메이션
+    $('.bi, .color').each(function() {
+        var pos = $(this).offset().top;
+        if (pos < winTop + winHeight - 200) {
             $(this).addClass('on');
         }
     });
 });
 
-// 페이지 로드 시 이미 화면에 보이는 요소들을 위해 한번 실행
+// 페이지 로드 시 초기 상태 반영
 $(window).trigger('scroll');
+
 
 
 
