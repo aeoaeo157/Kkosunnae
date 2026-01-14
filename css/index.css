@@ -11,22 +11,21 @@ body {
 
 body {
     background-image: url(../images/mainpage-img/background4.png);
-background-repeat: no-repeat;
-background-position-y: 52px;
+    background-repeat: no-repeat;
+    background-position-y: -258px;
+    background-position-x: -134px;
+    background-size: cover;
 
-    background-size: contain;
-    
     overflow-x: hidden;
+
+    position: relative;
 }
-
-
 
 
 /* ********************main************************* */
 main {
     width: 100%;
 
-    overflow: hidden;
     position: relative;
 }
 
@@ -101,22 +100,22 @@ main .main-txt p {
 
 
 main .pager {
-position: absolute;
-    bottom: 54px;     
-    left: 50%;       
+    position: absolute;
+    bottom: 54px;
+    left: 50%;
     transform: translateX(-50%);
-    z-index: 10;      
-    display: flex;     
-    gap: 20px;       
+    z-index: 10;
+    display: flex;
+    gap: 20px;
 }
 
 
 
 main .pager li {
-cursor: pointer;
-    font-size: 1.2rem; 
-    color: white;     /
-    transition: color 0.3s ease; /* 색상 변경 시 부드럽게 */
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: white;/ transition: color 0.3s ease;
+    /* 색상 변경 시 부드럽게 */
 }
 
 /* 현재 활성화된 페이지 표시 (JS에서 eq().css()로 제어하지만 클래스로 관리하면 편리합니다) */
@@ -165,7 +164,17 @@ section.about {
     position: relative;
     margin-bottom: 500px;
 
+    overflow-x: hidden;
 }
+
+.leftimg .ab-img1.active {
+    display: block;
+}
+
+.leftimg .ab-img1 {
+    display: none;
+}
+
 
 .about .ab-img1 {
     float: left;
@@ -180,8 +189,8 @@ section.about {
 .about .ab-con h2 {
     position: absolute;
 
-    top: 326px;
-    right: 28px;
+    top: 125px;
+    right: 53px;
 
     font-family: 'Paperozi';
     font-size: 2.6rem;
@@ -200,8 +209,8 @@ section.about {
     letter-spacing: 0.5px;
     width: 510px;
 
-    top: 406px;
-    right: 0px;
+    top: 210px;
+    right: 20px;
 }
 
 .about .ab-con .ab-con-txt p {
@@ -215,8 +224,8 @@ section.about {
 
     position: absolute;
 
-    top: 586px;
-    right: 0;
+    top: 683px;
+    right: 7px;
 
     padding-bottom: 10px;
     border-bottom: 1px solid black;
@@ -249,6 +258,8 @@ section .ab-silde ul li img {
     height: 100%;
 
     margin-bottom: 100px;
+
+    cursor: pointer;
 }
 
 section .ab-silde::after {
@@ -260,6 +271,117 @@ section .ab-silde::after {
 section .ab-silde ul li img:hover {
     opacity: 70%;
 }
+
+
+
+
+
+
+
+
+
+/* --- About 섹션 레이아웃 고정 --- */
+
+/* 1. 이미지들이 들어갈 왼쪽 박스의 크기를 고정합니다. */
+.leftimg {
+    float: left;
+    /* 텍스트와 가로 배치를 유지 */
+    width: 642px;
+    /* 원본 이미지 가로 너비 */
+    height: 600px;
+    /* 원본 이미지 세로 높이 (이미지에 맞게 수정 가능) */
+    position: relative;
+    /* 자식 요소 absolute의 기준점 */
+    margin-right: 20px;
+    /* 오른쪽 텍스트와의 간격 */
+    margin-bottom: 20px;
+}
+
+/* 2. ul 태그가 부모 박스를 꽉 채우도록 설정 */
+.leftimg ul {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* 3. 이미지들을 한 자리에 겹치기 */
+.leftimg .ab-img1 {
+    position: absolute;
+    /* 공중에 띄워 겹침 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지 비율 유지 */
+
+    opacity: 0;
+    /* 기본 투명 */
+    transition: opacity 0.5s ease;
+    display: block !important;
+    float: none !important;
+    /* 기존 float 제거 */
+}
+
+/* 4. 활성화된 이미지 설정 */
+.leftimg .ab-img1.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 5. 아래쪽 슬라이드와 텍스트 박스가 겹치지 않게 'clear' 처리 */
+.about::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+/* --- About 섹션 애니메이션 수정 --- */
+
+/* 1. 부모 요소의 오타 수정 및 위치 설정 */
+.about .ab-con {
+    /* ac-con을 ab-con으로 수정 */
+    overflow: hidden;
+    position: relative;
+}
+
+/* 2. 초기 상태: 오른쪽(80px)에 위치하고 투명함 */
+.about .ab-con h2,
+.about .ab-con .ab-con-txt {
+    opacity: 0;
+    transform: translateX(80px);
+    /* 오른쪽에서 대기 */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* 부드러운 가속도 */
+}
+
+/* 3. 스크롤 시 등장 (.on 클래스 활성 시) */
+.about.on .ab-con h2,
+.about.on .ab-con .ab-con-txt {
+    opacity: 1;
+    transform: translateX(0);
+    /* 제자리로 이동 */
+}
+
+/* 4. 텍스트 지연 시간 설정 (질문하신 핵심 부분) */
+/* h2가 먼저 나오고, .ab-con-txt는 0.4초 뒤에 나오도록 설정 */
+.about.on .ab-con .ab-con-txt {
+    transition-delay: 0.4s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /************************ information ***************************/
@@ -367,6 +489,45 @@ section .ab-silde ul li img:hover {
 
 
 
+
+/* --- Information 섹션 애니메이션 --- */
+
+/* 초기 상태: 아래로 50px 내려가 있고 투명함 */
+.infomation .explain>div {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* 스크롤 시 .on 클래스가 붙었을 때의 동작 */
+.infomation.on .explain>div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 왼쪽부터 순서대로 텀(지연 시간) 설정 */
+.infomation.on .explain>div:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.infomation.on .explain>div:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.infomation.on .explain>div:nth-child(3) {
+    transition-delay: 0.7s;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* ********************** rooms ************************ */
 
 /* --- ROOMS SECTION --- */
@@ -439,130 +600,8 @@ section.rooms .sub-title {
 
 
 
-
-
-
-/* --- ROOMS SECTION 수정 --- */
-/* ROOMS 섹션 전체 컨테이너 */
-section.rooms {
-    width: 100%;
-    max-width: 1280px;
-    margin: 100px auto;
-    position: relative; 
-    /* overflow: hidden; 삭제하여 화살표가 잘리지 않게 함 */
-}
-
-/* 슬라이드 이미지만 가두는 박스 (추가/수정) */
-.rooms-wrapper {
-    width: 100%;
-    overflow: hidden; /* 슬라이드 알맹이만 여기서 잘림 */
-    position: relative;
-}
-
-.rooms-con {
-    display: flex;
-    width: 133.333%; /* 4개 중 3개가 노출되는 비율 */
-    transition: all 0.5s ease;
-    gap: 20px; /* 아이템 사이 간격 */
-}
-
-.rooms-item {
-    /* 1280px 내에서 3개가 보이도록 계산 */
-    width: calc((100% / 4) - 15px); 
-    flex-shrink: 0;
-}
-
-/* 화살표 위치 보정 */
-.rooms-nav a {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    z-index: 100; /* 이미지보다 위에 오도록 */
-}
-
-.rooms-nav .left-a { left: -70px; }  /* 컨테이너 왼쪽 밖으로 */
-.rooms-nav .right-a { right: -70px; } /* 컨테이너 오른쪽 밖으로 */
-
-
-
-/* **********************facilities********************** */
-
-section.facilities {
-    width: 100%;
-    max-width: 1280px;
-    margin: 150px auto;
-    position: relative;
-}
-
-.fac-nav a {
-    position: absolute;
-    top: 49%;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.fac-nav .left-a {
-    left: -70px;
-}
-
-.fac-nav .right-a {
-    right: -70px;
-}
-
-.fac-nav img {
-    width: 40px;
-}
-
-/* 화살표 위치 보정 */
-.rooms-nav a {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    z-index: 100; /* 이미지보다 위에 오도록 */
-}
-
-.rooms-nav .left-a { left: -70px; }  /* 컨테이너 왼쪽 밖으로 */
-.rooms-nav .right-a { right: -70px; } /* 컨테이너 오른쪽 밖으로 */
-
-
-.fac-con {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-
-    width: 100%;
-    max-width: 1280px;
-
-    margin: 0 auto;
-
-    overflow: hidden;
-}
-
-.fac-item img {
-    border-radius: 50%;
-    object-fit: cover;
-    transition: 0.3s;
-    width: 350px;
-}
-
-.fac-item.side img {
-    width: 250px;
-    height: 250px;
-    filter: brightness(0.7);
-}
-
-.fac-item.center img {
-    width: 400px;
-    height: 400px;
-
-    padding: 10px;
-    background: #fff;
-}
-
 /* 공통 하단 컨트롤 */
-.rooms-footer,
-.fac-footer {
+.rooms-footer {
     margin-top: 40px;
     text-align: center;
 }
@@ -570,7 +609,7 @@ section.facilities {
 .pager {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     list-style: none;
     margin-bottom: 20px;
 }
@@ -601,6 +640,223 @@ section.facilities {
 
 
 
+/* --- ROOMS SECTION 수정 --- */
+/* ROOMS 섹션 전체 컨테이너 */
+section.rooms {
+    width: 100%;
+    max-width: 1280px;
+    margin: 100px auto;
+    position: relative;
+    /* overflow: hidden; 삭제하여 화살표가 잘리지 않게 함 */
+}
+
+/* 슬라이드 이미지만 가두는 박스 (추가/수정) */
+.rooms-wrapper {
+    width: 100%;
+    overflow: hidden;
+    /* 슬라이드 알맹이만 여기서 잘림 */
+    position: relative;
+}
+
+.rooms-con {
+    display: flex;
+    width: 133.333%;
+    /* 4개 중 3개가 노출되는 비율 */
+    transition: all 0.5s ease;
+    gap: 20px;
+    /* 아이템 사이 간격 */
+}
+
+.rooms-item {
+    /* 1280px 내에서 3개가 보이도록 계산 */
+    width: calc((100% / 4) - 15px);
+    flex-shrink: 0;
+}
+
+/* 화살표 위치 보정 */
+.rooms-nav a {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 100;
+    /* 이미지보다 위에 오도록 */
+}
+
+.rooms-nav .left-a {
+    left: -70px;
+}
+
+/* 컨테이너 왼쪽 밖으로 */
+.rooms-nav .right-a {
+    right: -70px;
+}
+
+/* 컨테이너 오른쪽 밖으로 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ********************** facilities ********************** */
+
+section.facilities {
+    width: 100%;
+    max-width: 1280px;
+    margin: 150px auto;
+    position: relative;
+    /* overflow: hidden; */
+    /* 화살표가 잘린다면 주석 해제 */
+}
+
+/* 네비게이션 화살표 */
+.fac-nav a {
+    position: absolute;
+    top: 50%;
+    /* 섹션의 세로 중앙 */
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.fac-nav .left-a {
+    left: -70px;
+}
+
+.fac-nav .right-a {
+    right: -70px;
+}
+
+.fac-nav img {
+    width: 40px;
+}
+
+/* 슬라이드 박스 영역 */
+.fac-wrapper {
+    width: 100%;
+    overflow: hidden;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    /* 수직 중앙 정렬 */
+}
+
+.fac-con {
+    display: flex;
+    gap: 62px;
+    align-items: center;
+
+}
+
+/* 2. 아이템 크기 및 정렬 기준 설정 */
+.fac-item {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    /* 아이템 간의 간격을 유지하며 크기 변화가 주변에 영향을 덜 주도록 설정 */
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 모든 이미지 공통 */
+.fac-item img {
+    display: none;
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    border-radius: 20px;
+    /* (선택사항) 부드러운 디자인 */
+}
+
+/* 2. 평상시: second 이미지만 active로 보임 */
+.fac-item .second.active {
+    display: block;
+}
+
+/* 3. 중앙 상태 (.center): 크기가 커짐 */
+.fac-item.center img {
+    width: 470px;
+    height: 470px;
+}
+
+.fac-item img.active {
+    display: block;
+}
+
+
+/* 4. 중앙에서의 이미지 교체 로직 */
+/* 중앙일 때는 first를 보여주고 second를 숨깁니다 */
+.fac-item.center .first {
+    display: block !important;
+}
+
+.fac-item.center .second {
+    display: none !important;
+}
+
+
+/* 하단 컨트롤 */
+.fac-footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.pager {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style
+}
+
+
+
+
+
+
+
+
+
+/* index.css */
+
+/* 1. 이미지 기본 공통 설정 */
+.fac-item img {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. 평상시 (기본) : second만 보임 */
+.fac-item .second.active {
+    width: 340px;
+    height: 340px;
+    opacity: 1;
+}
+
+/* 3. 중앙 상태 (.center) : first만 보임 */
+.fac-item.center .first {
+    width: 470px;
+    height: 470px;
+    opacity: 1;
+}
+
+.fac-item.center .second {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
 
 
 
@@ -611,29 +867,65 @@ section.facilities {
 
 /* **************** logo banner *************** */
 
-
+/* 섹션 컨테이너 */
 .logobanner {
     position: relative;
+    overflow: hidden;
+    /* 영역 밖으로 나가는 이미지 숨김 */
+    width: 100%;
 }
-
-
 
 .logobanner div {
     width: 100%;
-    max-width: 1920px;
-    height: 500px;
-
-    background-image: url(../images/mainpage-img/logobanner.png);
-    background-repeat: no-repeat;
+    position: relative;
 }
 
-.logobanner div img {
+.logobanner img.bg {
+    display: block;
+    width: 100%;
+}
+
+/* 로고가 움직이는 길 (트랙) */
+.logobanner .logo-track {
+    display: flex;
+    /* 이미지들을 가로로 나열 */
     position: absolute;
-    top: 213px;
+    top: 50%;
+    /* 기존 위치 고정 */
     left: 0;
+    transform: translateY(-50%);
+    /* 기존 위치 고정 */
+    width: max-content;
+    /* 이미지 너비만큼 가로로 길게 확장 */
+    z-index: 999;
+
+    /* 애니메이션 설정: 이름(marquee) / 속도(20초) / 일정하게(linear) / 무한(infinite) */
+    animation: marquee 20s linear infinite;
 }
 
+/* 개별 로고 이미지 크기 유지 */
+.logobanner .logo-track img.logo {
+    /* 기존 absolute 속성 제거 (flex 영향 하에 둠) */
+    position: static;
+    transform: none;
 
+    /* 이미지 크기는 기존 배너 높이에 맞춰 자동 조절되거나 고정값 사용 */
+    height: 50px;
+    display: block;
+}
+
+/* 무한 루프 애니메이션 키프레임 */
+@keyframes marquee {
+    0% {
+        /* 시작 위치: 기존 중앙 정렬 유지하며 X축은 0 */
+        transform: translateY(-50%) translateX(0);
+    }
+
+    100% {
+        /* 끝 위치: 이미지 1장 분량(50%)만큼 왼쪽으로 이동했을 때 다시 0으로 점프 */
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
 
 /* ******************** footer-slogun ******************** */
 
@@ -695,6 +987,7 @@ section.event .evimg {
     margin-top: -30px;
 
     margin-bottom: 300px;
+    background-color: #fff;
 }
 
 section.event .evimg .fir {
@@ -708,4 +1001,32 @@ section.event .evimg ul li {
 section.event .evimg ul li img {
     width: 100%;
     max-width: 875px;
+}
+
+
+
+
+
+
+
+
+/* 기존 CSS에서 .sunnae 부분 수정 및 추가 */
+section.event .sub-title li .sunnae {
+    position: absolute;
+    top: -22px;
+    left: 539px;
+
+    /* --- 애니메이션 초기 상태 --- */
+    opacity: 0;
+    transform: translateX(-50px);
+    /* 왼쪽으로 50px 이동된 상태 */
+    transition: all 1s ease-out;
+    /* 1초 동안 부드럽게 변화 */
+}
+
+/* 스크롤 시 .on 클래스가 추가되었을 때의 상태 */
+section.event.on .sub-title li .sunnae {
+    opacity: 1;
+    transform: translateX(0);
+    /* 제자리로 이동 */
 }

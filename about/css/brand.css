@@ -164,6 +164,47 @@ main .title p {
 
 
 
+
+
+
+
+/* 애니메이션 초기 상태 (준비) */
+.brand .gallery ul li div {
+    opacity: 0;
+    transition: all 0.8s ease-out; /* 부드러운 움직임 */
+}
+
+/* 이미지는 왼쪽에서 스르륵 (왼쪽 배치는 왼쪽에서, 오른쪽 배치는 오른쪽에서 오게 설정) */
+.brand .gallery ul li div:first-child {
+    transform: translateX(-50px); /* 왼쪽에서 시작 */
+}
+
+/* 텍스트는 오른쪽에서 fade (이미지보다 늦게) */
+.brand .gallery ul li div:last-child {
+    transform: translateX(50px); /* 오른쪽에서 시작 */
+    transition-delay: 0.3s; /* 이미지보다 0.3초 늦게 등장 */
+}
+
+/* 오른쪽 정렬된 li(.right)의 경우 반대로 설정하고 싶다면 아래 추가 (선택사항) */
+.brand .gallery ul li.right div:first-child {
+    transform: translateX(50px); /* 이미지가 오른쪽에서 */
+}
+.brand .gallery ul li.right div:last-child {
+    transform: translateX(-50px); /* 텍스트가 왼쪽에서 */
+}
+
+/* 스크롤 시 추가될 클래스 */
+.brand .gallery ul li.on div {
+    opacity: 1;
+    transform: translateX(0); /* 제자리로 */
+}
+
+
+
+
+
+
+
 /* ********************* bi ********************** */
 
 .bi {
@@ -227,7 +268,23 @@ main .title p {
 
 
 
+/* BI 이미지 초기 상태 */
+.bi .bi-con .gallery img {
+    opacity: 0;
+    transform: translateY(30px); /* 아래에서 대기 */
+    transition: all 0.8s ease-out; /* 부드러운 전환 */
+}
 
+/* 스크롤 시 추가될 클래스 (.on) */
+.bi.on .bi-con .gallery img {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 이동 */
+}
+
+/* 이미지 두 개가 시간차를 두고 나타나게 하려면 (선택사항) */
+.bi.on .bi-con .gallery img:last-child {
+    transition-delay: 0.2s;
+}
 
 
 
@@ -311,6 +368,27 @@ main .title p {
 
 
 
+
+
+
+
+/* Color 박스 초기 상태 */
+.color .code ul li {
+    opacity: 0;
+    transform: translateY(40px); /* 아래에서 대기 */
+    transition: all 0.6s ease-out; /* 부드러운 전환 */
+}
+
+/* 스크롤 시 순차적으로 나타나기 위한 지연 시간 설정 */
+.color.on .code ul li.c1 { transition-delay: 0.1s; }
+.color.on .code ul li.c2 { transition-delay: 0.3s; }
+.color.on .code ul li.c3 { transition-delay: 0.5s; }
+
+/* 클래스 활성화 시 상태 */
+.color.on .code ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* ******************** footer-slogun ******************** */
 

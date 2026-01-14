@@ -220,3 +220,69 @@ float: left;
 
 
 
+
+
+
+
+
+
+/* --- 1. 애니메이션 초기 상태 설정 --- */
+
+/* 텍스트: 왼쪽에서 대기 */
+.facility .box.left .top .txt {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1.0s ease-out;
+}
+
+/* 상단 이미지: 오른쪽에서 대기 */
+.facility .box.left .top .imgt {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1.0s ease-out;
+}
+
+.facility .box.right .top .txt {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1.0s ease-out;
+}
+
+.facility .box.right .top .imgt {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1.0s ease-out;
+}
+
+
+
+/* 하단 이미지: 아래에서 위로 대기 (구조에 맞춰 수정) */
+.facility .box .imgb img {
+    opacity: 0 !important;
+    transform: translateY(100px) !important;
+    transition: all 1.0s ease-out;
+}
+
+
+/* --- 2. 스크롤 시 활성화 상태 (.on 클래스 부여 시) --- */
+
+/* 텍스트 등장 (0.1초 지연) */
+.facility .box.on .top .txt {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.1s;
+}
+
+/* 상단 이미지 등장 (0.5초 지연) */
+.facility .box.on .top .imgt {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.5s;
+}
+
+/* 하단 이미지 등장 (0.9초 지연) */
+.facility .box.on .imgb img {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition-delay: 0.9s;
+}

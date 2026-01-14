@@ -30,6 +30,12 @@ $(document).ready(function () {
             });
         });
 
+        // [추가] 예약하러 가기 버튼 클릭 시 알림창 띄우기
+        $thisBox.find('.ad a, .ad2 a').click(function (e) {
+            e.preventDefault(); // 링크의 기본 이동 기능 방지
+            alert('준비중입니다!');
+        });
+
         // [수정] 아래쪽 화살표 클릭 시: 이미지가 아래로 내려가며 이전장 노출
         $bottomBtn.click(function (e) {
             e.preventDefault();
@@ -41,6 +47,9 @@ $(document).ready(function () {
                 $sliderUl.find('li:last').prependTo($sliderUl);
                 $sliderUl.css('margin-top', -liH);
             });
+
+
+            
         });
     });
 });
