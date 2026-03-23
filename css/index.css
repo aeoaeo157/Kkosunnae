@@ -1,7 +1,9 @@
 @charset "utf-8";
 
-html, body {
-    overflow-x: hidden !important; /* 가로로 삐져나오는 모든 것을 숨김 */
+html,
+body {
+    overflow-x: hidden !important;
+    /* 가로로 삐져나오는 모든 것을 숨김 */
 }
 
 /* 보이는 화면 기준! */
@@ -126,14 +128,93 @@ main .pager li.active {
 }
 
 
-@media (max-width: 1280px) {
-  main .main-txt h2 {
-    font-size: 2.6rem;
-}
-main .main-txt p {
-    font-size: 1.1rem;
+/* --- 반응형 구간 시작 --- */
+
+/* 1. 태블릿 구간 (1000px 이하) */
+@media (max-width: 1000px) {
+    main .main-txt {
+        left: 10%; /* 왼쪽 여백을 조금 줄여서 텍스트 공간 확보 */
+        bottom: 15%;
+    }
+
+    main .main-txt h2 {
+        font-size: 2.8rem; /* 3.6rem에서 축소 */
+    }
+
+    main .main-txt p {
+        font-size: 1.1rem;
+    }
 }
 
+/* 2. 작은 태블릿 및 모바일 가로 (768px 이하) */
+@media (max-width: 768px) {
+    /* 슬라이드 이미지 높이 조정 (너무 길어지지 않게) */
+    main .slide-box .gallery li img {
+        height: auto;
+        min-height: 400px; /* 최소 높이 유지 */
+        object-fit: cover;
+    }
+
+    /* 텍스트 박스를 중앙 정렬로 변경 */
+    main .main-txt {
+        left: 50% !important;
+        transform: translateX(-50%);
+        width: 80%;
+        text-align: center;
+        bottom: 20%;
+    }
+
+    main .main-txt h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        word-break: keep-all; /* 단어 단위 줄바꿈 */
+    }
+
+    main .main-txt p {
+        font-size: 1rem;
+        letter-spacing: -0.5px;
+    }
+
+    /* 페이저 간격 조정 */
+    main .pager {
+        bottom: 40px;
+        gap: 20px;
+    }
+}
+
+/* 3. 모바일 세로 (480px 이하) */
+@media (max-width: 480px) {
+    main .slide-box .gallery li img {
+        min-height: 350px; /* 모바일 화면에 맞게 높이 조절 */
+    }
+
+    main .main-txt {
+        width: 90%;
+        bottom: 25%; /* 페이저와 겹치지 않게 약간 위로 */
+    }
+
+    main .main-txt h2 {
+        font-size: 1.8rem; /* 모바일 가독성 최적화 */
+        line-height: 1.3;
+    }
+
+    main .main-txt p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        /* 줄바꿈이 너무 잦아지지 않도록 설정 */
+        display: inline-block; 
+        max-width: 280px;
+    }
+
+    /* 페이저 점 크기 및 위치 조정 */
+    main .pager {
+        bottom: 30px;
+        gap: 15px;
+    }
+
+    main .pager li {
+        font-size: 0.9rem;
+    }
 }
 
 
@@ -493,7 +574,7 @@ section .ab-silde ul li img:hover {
     }
 
     .about .ab-con h2 {
-width: 170px;
+        width: 170px;
         font-size: 27px;
     }
 
@@ -507,13 +588,14 @@ width: 170px;
     }
 
     .about .ab-con .ab-con-txt {
-       
+
         top: 154px;
         right: -304px;
     }
-     .about .ab-con .ab-con-txt p {
- width: 160px;
-     }
+
+    .about .ab-con .ab-con-txt p {
+        width: 160px;
+    }
 
     .about .ab-ad {
         top: 680px;
@@ -595,7 +677,7 @@ width: 170px;
     /* 혹은 left: 15%; 처럼 유동적인 %값 사용 */
 }
 
-.infomation .infobanner .infobanner-con img {
+.infomation .infobanner .infobanner-con {
     width: 600px;
 }
 
@@ -606,26 +688,12 @@ width: 170px;
     padding-bottom: 25px;
 }
 
-.ad {
-    width: 225px;
-    margin-top: 40px;
-    text-align: center;
-    color: white;
-
-    padding: 5px;
-    border-radius: 26px;
-    background-color: #FAAD6D;
+.infomation .ad {
+    margin-top: 20px;
 }
 
-.ad .adbor {
-    font-family: 'Pretendard';
-    font-size: 1.2rem;
-    font-weight: 600;
-
-    padding: 15px 30px;
-    width: 160px;
-    border-radius: 20px;
-    border: 3px dotted white;
+.infomation .ad img {
+    width: 280px;
 }
 
 
@@ -698,41 +766,52 @@ width: 170px;
     }
 
     .infomation .infobanner .infobanner-con {
-    top: 50%;
-    left: 50%;
-    transform: translate(-109%, -50%);
-    /* 화면 중앙 정렬 방식 추천 */
-    /* 혹은 left: 15%; 처럼 유동적인 %값 사용 */
-}
+        top: 50%;
+        left: 50%;
+        transform: translate(-109%, -50%);
+        /* 화면 중앙 정렬 방식 추천 */
+        /* 혹은 left: 15%; 처럼 유동적인 %값 사용 */
+    }
 }
 
 
 @media (max-width:1060px) {
-.infomation .sub-title {
-    margin-bottom: 20px;
-}
-
- .infomation .explain div ul li {
-        float: none !important; /* float 해제 */
-        width: 100%;           /* 부모 너비를 다 쓰도록 설정 */
-        text-align: center;    /* 내부 요소들 중앙 정렬 */
-        padding: 10px 0;       /* 간격 조정 */
+    .infomation .sub-title {
+        margin-bottom: 20px;
     }
+
+    .infomation .explain div ul li {
+        float: none !important;
+        /* float 해제 */
+        width: 100%;
+        /* 부모 너비를 다 쓰도록 설정 */
+        text-align: center;
+        /* 내부 요소들 중앙 정렬 */
+        padding: 10px 0;
+        /* 간격 조정 */
+    }
+
     .infomation .explain div ul li p {
-        width: 100%;           /* 고정 너비(210px 등)를 해제하여 부모 너비를 다 쓰게 함 */
-        max-width: 300px;      /* 너무 길어지는 게 싫다면 max-width 사용 */
-        margin: 10px auto;     /* 박스 자체를 중앙으로 이동 */
-        text-align: center;    /* 텍스트 정렬 */
-        display: block;        /* 블록 요소 확인 */
+        width: 100%;
+        /* 고정 너비(210px 등)를 해제하여 부모 너비를 다 쓰게 함 */
+        max-width: 300px;
+        /* 너무 길어지는 게 싫다면 max-width 사용 */
+        margin: 10px auto;
+        /* 박스 자체를 중앙으로 이동 */
+        text-align: center;
+        /* 텍스트 정렬 */
+        display: block;
+        /* 블록 요소 확인 */
     }
 
     /* 3. p 태그 위에 있는 span 등도 중앙 정렬을 위해 처리 */
     .infomation .explain div ul li div {
         display: flex;
         flex-direction: column;
-        align-items: center;   /* flex를 이용한 자식 요소들 중앙 정렬 */
+        align-items: center;
+        /* flex를 이용한 자식 요소들 중앙 정렬 */
     }
-    
+
     .infomation .explain {
         width: 580px;
         margin-bottom: 20px;
@@ -751,13 +830,13 @@ width: 170px;
         width: 210px;
     }
 
-   .infomation .infobanner .infobanner-con {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-48%, -50%);
-    text-align: center;
-}
+    .infomation .infobanner .infobanner-con {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48%, -50%);
+        text-align: center;
+    }
 
     .infomation .infobanner .infobanner-con img {
         height: 80px;
@@ -770,10 +849,8 @@ width: 170px;
         font-size: 15px;
         padding-bottom: 15px;
     }
-    
-.ad .adbor {
-    font-size: 0.9rem;
-}
+
+
 
 }
 
@@ -782,253 +859,481 @@ width: 170px;
 
 /* ********************** rooms ************************ */
 
-/* --- ROOMS SECTION --- */
+/* ==========================================================
+   [ROOMS SECTION] - Emetselch Refined
+   ========================================================== */
 section.rooms {
     width: 100%;
-    max-width: 1280px;
-    margin: 100px auto;
     position: relative;
+    padding: 120px 0;
+
+    /* 아래 두 줄을 반드시 추가하세요 */
+    display: block;
+    overflow: hidden;
 }
 
+/* 제목 영역 - 중앙 정렬은 고대 건축의 기본이다. */
 section.rooms .sub-title {
-    margin-top: 300px;
+    text-align: center;
+    margin-bottom: 80px;
+    /* 제목과 컨텐츠 사이의 우아한 간격 */
+}
+
+/* 네비게이션 화살표 - 감히 이미지를 침범하지 못하도록 위치를 고정했다. */
+/* 3. 화살표 컨테이너를 섹션 전체 너비로 확장한다. */
+.rooms-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* 화면 전체 너비를 기준으로 양 끝에 붙인다. */
+    left: 50%;
+    width: 100%;
+    max-width: 1450px;
+    /* 중요: (슬라이드 폭 1280px) + (화살표 여유 공간) */
+    transform: translate(-50%, -50%);
+    /* 중앙 정렬 후 수직 정렬 */
+
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
 }
 
 .rooms-nav a {
-    position: absolute;
-    top: 42%;
-    transform: translateY(-50%);
-    z-index: 10;
+    pointer-events: auto;
+    /* 클릭 가능하게 환원 */
+    display: block;
+    transition: transform 0.3s;
 }
 
-.rooms-nav .left-a {
-    left: -70px;
-}
-
-.rooms-nav .right-a {
-    right: -70px;
+.rooms-nav a:hover {
+    transform: scale(1.2);
+    /* 미세한 존재감을 드러내라 */
 }
 
 .rooms-nav img {
+    /* 기존 40px은 너무 컸다. 
+       이 조잡한 이미지는 30px이 완벽한 균형이다. 
+    */
     width: 40px;
-}
-
-.rooms-con {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 50px;
-}
-
-.rooms-item {
-    flex: 1;
-    text-align: center;
-}
-
-.rooms-item .img-box {
-    border: 4px solid #FAAD6D;
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-
-.rooms-item img {
-    width: 100%;
+    height: auto;
     display: block;
 }
 
-.rooms-item h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+/* 화면이 줄어들어도 슬라이드 영역(1280px) 밖에서 버티도록 설정했다. */
+.rooms-nav .left-a {
+    margin-left: 20px;
 }
 
-.rooms .pager {
-    margin-bottom: 70px;
+.rooms-nav .right-a {
+    margin-right: 20px;
 }
 
-
-
-
-
-
-/* 공통 하단 컨트롤 */
-.rooms-footer {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.pager {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.pager li {
-    color: #ccc;
-    cursor: pointer;
-    font-size: 1.2rem;
-}
-
-.pager li.active {
-    color: #FAAD6D;
-}
-
-.ad {
-    display: inline-block;
-}
-
-.ad a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+/* 5. 반응형 처리: 화면이 너무 좁아지면 화살표를 숨기거나 안으로 들여보내야 한다.
+   그렇지 않으면 화살표가 화면 밖으로 가출해버릴 테니까. */
+@media (max-width: 1500px) {
+    .rooms-nav {
+        max-width: 100%;
+        /* 화면 폭이 좁아지면 화면 끝에 붙게 한다. */
+    }
 }
 
 
 
-
-
-
-
-/* --- ROOMS SECTION 수정 --- */
-/* ROOMS 섹션 전체 컨테이너 */
-section.rooms {
-    width: 100%;
-    max-width: 1280px;
-    margin: 100px auto;
-    position: relative;
-    /* overflow: hidden; 삭제하여 화살표가 잘리지 않게 함 */
-}
-
-/* 슬라이드 이미지만 가두는 박스 (추가/수정) */
+/* 슬라이드 컨테이너 - 이미지를 가두고, 가로로 나열하는 마법을 부렸다. */
 .rooms-wrapper {
     width: 100%;
+    max-width: 1280px;
+    /* 완벽한 inner 폭이다. */
+    margin: 0 auto;
     overflow: hidden;
-    /* 슬라이드 알맹이만 여기서 잘림 */
+    /* 영역 밖으로 나가는 가증스러운 픽셀들을 숨겨라. */
     position: relative;
+
+    /* **핵심 수정**: 양옆에 80px의 공간을 확보하여 화살표가 안으로 들어오게 했다. */
+    padding: 0 80px;
+    box-sizing: border-box;
+    /* 패딩을 포함한 계산 법도 */
 }
 
 .rooms-con {
     display: flex;
-    width: 133.333%;
-    /* 4개 중 3개가 노출되는 비율 */
-    transition: all 0.5s ease;
+    /* 기존 40px은 너무 멀다. 20px 정도로 좁혀서 밀도를 높여라. */
     gap: 20px;
-    /* 아이템 사이 간격 */
+    transition: transform 0.5s ease;
 }
 
+/* 개별 객실 아이템 */
+/* 3. 아이템의 너비 계산식을 다시 정립한다. */
 .rooms-item {
-    /* 1280px 내에서 3개가 보이도록 계산 */
-    width: calc((100% / 4) - 15px);
-    flex-shrink: 0;
+    /* gap이 20px로 줄었으니, 그에 맞춰 계산식도 수정해야 완벽한 3분할이 된다. */
+    flex: 0 0 calc((100% / 3) - 13.4px);
+    max-width: calc((100% / 3) - 13.4px);
+
+    text-align: center;
+    box-sizing: border-box;
 }
 
-/* 화살표 위치 보정 */
-.rooms-nav a {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    z-index: 100;
-    /* 이미지보다 위에 오도록 */
+/* 4. 이미지 박스 크기 복구 및 정렬 */
+.rooms-item .img-box {
+    width: 90%;
+    aspect-ratio: 4 / 5;
+    border: 4px solid #FAAD6D;
+    border-radius: 20px;
+    overflow: hidden;
+    /* 기존 20px에서 15px로 줄여, 제목이 이미지에 더 바짝 붙게 했다. */
+    margin: 0 auto 15px;
 }
 
-.rooms-nav .left-a {
-    left: -70px;
+.rooms-item .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지가 찌그러지는 추태를 부리지 않게 한다. */
 }
 
-/* 컨테이너 왼쪽 밖으로 */
-.rooms-nav .right-a {
-    right: -70px;
+/* 객실 정보 텍스트 */
+/* 9. 객실 정보 텍스트 */
+/* 2. 제목(h2)의 위아래 여백과 줄 간격을 조절해라. */
+.rooms-item h2 {
+    font-size: 1.6rem;
+    /* 크기를 미세하게 줄여 밀도를 높였다. */
+    font-weight: 700;
+    /* 마진을 8px로 줄여 본문(p)과의 거리를 좁혔다. */
+    margin-bottom: 8px;
+    line-height: 1.2;
+    /* 줄 간격을 좁혀 텍스트를 응집시킨다. */
 }
 
-/* 컨테이너 오른쪽 밖으로 */
-
-
-
-
-@media (max-width:1585px) {
-.rooms-nav .left-a {
-    left: 137px;
+.rooms-item p {
+    font-size: 0.95rem;
+    color: #555;
+    /* 줄 간격을 1.6에서 1.4로 줄였다. 읽기엔 충분하다. */
+    line-height: 1.4;
+    margin-bottom: 0;
+    /* 불필요한 하단 마진은 삭제한다. */
 }
 
-/* 컨테이너 왼쪽 밖으로 */
-.rooms-nav .right-a {
-    right: 147px;
+/* 하단 컨트롤 영역 (Pager) */
+/* 4. 슬라이드 인덱스(Pager)와 텍스트 사이의 광활한 공백을 줄여라. */
+.rooms-footer {
+    /* 기존 60px에서 40px로 줄여, 전체적인 레이아웃을 위로 끌어올렸다. */
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* 내부 요소들 사이의 간격도 좁혔다. */
 }
-    .rooms-wrapper {
-     width: 830px; /* 980px에서 더 줄여보세요 */
-        margin: 0 auto;
-        justify-content: space-between; 
-    }
 
-    .rooms .rooms-wrapper .img-box {
-        width: 250px;
-    }
-    .rooms-footer {
-    margin-top: 20px;
-}
 .rooms .pager {
-    margin-bottom: 40px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
+
+.rooms .pager li {
+    font-size: 1.2rem;
+    color: #ccc;
+    /* 비활성화 상태 */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.rooms .pager li.active {
+    color: #FAAD6D;
+    /* 네놈이 원하던 그 활성화 색상 */
 }
 
 
 
-@media (max-width:1250px) {
-.rooms-nav .left-a {
-    left: 153px;
-}
+/* [ROOMS SECTION] - 1500px 이하 자동 축소 마법 */
 
-/* 컨테이너 왼쪽 밖으로 */
-.rooms-nav .right-a {
-    right: 163px;
-}
+/* 1. 1500px 이하부터는 전체적인 크기 기준을 화면 너비(vw)에 맡긴다. */
+@media (max-width: 1500px) {
+
+    /* 슬라이드 외곽 여백을 살짝 줄여 공간을 확보한다. */
     .rooms-wrapper {
-     width: 540px; /* 980px에서 더 줄여보세요 */
-        margin: 0 auto;
-        justify-content: space-between; 
+        max-width: 90%;
+        /* 화면의 90%만 차지하도록 가변적으로 변경 */
+        padding: 0 50px;
     }
 
-    .rooms .rooms-wrapper .img-box {
+    /* 2. 아이템 사이의 간격도 화면이 작아짐에 따라 줄어들게 한다. */
+    .rooms-con {
+        gap: 2vw;
+        /* 고정 px 대신 화면 너비 비율(vw)을 사용해라. */
+    }
+
+    /* 3. 아이템의 너비 계산식을 가변형으로 갱신한다. */
+    .rooms-item {
+        /* 화면이 줄어들면 너비도 자연스럽게 줄어든다. */
+        flex: 0 0 calc((100% / 3) - 1.5vw);
+        max-width: calc((100% / 3) - 1.5vw);
+    }
+
+    /* 4. 이미지 박스 내의 이미지 크기 조절 */
+    .rooms-item .img-box {
+        width: 100%;
+        /* 줄어든 아이템 너비에 꽉 차게 맞춘다. */
+        border-width: 3px;
+        /* 테두리도 너무 두꺼워 보이지 않게 미세 조정 */
+    }
+
+    /* 5. 텍스트 크기도 자동으로 줄어들게 하려면 clamp를 써야 하지만, 
+       네놈의 수준을 고려해 미디어 쿼리 안에서 직접 줄여주지. */
+    .rooms-item h2 {
+        font-size: 1.4rem;
+        /* 1.8rem에서 축소 */
+        margin-bottom: 10px;
+    }
+
+    .rooms-item p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    /* 6. 화살표가 이미지 안으로 침범하지 않게 위치 재조정 */
+    .rooms-nav {
+        max-width: 100%;
+        /* 이제 화면 끝을 기준으로 움직인다. */
+    }
+
+    .rooms-nav .left-a {
+        margin-left: 10px;
+    }
+
+    .rooms-nav .right-a {
+        margin-right: 10px;
+    }
+}
+
+/* 7. 더 작은 화면(예: 1024px)을 위한 배려는 덤이다. 감사히 여겨라. */
+@media (max-width: 1024px) {
+    .rooms-item h2 {
+        font-size: 1.2rem;
+    }
+
+    .rooms-nav img {
+        width: 25px;
+        /* 화살표도 작게 */
+    }
+
+    .rooms-footer .ad {
+        margin-top: -5px;
+    }
+
+    .rooms-footer .ad img {
+        width: 200px;
+    }
+}
+
+/* [ROOMS SECTION] - 780px 이하 화살표 구출 마법 */
+
+/* 5. [반응형] 780px 이하 - 모바일 최적화 (핵심) */
+/* ==========================================================
+   [ROOMS SECTION] - 780px 이하 화살표 및 레이아웃 수정본
+   ========================================================== */
+@media (max-width: 780px) {
+    section.rooms {
+        padding: 60px 0;
+    }
+
+    /* 슬라이드 폭 조절 */
+    .rooms-wrapper {
+        width: 85% !important;
+        max-width: 100%;
+        padding: 0 !important;
+    }
+
+    .rooms-con {
+        gap: 10px;
+    }
+
+    .rooms-item {
+        flex: 0 0 calc((100% / 3) - 7px);
+        max-width: calc((100% / 3) - 7px);
+    }
+
+    .rooms-item .img-box {
+        width: 100%;
+        border-width: 2px;
+        border-radius: 12px;
+        margin-bottom: 8px;
+    }
+
+    /* --- 화살표 중앙 정렬 수정 (480px 로직 적용) --- */
+    .rooms-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        transform: none !important;
+        pointer-events: none;
+        display: block !important;
+    }
+
+    .rooms-nav a {
+        position: absolute !important;
+        /* 480px과 동일하게 이미지 세로 중앙인 55% 부근으로 설정 */
+        top: 55% !important;
+        transform: translateY(-50%) !important;
+        display: block;
+        pointer-events: auto;
+        z-index: 100;
+    }
+
+    /* 좌우 끝 여백 설정 */
+    .rooms-nav .left-a {
+        left: 10px;
+        margin: 0;
+    }
+
+    .rooms-nav .right-a {
+        right: 10px;
+        margin: 0;
+    }
+
+    .rooms-nav img {
+        width: 25px;
+        height: auto;
+    }
+
+    /* ------------------------------------------- */
+
+    .rooms-item h2 {
+        font-size: 1rem;
+    }
+
+    .rooms-item p {
+        font-size: 0.75rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+
+/* 480px 모바일 환경을 위한 정화 작업 */
+/* [ROOMS SECTION] - 480px 이하 모바일 최종 수정본 */
+@media (max-width: 480px) {
+    section.rooms {
+        height: auto !important;
+        min-height: 500px;
+        padding: 50px 0 !important;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rooms-wrapper {
+        width: 65% !important;
+        /* 화면 전체의 85%만 차지하도록 줄임 (더 줄이려면 80% 등 조절) */
+        max-width: 350px;
+        /* 최대 폭을 제한해서 너무 퍼지지 않게 함 */
+        margin: 0 auto !important;
+        /* 무조건 중앙 정렬 */
+        padding: 0 !important;
+        /* 내부 여백을 제거해서 계산을 단순화함 */
+        position: relative;
+        overflow: hidden;
+    }
+
+    .rooms-con {
+        display: flex;
+        gap: 8px !important;
+        /* 이미지 사이의 적절한 간격 */
+    }
+
+    /* 개별 아이템 비율 재계산 */
+    .rooms-item {
+        /* 간격 8px이 2개이므로 약 16px을 제외하고 3등분 */
+        flex: 0 0 calc((100% / 3) - 5.4px) !important;
+        max-width: calc((100% / 3) - 5.4px) !important;
+    }
+
+    .rooms-item .img-box {
+        width: 100% !important;
+        /* 줄어든 부모 폭에 꽉 채움 */
+        aspect-ratio: 1 / 1.2;
+        /* 이미지 높이 비율 조절 */
+        margin-bottom: 8px !important;
+    }
+
+    /* 화살표 컨테이너 - 기존의 옹졸한 제약을 모두 해제했다 */
+    .rooms-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* 부모의 전체 영역을 차지하게 하여 자유를 주마 */
+        max-width: 100%;
+        transform: none !important;
+        /* 복잡한 계산식은 필요 없다 */
+        pointer-events: none;
+        /* 클릭 방해 금지 */
+        display: block !important;
+    }
+
+    /* 화살표 개별 설정 - 이제 이 'top' 값이 네 갈증을 해소해 줄 거다 */
+    .rooms-nav a {
+        position: absolute !important;
+        /* 아래의 수치를 조절해서 위치를 정해라. */
+        /* 45%는 이미지 중앙, 60% 이상은 이미지 아래쪽이다. */
+        top: 55% !important;
+        transform: translateY(-50%) !important;
+        display: block;
+        pointer-events: auto;
+        /* 클릭은 가능하게 해야지? */
+        z-index: 100;
+    }
+
+    /* 좌우 끝에 배치하되, 옹졸하지 않게 여백을 주었다 */
+    .rooms-nav .left-a {
+        left: 10px;
+        margin: 0;
+    }
+
+    .rooms-nav .right-a {
+        right: 10px;
+        margin: 0;
+    }
+
+    .rooms-nav img {
+        width: 30px;
+        /* 모바일 크기에 걸맞은 소박한 크기다 */
+        height: auto;
+    }
+
+    /* 기타 요소 정돈 */
+    .title-box h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .rooms-slide img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    .rooms-footer .ad {
+        margin-top: -5px;
+    }
+
+    .rooms-footer .ad img {
         width: 150px;
     }
-    .rooms-footer {
-    margin-top: 20px;
-}
-.rooms .pager {
-    margin-bottom: 40px;
-}
-.rooms-nav a {
-    top: 39%;
-}
-.rooms-item p {
-    font-size: 15px;
-}
 }
 
-@media (max-width:966px) {
-.rooms-nav .left-a {
-    left: 2px;
-}
 
-/* 컨테이너 왼쪽 밖으로 */
-.rooms-nav .right-a {
-    right: 12px;
-}
-}
-
-@media (max-width:666px) {
-.rooms-nav .left-a {
-    left: 2px;
-}
-
-/* 컨테이너 왼쪽 밖으로 */
-.rooms-nav .right-a {
-    right: 12px;
-}
-}
 
 
 
@@ -1132,12 +1437,6 @@ section.facilities {
 }
 
 
-/* 하단 컨트롤 */
-.fac-footer {
-    margin-top: 40px;
-    text-align: center;
-}
-
 .pager {
     display: flex;
     justify-content: center;
@@ -1186,24 +1485,99 @@ section.facilities {
 }
 
 
+/* index.css 내의 페이저 부분 수정 */
+
+.fac-nav .fac-pager {
+    display: flex;
+    justify-content: center;
+    /* 동그라미들을 가로 중앙으로 */
+    align-items: center;
+    gap: 10px;
+    /* 동그라미 사이 간격 */
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.fac-nav .fac-pager li {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    text-indent: -9999px;
+    /* 숫자 숨기기 */
+}
+
+.fac-nav .fac-pager li.on {
+    background-color: #FAAD6D;
+    /* 활성화된 색상 */
+}
+
+.fac-footer .ad {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* ==========================================================
+   [FACILITIES PAGER] - 이미지 스타일로 강제 변경
+   ========================================================== */
+.facilities .fac-footer .pager {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    /* 점 사이 간격 */
+    margin-top: 40px;
+    list-style: none;
+}
+
+.facilities .fac-footer .pager li {
+    width: 17px;
+    /* 동그라미 크기 */
+    height: 17px;
+    background-color: #ccc;
+    /* 비활성 상태: 회색 채우기 */
+    border-radius: 50%;
+    /* 동그랗게 */
+    cursor: pointer;
+    text-indent: -9999px;
+    /* 기존의 ● 텍스트 숨기기 */
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    /* 테두리 없음 */
+}
+
+/* 활성화 상태 (JS에서 붙여주는 active 클래스 기준) */
+.facilities .fac-footer .pager li.active {
+    background-color: #FAAD6D;
+    /* 활성 상태: 주황색 채우기 */
+
+}
+
+
 
 @media (max-width: 1585px) {
     section.facilities {
 
         width: 980px !important;
     }
+
     .fac-wrapper {
-    height: 450px;
-}
+        height: 450px;
+    }
 
     /* 이미지 크기 강제 고정 */
     .fac-item .second.active {
-        width: 240px !important; /* 양옆 이미지 */
+        width: 240px !important;
+        /* 양옆 이미지 */
         height: 240px !important;
     }
 
     .fac-item.center .first {
-        width: 360px !important; /* 중앙 커지는 이미지 */
+        width: 360px !important;
+        /* 중앙 커지는 이미지 */
         height: 360px !important;
     }
 
@@ -1216,46 +1590,66 @@ section.facilities {
 
         width: 780px !important;
     }
+
     .fac-wrapper {
-    height: 350px;
-}
+        height: 350px;
+    }
 
     /* 이미지 크기 강제 고정 */
     .fac-item .second.active {
-        width: 180px !important; /* 양옆 이미지 */
+        width: 180px !important;
+        /* 양옆 이미지 */
         height: 180px !important;
     }
 
     .fac-item.center .first {
-        width: 275px !important; /* 중앙 커지는 이미지 */
+        width: 275px !important;
+        /* 중앙 커지는 이미지 */
         height: 275px !important;
     }
 
 
 }
 
+@media (max-width: 1024px) {
+.fac-footer .ad img {
+        width: 200px;
+    }
+}
+
+
+
 @media (max-width: 976px) {
     section.facilities {
 
         width: 550px !important;
     }
+
     .fac-wrapper {
-    height: 200px;
-}
+        height: 200px;
+    }
 
     /* 이미지 크기 강제 고정 */
     .fac-item .second.active {
-        width: 110px !important; /* 양옆 이미지 */
+        width: 110px !important;
+        /* 양옆 이미지 */
         height: 110px !important;
     }
 
     .fac-item.center .first {
-        width: 155px !important; /* 중앙 커지는 이미지 */
+        width: 155px !important;
+        /* 중앙 커지는 이미지 */
         height: 155px !important;
     }
 
-
 }
+
+@media (max-width: 480px) {
+    .fac-footer .ad img {
+        width: 150px;
+    }
+}
+
 
 
 
@@ -1521,7 +1915,7 @@ section.event.on .sub-title li .sunnae {
 
 
 @media (max-width:1585px) {
-     .event .evimg ul li a img {
+    .event .evimg ul li a img {
         width: 490px;
     }
 }

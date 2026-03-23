@@ -2,295 +2,100 @@
 
 footer {
     width: 100%;
+    position: relative; /* address 배치를 위한 기준점 */
+}
 
-    margin: 0 auto;
-
-    position: relative;
-
+/* 배경 이미지 */
+footer .footer-ill {
+    width: 100%;
+    line-height: 0; /* 이미지 하단 미세한 틈 제거 */
 }
 
 footer .footer-ill img {
-    display: block;
     width: 100%;
-
-    margin: 0 auto;
-
-
+    height: auto;
+    display: block;
 }
 
+/* 이미지 위에 띄울 정보 */
 footer .address {
-
- width: 1200px;
     position: absolute;
-    left: 20%;
-    top: 9%;
+    top: 30%; /* 이미지 비율에 따라 40%~55% 사이에서 조절해 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
 
-
+/* 로고 반응형 */
+footer .address .add-logo {
+    flex: 0 0 auto;
+    width: 12vw; 
+    max-width: 160px;
+    min-width: 100px;
 }
 
 footer .address .add-logo img {
-    height: 160px;
-    display: block;
-
-
-}
-
-footer .address>div {
-    float: left;
-
-    margin: 30px;
-
-
-}
-
-footer .address>div h2 {
-    font-family: "Noto Sans KR", sans-serif;
-
-    margin-bottom: 18px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: rgb(30, 30, 30);
-
-
-}
-
-footer .address div p {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 0.9rem;
-
-    color: rgb(47, 47, 47);
-    margin-bottom: 5px;
-}
-
-footer .address .sns ul li {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 0.9rem;
-
-    color: rgb(47, 47, 47);
-    margin-bottom: 5px;
-
-
-}
-
-footer .address>div .sns ul li {
-    margin-bottom: 10px;
-}
-
-footer .rule {
-    width: 800px;
-
-    position: absolute;
-    left: 34%;
-    bottom: 19px;
-}
-
-footer .rule ul {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-
-    color: rgb(47, 47, 47);
-    margin-bottom: 5px;
-}
-
-footer .rule ul li {
-    float: left;
-    display: inline-block;
-    margin: 20px;
-
-    position: relative;
-
-    margin-bottom: 5px;
-}
-
-footer .rule ul li~li {
-    margin-left: 10px;
-}
-
-footer .rule ul li::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 14px;
-    background-color: rgb(47, 47, 47);
-
-    position: absolute;
-    left: -16px;
-    bottom: 2px;
-}
-
-footer .rule ul li:first-child::after {
-    display: none;
-}
-
-
-/* footer.css 수정본 */
-
-footer .address {
-    /* 절대 위치 대신 상대 위치나 기본 배치를 권장하지만, 
-       기존 구조를 유지하며 수정한다면 아래와 같이 바꿔보세요. */
-    width: 90%;            /* 고정 1200px 대신 화면의 90% 사용 */
-    max-width: 1200px;     /* 최대치는 1200px로 제한 */
-    position: absolute;
-    left: 50%;             /* 왼쪽에서 50% 이동 */
-    transform: translateX(-50%); /* 다시 자신의 너비 절반만큼 왼쪽으로 와서 정중앙 정렬 */
-    top: 9%;
-    
-    /* 내부 요소 정렬을 위한 Flexbox 추가 */
-    display: flex;
-    justify-content: space-between; /* 요소들 사이에 균일한 간격 */
-    flex-wrap: wrap;       /* 화면이 너무 좁아지면 자연스럽게 줄바꿈 */
+    width: 100%;
+    height: auto;
 }
 
 footer .address > div {
-    /* 기존 float: left; 삭제 */
-    margin: 20px;          /* 간격 조절 */
-    min-width: 200px;      /* 최소 너비 확보 */
+    /* flex: 1; */
+    margin: 0 15px;
+    flex: 0 0 auto; /* 내용물 크기만큼만 자리를 차지하게 해. */
 }
 
-
-
-@media (max-width:1300px) {
-    /* 1. 전체 너비를 줄여서 요소들을 강제로 모읍니다 */
-    footer .address {
-        width: 95% !important;
-        max-width: 1000px !important; /* 전체 폭을 1200에서 1000으로 줄임 */
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-    }
-   .addrdss img {
-    height: 120px;
-    display: block;
-   }
-   footer .address > div {
-        margin: 10px !important; /* 30px에서 10px로 강제 축소 */
-    }
-
-  footer .address>div h2 {
-    font-size: 0.9rem;
+/* 텍스트 스타일 */
+footer .address h2 {
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-footer .address div p {
-    font-size: 0.7rem;
+footer .address p, footer .address li {
+    font-size: clamp(0.7rem, 1vw, 0.85rem);
+    margin-bottom: 5px;
 }
 
-footer .address .sns ul li {
-    font-size: 0.7rem;
-}
-
-}
-
-
-@media (max-width:1060px) {
-    /* 1. 전체 너비를 줄여서 요소들을 강제로 모읍니다 */
-    footer .address {
-        width: 85% !important;
-        max-width: 800px !important; /* 전체 폭을 1200에서 1000으로 줄임 */
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-    }
-   .addrdss img {
-    height: 100px;
-    display: block;
-   }
-   footer .address > div {
-        margin: 5px !important; /* 30px에서 10px로 강제 축소 */
-    }
-
-  footer .address>div h2 {
-    font-size: 0.9rem;
-}
-
-footer .address div p {
-    font-size: 0.7rem;
-}
-
-footer .address .sns ul li {
-    font-size: 0.7rem;
-}
+/* 문제의 그 영역: 이제 밖으로 안 나간다 */
 footer .rule {
-    width: 800px;
-
-    position: absolute;
-    left: 34%;
-    bottom: 19px;
-}
+    width: 100%;
+    background-color: #9ac056; /* 이미지 바닥 색상과 일치 필수 */
+    padding: 20px 0;
+    position: relative; /* absolute 해제 */
 }
 
+footer .rule ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
 
-@media (max-width:930px) {
-    /* 1. 전체 너비를 줄여서 요소들을 강제로 모읍니다 */
+footer .rule li {
+    font-size: 0.8rem;
+    color: #2f2f2f;
+}
+
+/* 반응형: 화면 작아질 때 */
+@media (max-width: 940px) {
     footer .address {
-        width: 75% !important;
-        max-width: 800px !important; /* 전체 폭을 1200에서 1000으로 줄임 */
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+        position: relative; /* 이미지 위에서 내려옴 */
+        top: 0; left: 0;
+        transform: none;
+        background-color: #fff;
+        padding: 40px 5%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-   .addrdss img {
-    height: 100px;
-    display: block;
-   }
-   footer .address > div {
-        margin: 5px !important; /* 30px에서 10px로 강제 축소 */
+    
+    footer .rule {
+        padding: 15px 0;
     }
-
-  footer .address>div h2 {
-    font-size: 0.7rem;
-}
-
-footer .address div p {
-    font-size: 0.6rem;
-}
-
-footer .address .sns ul li {
-    font-size: 0.6rem;
-}
-footer .rule {
-    width: 700px;
-
-    position: absolute;
-    left: 50%;
-    bottom: 19px;
-    transform: translateX(-50%);
-}
-}
-
-@media (max-width:854px) {
-    /* 1. 전체 너비를 줄여서 요소들을 강제로 모읍니다 */
-    footer .address {
-        width: 85% !important;
-        max-width: 800px !important; /* 전체 폭을 1200에서 1000으로 줄임 */
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        
-    }
-footer .address .add-logo img {
-        height: 100px !important; /* !important를 추가하여 강제 적용 */
-        display: block;
-        width: auto; /* 가로 너비 자동 조절 */
-    }
-   footer .address > div {
-        margin: 5px !important; /* 30px에서 10px로 강제 축소 */
-        float: none;
-    }
-
-  footer .address>div h2 {
-    font-size: 0.7rem;
-}
-
-footer .address div p {
-    font-size: 0.6rem;
-}
-
-footer .address .sns ul li {
-    font-size: 0.6rem;
-}
-footer .rule {
-    width: 700px;
-
-    position: absolute;
-    left: 50%;
-    bottom: 19px;
-    transform: translateX(-50%);
-}
 }
