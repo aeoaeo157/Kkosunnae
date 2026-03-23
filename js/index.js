@@ -288,12 +288,25 @@ function moveFac(idx, isInstant = false) {
     let baseOffset;
     let currentItemWidth;
 
- if (window.innerWidth <= 978) {
+ if (window.innerWidth <= 530) {
         // [1280px 이하] - 추가된 구간
         // 화면이 좁으므로 기준점(baseOffset)을 더 줄이고, 아이템 너비도 작게 설정해야 합니다.
-        baseOffset = 200; // 위치가 어긋나면 150~250 사이에서 조절하세요
-        currentItemWidth = 110 + 62; // 예: 이미지(200) + 간격(40)
-        } else if (window.innerWidth <= 1280) {
+        baseOffset = 15; // 위치가 어긋나면 150~250 사이에서 조절하세요
+        currentItemWidth = 150 + 62; // 예: 이미지(200) + 간격(40)
+        } 
+        else if (window.innerWidth <= 714) {
+        // [1280px 이하] - 추가된 구간
+        // 화면이 좁으므로 기준점(baseOffset)을 더 줄이고, 아이템 너비도 작게 설정해야 합니다.
+        baseOffset = 30; // 위치가 어긋나면 150~250 사이에서 조절하세요
+        currentItemWidth = 250 + 62; // 예: 이미지(200) + 간격(40)
+        
+         } else if (window.innerWidth <= 978) {
+        // [1280px 이하] - 추가된 구간
+        // 화면이 좁으므로 기준점(baseOffset)을 더 줄이고, 아이템 너비도 작게 설정해야 합니다.
+        baseOffset = 90; // 위치가 어긋나면 150~250 사이에서 조절하세요
+        currentItemWidth = 320 + 62; // 예: 이미지(200) + 간격(40)
+        
+         } else if (window.innerWidth <= 1280) {
         // [1280px 이하] - 추가된 구간
         // 화면이 좁으므로 기준점(baseOffset)을 더 줄이고, 아이템 너비도 작게 설정해야 합니다.
         baseOffset = 255; // 위치가 어긋나면 150~250 사이에서 조절하세요
