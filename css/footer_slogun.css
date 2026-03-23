@@ -5,8 +5,8 @@
 
 
 .footer-slogun {
-    margin-top: 1250px;
-
+    /* margin-top: 1250px; <- 이 값을 줄이거나 제거해 보세요 */
+    margin-top: 100px; 
     position: relative;
 }
 
@@ -27,12 +27,6 @@
 .footer-slogun .slogunimg img {
     width: 100%;
 }
-
-
-
-
-
-
 
 
 

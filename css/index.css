@@ -1,6 +1,8 @@
 @charset "utf-8";
 
-
+html, body {
+    overflow-x: hidden !important; /* 가로로 삐져나오는 모든 것을 숨김 */
+}
 
 /* 보이는 화면 기준! */
 /* html,
@@ -124,7 +126,15 @@ main .pager li.active {
 }
 
 
+@media (max-width: 1280px) {
+  main .main-txt h2 {
+    font-size: 2.6rem;
+}
+main .main-txt p {
+    font-size: 1.1rem;
+}
 
+}
 
 
 /* ****************************sub-title*********************** */
@@ -178,13 +188,9 @@ section.about {
 
 .about .ab-img1 {
     float: left;
-
     margin-right: 20px;
 }
 
-.about .ab-con img {
-    /* float: left; */
-}
 
 .about .ab-con h2 {
     position: absolute;
@@ -373,9 +379,148 @@ section .ab-silde ul li img:hover {
 
 
 
+@media (max-width:1585px) {
+    section.about {
+        max-width: 980px;
+        margin-bottom: 500px;
+    }
+
+    .about .leftimg {
+        width: 550px;
+
+    }
+
+    .about .leftimg img {
+        width: 550px;
+        height: auto;
+    }
+
+    .about .ab-con img {
+        width: 280px;
+        left: 220px;
+        /* 이 값을 줄일수록 왼쪽 이미지와 가까워집니다 */
+        top: 50px;
+    }
 
 
 
+    section .ab-silde ul li img {
+        display: block;
+        width: 134px;
+        height: 100%;
+
+        margin-bottom: 100px;
+    }
+
+    .about .ab-con {
+        position: relative;
+    }
+
+    .about .ab-silde {
+        position: absolute;
+        top: 678px;
+        right: -202px;
+        /* 오른쪽 끝에 고정 */
+        width: 250px;
+    }
+
+    .about .ab-con h2 {
+        font-size: 30px;
+    }
+
+    .about .ab-con .ab-con-txt p {
+        font-size: 15px;
+    }
+
+    .about .ab-con h2 {
+        top: 125px;
+        right: 16px;
+    }
+
+    .about .ab-con .ab-con-txt {
+        top: 210px;
+        right: -152px;
+    }
+
+    .about .ab-ad {
+        top: 659px;
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width:1060px) {
+    section.about {
+        max-width: 580px;
+        margin-bottom: 500px;
+    }
+
+    .about .leftimg {
+        width: 300px;
+
+    }
+
+    .about .leftimg img {
+        width: 300px;
+        height: auto;
+    }
+
+    .about .ab-con img {
+        width: 260px;
+        left: 120px;
+        /* 이 값을 줄일수록 왼쪽 이미지와 가까워집니다 */
+        top: 50px;
+    }
+
+    section .ab-silde ul li img {
+        display: block;
+        width: 106px;
+        height: 100%;
+
+        margin-bottom: 100px;
+    }
+
+    .about .ab-con {
+        position: relative;
+    }
+
+    .about .ab-silde {
+        position: absolute;
+        top: 554px;
+        right: -14px;
+        /* 오른쪽 끝에 고정 */
+        width: 150px;
+    }
+
+    .about .ab-con h2 {
+width: 170px;
+        font-size: 27px;
+    }
+
+    .about .ab-con .ab-con-txt p {
+        font-size: 14px;
+    }
+
+    .about .ab-con h2 {
+        top: 62px;
+        right: 36px;
+    }
+
+    .about .ab-con .ab-con-txt {
+       
+        top: 154px;
+        right: -304px;
+    }
+     .about .ab-con .ab-con-txt p {
+ width: 160px;
+     }
+
+    .about .ab-ad {
+        top: 680px;
+        right: -1px;
+        font-size: 15px;
+    }
+}
 
 
 
@@ -520,10 +665,117 @@ section .ab-silde ul li img:hover {
 
 
 
+@media (max-width:1585px) {
+    .infomation .explain {
+        width: 980px;
+    }
+
+    .infomation .explain div ul li img {
+        height: 60px;
+    }
+
+    .infomation .explain div ul li span {
+        font-size: 18px;
+    }
+
+    .infomation .explain div ul li p {
+        font-size: 15px;
+        width: 210px;
+    }
+
+    .infomation .infobanner .infobanner-con img {
+        height: 100px;
+        width: auto;
+    }
+
+    .infomation .infobanner .infobanner-con p {
+        font-size: 16px;
+        padding-bottom: 15px;
+    }
+
+    .ad {
+        margin-top: 20px;
+    }
+
+    .infomation .infobanner .infobanner-con {
+    top: 50%;
+    left: 50%;
+    transform: translate(-109%, -50%);
+    /* 화면 중앙 정렬 방식 추천 */
+    /* 혹은 left: 15%; 처럼 유동적인 %값 사용 */
+}
+}
 
 
+@media (max-width:1060px) {
+.infomation .sub-title {
+    margin-bottom: 20px;
+}
 
+ .infomation .explain div ul li {
+        float: none !important; /* float 해제 */
+        width: 100%;           /* 부모 너비를 다 쓰도록 설정 */
+        text-align: center;    /* 내부 요소들 중앙 정렬 */
+        padding: 10px 0;       /* 간격 조정 */
+    }
+    .infomation .explain div ul li p {
+        width: 100%;           /* 고정 너비(210px 등)를 해제하여 부모 너비를 다 쓰게 함 */
+        max-width: 300px;      /* 너무 길어지는 게 싫다면 max-width 사용 */
+        margin: 10px auto;     /* 박스 자체를 중앙으로 이동 */
+        text-align: center;    /* 텍스트 정렬 */
+        display: block;        /* 블록 요소 확인 */
+    }
 
+    /* 3. p 태그 위에 있는 span 등도 중앙 정렬을 위해 처리 */
+    .infomation .explain div ul li div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;   /* flex를 이용한 자식 요소들 중앙 정렬 */
+    }
+    
+    .infomation .explain {
+        width: 580px;
+        margin-bottom: 20px;
+    }
+
+    .infomation .explain div ul li img {
+        height: 60px;
+    }
+
+    .infomation .explain div ul li span {
+        font-size: 18px;
+    }
+
+    .infomation .explain div ul li p {
+        font-size: 15px;
+        width: 210px;
+    }
+
+   .infomation .infobanner .infobanner-con {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -50%);
+    text-align: center;
+}
+
+    .infomation .infobanner .infobanner-con img {
+        height: 80px;
+        width: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .infomation .infobanner .infobanner-con p {
+        font-size: 15px;
+        padding-bottom: 15px;
+    }
+    
+.ad .adbor {
+    font-size: 0.9rem;
+}
+
+}
 
 
 
@@ -696,11 +948,87 @@ section.rooms {
 
 
 
+@media (max-width:1585px) {
+.rooms-nav .left-a {
+    left: 137px;
+}
+
+/* 컨테이너 왼쪽 밖으로 */
+.rooms-nav .right-a {
+    right: 147px;
+}
+    .rooms-wrapper {
+     width: 830px; /* 980px에서 더 줄여보세요 */
+        margin: 0 auto;
+        justify-content: space-between; 
+    }
+
+    .rooms .rooms-wrapper .img-box {
+        width: 250px;
+    }
+    .rooms-footer {
+    margin-top: 20px;
+}
+.rooms .pager {
+    margin-bottom: 40px;
+}
+}
 
 
 
+@media (max-width:1250px) {
+.rooms-nav .left-a {
+    left: 153px;
+}
 
+/* 컨테이너 왼쪽 밖으로 */
+.rooms-nav .right-a {
+    right: 163px;
+}
+    .rooms-wrapper {
+     width: 540px; /* 980px에서 더 줄여보세요 */
+        margin: 0 auto;
+        justify-content: space-between; 
+    }
 
+    .rooms .rooms-wrapper .img-box {
+        width: 150px;
+    }
+    .rooms-footer {
+    margin-top: 20px;
+}
+.rooms .pager {
+    margin-bottom: 40px;
+}
+.rooms-nav a {
+    top: 39%;
+}
+.rooms-item p {
+    font-size: 15px;
+}
+}
+
+@media (max-width:966px) {
+.rooms-nav .left-a {
+    left: 2px;
+}
+
+/* 컨테이너 왼쪽 밖으로 */
+.rooms-nav .right-a {
+    right: 12px;
+}
+}
+
+@media (max-width:666px) {
+.rooms-nav .left-a {
+    left: 2px;
+}
+
+/* 컨테이너 왼쪽 밖으로 */
+.rooms-nav .right-a {
+    right: 12px;
+}
+}
 
 
 
@@ -859,9 +1187,75 @@ section.facilities {
 
 
 
+@media (max-width: 1585px) {
+    section.facilities {
+
+        width: 980px !important;
+    }
+    .fac-wrapper {
+    height: 450px;
+}
+
+    /* 이미지 크기 강제 고정 */
+    .fac-item .second.active {
+        width: 240px !important; /* 양옆 이미지 */
+        height: 240px !important;
+    }
+
+    .fac-item.center .first {
+        width: 360px !important; /* 중앙 커지는 이미지 */
+        height: 360px !important;
+    }
 
 
+}
 
+
+@media (max-width: 1280px) {
+    section.facilities {
+
+        width: 780px !important;
+    }
+    .fac-wrapper {
+    height: 350px;
+}
+
+    /* 이미지 크기 강제 고정 */
+    .fac-item .second.active {
+        width: 180px !important; /* 양옆 이미지 */
+        height: 180px !important;
+    }
+
+    .fac-item.center .first {
+        width: 275px !important; /* 중앙 커지는 이미지 */
+        height: 275px !important;
+    }
+
+
+}
+
+@media (max-width: 976px) {
+    section.facilities {
+
+        width: 550px !important;
+    }
+    .fac-wrapper {
+    height: 200px;
+}
+
+    /* 이미지 크기 강제 고정 */
+    .fac-item .second.active {
+        width: 110px !important; /* 양옆 이미지 */
+        height: 110px !important;
+    }
+
+    .fac-item.center .first {
+        width: 155px !important; /* 중앙 커지는 이미지 */
+        height: 155px !important;
+    }
+
+
+}
 
 
 
@@ -1036,20 +1430,21 @@ section.event.on .sub-title li .sunnae {
 
 
 #scrollTopBtn {
-    display: none; /* 처음엔 숨김 */
+    display: none;
+    /* 처음엔 숨김 */
     position: fixed;
     bottom: 50px;
     right: 40px;
     z-index: 999;
-    
+
     /* 버튼 배경 및 테두리 제거 */
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    
+
     /* 버튼 크기 조절 */
-    width: 60px; 
+    width: 60px;
     height: 60px;
     transition: transform 0.3s ease;
 }
@@ -1057,10 +1452,76 @@ section.event.on .sub-title li .sunnae {
 #scrollTopBtn img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 이미지 비율 유지 */
+    object-fit: contain;
+    /* 이미지 비율 유지 */
 }
 
 /* 마우스 올렸을 때 살짝 커지는 효과 */
 #scrollTopBtn:hover {
     transform: scale(1.1);
+}
+
+
+@media (max-width:1800px) {
+    section.event .sub-title li .sunnae {
+        top: 5px;
+
+    }
+
+    section.event .sub-title li .sunnae img {
+        width: 200px;
+    }
+
+    .event .evimg ul {
+        text-align: center;
+    }
+
+    .event .evimg ul li a img {
+        width: 700px;
+    }
+}
+
+@media (max-width:1635px) {
+    section.event .sub-title li .sunnae {
+        top: 39px;
+
+    }
+
+    section.event .sub-title li .sunnae img {
+        width: 160px;
+    }
+
+    .event .evimg ul {
+        text-align: center;
+    }
+
+    .event .evimg ul li a img {
+        width: 600px;
+    }
+}
+
+
+@media (max-width:1600px) {
+    section.event .sub-title li .sunnae {
+        top: 55px;
+
+    }
+
+    section.event .sub-title li .sunnae img {
+        display: none;
+    }
+
+    .event .evimg ul {
+        text-align: center;
+    }
+
+
+}
+
+
+
+@media (max-width:1585px) {
+     .event .evimg ul li a img {
+        width: 490px;
+    }
 }

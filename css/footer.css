@@ -20,8 +20,7 @@ footer .footer-ill img {
 
 footer .address {
 
-    width: 1200px;
-
+ width: 1200px;
     position: absolute;
     left: 20%;
     top: 9%;
@@ -122,4 +121,176 @@ footer .rule ul li::after {
 
 footer .rule ul li:first-child::after {
     display: none;
+}
+
+
+/* footer.css 수정본 */
+
+footer .address {
+    /* 절대 위치 대신 상대 위치나 기본 배치를 권장하지만, 
+       기존 구조를 유지하며 수정한다면 아래와 같이 바꿔보세요. */
+    width: 90%;            /* 고정 1200px 대신 화면의 90% 사용 */
+    max-width: 1200px;     /* 최대치는 1200px로 제한 */
+    position: absolute;
+    left: 50%;             /* 왼쪽에서 50% 이동 */
+    transform: translateX(-50%); /* 다시 자신의 너비 절반만큼 왼쪽으로 와서 정중앙 정렬 */
+    top: 9%;
+    
+    /* 내부 요소 정렬을 위한 Flexbox 추가 */
+    display: flex;
+    justify-content: space-between; /* 요소들 사이에 균일한 간격 */
+    flex-wrap: wrap;       /* 화면이 너무 좁아지면 자연스럽게 줄바꿈 */
+}
+
+footer .address > div {
+    /* 기존 float: left; 삭제 */
+    margin: 20px;          /* 간격 조절 */
+    min-width: 200px;      /* 최소 너비 확보 */
+}
+
+
+
+@media (max-width:1300px) {
+    /* 1. 전체 너비를 줄여서 요소들을 강제로 모읍니다 */
+    footer .address {
+        width: 95% !important;
+        max-width: 1000px !important; /* 전체 폭을 1200에서 1000으로 줄임 */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+   .addrdss img {
+    height: 120px;
+    display: block;
+   }
+   footer .address > div {
+        margin: 10px !important; /* 30px에서 10px로 강제 축소 */
+    }
+
+  footer .address>div h2 {
+    font-size: 0.9rem;
+}
+
+footer .address div p {
+    font-size: 0.7rem;
+}
+
+footer .address .sns ul li {
+    font-size: 0.7rem;
+}
+
+}
+
+
+@media (max-width:1060px) {
+    /* 1. 전체 너비를 줄여서 요소들을 강제로 모읍니다 */
+    footer .address {
+        width: 85% !important;
+        max-width: 800px !important; /* 전체 폭을 1200에서 1000으로 줄임 */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+   .addrdss img {
+    height: 100px;
+    display: block;
+   }
+   footer .address > div {
+        margin: 5px !important; /* 30px에서 10px로 강제 축소 */
+    }
+
+  footer .address>div h2 {
+    font-size: 0.9rem;
+}
+
+footer .address div p {
+    font-size: 0.7rem;
+}
+
+footer .address .sns ul li {
+    font-size: 0.7rem;
+}
+footer .rule {
+    width: 800px;
+
+    position: absolute;
+    left: 34%;
+    bottom: 19px;
+}
+}
+
+
+@media (max-width:930px) {
+    /* 1. 전체 너비를 줄여서 요소들을 강제로 모읍니다 */
+    footer .address {
+        width: 75% !important;
+        max-width: 800px !important; /* 전체 폭을 1200에서 1000으로 줄임 */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+   .addrdss img {
+    height: 100px;
+    display: block;
+   }
+   footer .address > div {
+        margin: 5px !important; /* 30px에서 10px로 강제 축소 */
+    }
+
+  footer .address>div h2 {
+    font-size: 0.7rem;
+}
+
+footer .address div p {
+    font-size: 0.6rem;
+}
+
+footer .address .sns ul li {
+    font-size: 0.6rem;
+}
+footer .rule {
+    width: 700px;
+
+    position: absolute;
+    left: 50%;
+    bottom: 19px;
+    transform: translateX(-50%);
+}
+}
+
+@media (max-width:854px) {
+    /* 1. 전체 너비를 줄여서 요소들을 강제로 모읍니다 */
+    footer .address {
+        width: 85% !important;
+        max-width: 800px !important; /* 전체 폭을 1200에서 1000으로 줄임 */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        
+    }
+footer .address .add-logo img {
+        height: 100px !important; /* !important를 추가하여 강제 적용 */
+        display: block;
+        width: auto; /* 가로 너비 자동 조절 */
+    }
+   footer .address > div {
+        margin: 5px !important; /* 30px에서 10px로 강제 축소 */
+        float: none;
+    }
+
+  footer .address>div h2 {
+    font-size: 0.7rem;
+}
+
+footer .address div p {
+    font-size: 0.6rem;
+}
+
+footer .address .sns ul li {
+    font-size: 0.6rem;
+}
+footer .rule {
+    width: 700px;
+
+    position: absolute;
+    left: 50%;
+    bottom: 19px;
+    transform: translateX(-50%);
+}
 }

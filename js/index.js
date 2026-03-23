@@ -238,41 +238,69 @@ $(function() {
     let isAnimated = false;
 
     // 2. 이동 함수
-    function moveFac(idx, isInstant = false) {
-        if (isAnimated && !isInstant) return;
-        isAnimated = true;
+function moveFac(idx, isInstant = false) {
+    if (isAnimated && !isInstant) return;
+    isAnimated = true;
 
-        const baseOffset = 400; // 화면 중앙 배치를 위한 보정값
-        const moveX = -(idx + 3) * itemWidth + baseOffset; 
+    // 1. 화면 너비에 따른 변수 분기
+    let baseOffset;
+    let currentItemWidth;
 
-        if (isInstant) {
-            $facCon.css({ 'transition': 'none', 'transform': `translateX(${moveX}px)` });
-            updateStyle(idx);
-            isAnimated = false;
-        } else {
-            // [중요] 이동 시작 '직전'에 스타일 업데이트 (그래야 동시에 변함)
-            updateStyle(idx);
-
-            $facCon.css({ 
-                'transition': 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)', 
-                'transform': `translateX(${moveX}px)` 
-            });
-
-            setTimeout(() => {
-                // 무한 루프 구간 처리
-                if (idx >= totalActual) {
-                    facIdx = 0;
-                    moveFac(facIdx, true);
-                } else if (idx < 0) {
-                    facIdx = totalActual - 1;
-                    moveFac(facIdx, true);
-                } else {
-                    facIdx = idx;
-                }
-                isAnimated = false;
-            }, 600);
-        }
+ if (window.innerWidth <= 978) {
+        // [1280px 이하] - 추가된 구간
+        // 화면이 좁으므로 기준점(baseOffset)을 더 줄이고, 아이템 너비도 작게 설정해야 합니다.
+        baseOffset = 200; // 위치가 어긋나면 150~250 사이에서 조절하세요
+        currentItemWidth = 110 + 62; // 예: 이미지(200) + 간격(40)
+        } else if (window.innerWidth <= 1280) {
+        // [1280px 이하] - 추가된 구간
+        // 화면이 좁으므로 기준점(baseOffset)을 더 줄이고, 아이템 너비도 작게 설정해야 합니다.
+        baseOffset = 255; // 위치가 어긋나면 150~250 사이에서 조절하세요
+        currentItemWidth = 180 + 62; // 예: 이미지(200) + 간격(40)
+    } else if (window.innerWidth <= 1585) {
+        // [1585px 이하] 
+        baseOffset = 315; 
+        currentItemWidth = 240 + 62; // 이미지(240) + 간격(62)
+    } else {
+        // [기본 PC 화면]
+        baseOffset = 400;
+        currentItemWidth = 340 + 62; // 이미지(340) + 간격(62)
     }
+
+    // 2. 계산식 (정확한 currentItemWidth를 사용해야 위치가 안 틀어짐)
+    const moveX = -(idx + 3) * currentItemWidth + baseOffset; 
+
+    if (isInstant) {
+        $facCon.css({ 
+            'transition': 'none', 
+            'transform': `translateX(${moveX}px)` 
+        });
+        updateStyle(idx);
+        isAnimated = false;
+    } else {
+        updateStyle(idx);
+        $facCon.css({ 
+            'transition': 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)', 
+            'transform': `translateX(${moveX}px)` 
+        });
+
+        setTimeout(() => {
+            if (idx >= totalActual) {
+                facIdx = 0;
+                moveFac(facIdx, true);
+            } else if (idx < 0) {
+                facIdx = totalActual - 1;
+                moveFac(facIdx, true);
+            } else {
+                facIdx = idx;
+            }
+            isAnimated = false;
+        }, 600);
+    }
+}
+
+    $(window).on('resize', function() {
+    moveFac(facIdx, true);
+});
 
     // 3. 중앙 아이템 스타일 업데이트 함수
     function updateStyle(idx) {
