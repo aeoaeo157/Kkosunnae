@@ -133,12 +133,14 @@ main .pager li.active {
 /* 1. 태블릿 구간 (1000px 이하) */
 @media (max-width: 1000px) {
     main .main-txt {
-        left: 10%; /* 왼쪽 여백을 조금 줄여서 텍스트 공간 확보 */
+        left: 10%;
+        /* 왼쪽 여백을 조금 줄여서 텍스트 공간 확보 */
         bottom: 15%;
     }
 
     main .main-txt h2 {
-        font-size: 2.8rem; /* 3.6rem에서 축소 */
+        font-size: 2.8rem;
+        /* 3.6rem에서 축소 */
     }
 
     main .main-txt p {
@@ -148,10 +150,12 @@ main .pager li.active {
 
 /* 2. 작은 태블릿 및 모바일 가로 (768px 이하) */
 @media (max-width: 990px) {
+
     /* 슬라이드 이미지 높이 조정 (너무 길어지지 않게) */
     main .slide-box .gallery li img {
         height: auto;
-        min-height: 400px; /* 최소 높이 유지 */
+        min-height: 400px;
+        /* 최소 높이 유지 */
         object-fit: cover;
     }
 
@@ -167,7 +171,8 @@ main .pager li.active {
     main .main-txt h2 {
         font-size: 2.2rem;
         margin-bottom: 15px;
-        word-break: keep-all; /* 단어 단위 줄바꿈 */
+        word-break: keep-all;
+        /* 단어 단위 줄바꿈 */
     }
 
     main .main-txt p {
@@ -185,16 +190,19 @@ main .pager li.active {
 /* 3. 모바일 세로 (480px 이하) */
 @media (max-width: 480px) {
     main .slide-box .gallery li img {
-        min-height: 350px; /* 모바일 화면에 맞게 높이 조절 */
+        min-height: 350px;
+        /* 모바일 화면에 맞게 높이 조절 */
     }
 
     main .main-txt {
         width: 90%;
-        bottom: 25%; /* 페이저와 겹치지 않게 약간 위로 */
+        bottom: 25%;
+        /* 페이저와 겹치지 않게 약간 위로 */
     }
 
     main .main-txt h2 {
-        font-size: 1.8rem; /* 모바일 가독성 최적화 */
+        font-size: 1.8rem;
+        /* 모바일 가독성 최적화 */
         line-height: 1.3;
     }
 
@@ -202,7 +210,7 @@ main .pager li.active {
         font-size: 0.9rem;
         line-height: 1.5;
         /* 줄바꿈이 너무 잦아지지 않도록 설정 */
-        display: inline-block; 
+        display: inline-block;
         max-width: 280px;
     }
 
@@ -511,6 +519,8 @@ section .ab-silde ul li img:hover {
 
     .about .ab-con .ab-con-txt p {
         font-size: 15px;
+        word-break: keep-all;
+        width: 280px;
     }
 
     .about .ab-con h2 {
@@ -519,7 +529,7 @@ section .ab-silde ul li img:hover {
     }
 
     .about .ab-con .ab-con-txt {
-        top: 210px;
+        top: 180px;
         right: -152px;
     }
 
@@ -528,7 +538,6 @@ section .ab-silde ul li img:hover {
         font-size: 15px;
     }
 }
-
 
 @media (max-width:1060px) {
     section.about {
@@ -580,6 +589,7 @@ section .ab-silde ul li img:hover {
 
     .about .ab-con .ab-con-txt p {
         font-size: 14px;
+
     }
 
     .about .ab-con h2 {
@@ -605,10 +615,162 @@ section .ab-silde ul li img:hover {
 }
 
 
+@media (max-width:680px) {
+    section.about {
+        max-width: 385px;
+        margin-bottom: 500px;
+    }
+
+    .about .leftimg {
+        width: 190px;
+
+    }
+
+    .about .leftimg img {
+        width: 200px;
+        height: auto;
+    }
+
+    .about .ab-con img {
+        width: 174px;
+        left: 120px;
+        /* 이 값을 줄일수록 왼쪽 이미지와 가까워집니다 */
+        top: 50px;
+    }
+
+    section .ab-silde ul li img {
+        display: block;
+        width: 67px;
+        height: 100%;
+
+        margin-bottom: 100px;
+    }
+
+    .about .ab-con {
+        position: relative;
+    }
+
+    .about .ab-silde {
+        position: absolute;
+        top: 554px;
+        right: -14px;
+        /* 오른쪽 끝에 고정 */
+        width: 150px;
+    }
+
+    section.about .ab-silde {
+        width: 398px;
+        margin-top: -62px;
+    }
+
+    .about .ab-con h2 {
+        width: 111px;
+        font-size: 19px;
+        top: 24px;
+        right: 31px;
+        text-align: center;
+    }
+
+    .about .ab-con .ab-con-txt p {
+        font-size: 12.6px;
+        top: 82px;
+        right: -340px;
+        text-align: center;
+        width: 140px;
+        word-break: keep-all;
+    }
+
+    .about .ab-con .ab-con-txt {
+        top: 81px;
+        right: -354px;
+    }
 
 
+    .about .ab-ad {
+        top: 571px;
+        right: 147px;
+        font-size: 15px;
+    }
+}
 
 
+@media (max-width:410px) {
+    section.about {
+        max-width: 353px;
+        margin-bottom: 500px;
+    }
+
+    .about .leftimg {
+        width: 171px;
+
+    }
+
+    .about .leftimg img {
+        width: 183px;
+        height: auto;
+    }
+
+    .about .ab-con img {
+        width: 160px;
+        left: 120px;
+        /* 이 값을 줄일수록 왼쪽 이미지와 가까워집니다 */
+        top: 50px;
+    }
+
+    section .ab-silde ul li img {
+        display: block;
+        width: 61px;
+        height: 100%;
+
+        margin-bottom: 100px;
+    }
+
+    .about .ab-con {
+        position: relative;
+    }
+
+    .about .ab-silde {
+        position: absolute;
+        top: 554px;
+        right: -14px;
+        /* 오른쪽 끝에 고정 */
+        width: 150px;
+    }
+
+    section.about .ab-silde {
+        width: 367px;
+        margin-top: -77px;
+    }
+
+    .about .ab-con h2 {
+        width: 111px;
+        font-size: 18px;
+        top: 24px;
+        right: 27px;
+        text-align: center;
+    }
+
+    .about .ab-con .ab-con-txt p {
+        font-size: 11.5px;
+        top: 82px;
+        right: -340px;
+        text-align: center;
+        width: 130px;
+        word-break: keep-all;
+    }
+
+    .about .ab-con .ab-con-txt {
+        top: 75px;
+        right: -364px;
+    }
+
+
+    .about .ab-ad {
+        top: 552px;
+        right: 147px;
+        font-size: 15px;
+    }
+}
 
 
 /************************ information ***************************/
@@ -733,17 +895,18 @@ section .ab-silde ul li img:hover {
 
 
 @media (max-width:1500px) {
-    .infobanner .infobanner-con .kkologo{
+    .infobanner .infobanner-con .kkologo {
         width: 300px;
     }
 
-  .infomation .infobanner .infobanner-con p {
-    font-size: 1.1rem;
-    padding-bottom: 15px;
-}
-.infomation .infobanner .ad img {
-    width: 250px;
-}
+    .infomation .infobanner .infobanner-con p {
+        font-size: 1.1rem;
+        padding-bottom: 15px;
+    }
+
+    .infomation .infobanner .ad img {
+        width: 250px;
+    }
 }
 
 
@@ -753,21 +916,28 @@ section .ab-silde ul li img:hover {
     /* 1. .explain: 전체 컨테이너를 Flex 세로 모드로 변경 */
     .infomation .explain {
         display: flex !important;
-        flex-direction: column !important; /* 가로 -> 세로 쌓기 */
-        align-items: center !important;    /* 중앙 정렬 */
+        flex-direction: column !important;
+        /* 가로 -> 세로 쌓기 */
+        align-items: center !important;
+        /* 중앙 정렬 */
         width: 100% !important;
-        float: none !important;            /* PC용 float 해제 */
+        float: none !important;
+        /* PC용 float 해제 */
         padding: 50px 0 !important;
-        gap: 60px !important;              /* 항목 간의 위아래 간격 */
+        gap: 60px !important;
+        /* 항목 간의 위아래 간격 */
     }
 
     /* 2. 각 항목 박스: 너비를 100%로 늘려서 가로 정렬 파괴 */
-    .infomation .explain > div {
-        width: 100% !important;            /* 33.3% -> 100% */
-        float: none !important;            /* float 해제 */
+    .infomation .explain>div {
+        width: 100% !important;
+        /* 33.3% -> 100% */
+        float: none !important;
+        /* float 해제 */
         margin: 0 auto !important;
         display: flex !important;
-        justify-content: center !important; /* 내부 콘텐츠 중앙 */
+        justify-content: center !important;
+        /* 내부 콘텐츠 중앙 */
     }
 
     /* 3. 내부 ul, li: 텍스트와 이미지를 중앙 정렬 */
@@ -779,22 +949,35 @@ section .ab-silde ul li img:hover {
     }
 
     .infomation .explain div ul li {
-        float: none !important;            /* 무조건 해제 */
+        float: none !important;
+        /* 무조건 해제 */
         width: 100% !important;
-        text-align: center !important;     /* 텍스트 중앙 */
+        text-align: center !important;
+        /* 텍스트 중앙 */
         margin-bottom: 15px !important;
     }
 
     .infomation .explain div ul li img {
-        margin: 0 auto !important;         /* 이미지 중앙 */
+        margin: 0 auto !important;
+        /* 이미지 중앙 */
         display: block;
+
     }
 
+    .infomation .explain div ul li div span {
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;      /* 이 줄을 추가하여 블록 요소로 변경 */
+    margin-bottom: 15px; /* 원하는 만큼 간격 조절 (예: 15px) */
+}
+
     .infomation .explain div ul p {
-        width: 90% !important;
+        width: 50% !important;
         max-width: 500px;
         margin: 0 auto !important;
         word-break: keep-all;
+        line-height: 23px;
     }
 
     /* 4. 배너 콘텐츠 반응형 (이미지 높이에 맞춤) */
@@ -809,7 +992,8 @@ section .ab-silde ul li img:hover {
     }
 
     .infomation .infobanner .infobanner-con .kkologo {
-        width: 25vw !important; /* 뷰포트에 따라 줄어듦 */
+        width: 25vw !important;
+        /* 뷰포트에 따라 줄어듦 */
         max-width: 240px;
         min-width: 160px;
         height: auto;
@@ -833,15 +1017,44 @@ section .ab-silde ul li img:hover {
 }
 
 /* 600px 이하 모바일 추가 조정 */
-@media (max-width: 600px) {
+@media (max-width: 630px) {
     .infomation .infobanner .infobanner-con .kkologo {
         width: 140px !important;
     }
+
     .infomation .infobanner .ad img {
         width: 110px !important;
     }
+    .infomation .explain div ul li div span {
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;      /* 이 줄을 추가하여 블록 요소로 변경 */
+    margin-bottom: 15px; /* 원하는 만큼 간격 조절 (예: 15px) */
+}
 }
 
+@media (max-width: 590px) {
+    .infomation .infobanner .infobanner-con .kkologo {
+        width: 100px !important;
+    }
+
+    .infomation .infobanner .ad img {
+        width: 110px !important;
+    }
+    .infomation .explain div ul li div span {
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;      /* 이 줄을 추가하여 블록 요소로 변경 */
+    margin-bottom: 15px; /* 원하는 만큼 간격 조절 (예: 15px) */
+}
+
+.infomation .infobanner .infobanner-con p {
+    font-size: 0.1rem;
+    padding-bottom: 8px;
+}
+}
 
 
 
@@ -1600,7 +1813,7 @@ section.facilities {
 }
 
 @media (max-width: 1024px) {
-.fac-footer .ad img {
+    .fac-footer .ad img {
         width: 200px;
     }
 }
@@ -1654,13 +1867,14 @@ section.facilities {
         /* 중앙 커지는 이미지 */
         height: 300px !important;
     }
- .fac-footer .ad img {
+
+    .fac-footer .ad img {
         width: 180px;
     }
 }
 
 @media (max-width: 530px) {
-       section.facilities {
+    section.facilities {
 
         width: 200px !important;
     }
@@ -1681,6 +1895,7 @@ section.facilities {
         /* 중앙 커지는 이미지 */
         height: 180px !important;
     }
+
     .fac-footer .ad img {
         width: 150px;
     }
@@ -1750,6 +1965,25 @@ section.facilities {
         transform: translateY(-50%) translateX(-50%);
     }
 }
+
+
+@media (max-width:850px) {
+    .logobanner .logo-track img.logo {
+    /* 기존 absolute 속성 제거 (flex 영향 하에 둠) */
+    position: static;
+    transform: none;
+
+    /* 이미지 크기는 기존 배너 높이에 맞춰 자동 조절되거나 고정값 사용 */
+    height: 30px;
+    display: block;
+}
+
+}
+
+
+
+
+
 
 /* ******************** footer-slogun ******************** */
 
@@ -1890,6 +2124,7 @@ section.event.on .sub-title li .sunnae {
 #scrollTopBtn:hover {
     transform: scale(1.1);
 }
+
 /* ==========================================================
    [EVENT SECTION] - 1800px ~ 480px Responsive Design
    ========================================================== */
@@ -1897,45 +2132,52 @@ section.event.on .sub-title li .sunnae {
 /* 1. 기본 스타일 (PC - 1800px 미만부터 적용 시작) */
 @media (max-width: 1800px) {
     section.event {
-        padding: 100px 0; /* 상하 여백 조절 */
+        padding: 100px 0;
+        /* 상하 여백 조절 */
     }
 
     section.event .sub-title li .sunnae {
-        top: 5px; /* 위치 미세 조정 */
+        top: 5px;
+        /* 위치 미세 조정 */
     }
 
     section.event .sub-title li .sunnae img {
-        width: 200px; /* 로고 크기 축소 */
+        width: 200px;
+        /* 로고 크기 축소 */
     }
 
     .event .evimg ul {
-        text-align: center; /* 이미지 중앙 정렬 */
+        text-align: center;
+        /* 이미지 중앙 정렬 */
         display: flex;
         justify-content: center;
         gap: 30px;
     }
 
     .event .evimg ul li a img {
-        width: 700px; /* 배너 크기 최적화 */
+        width: 700px;
+        /* 배너 크기 최적화 */
         height: auto;
     }
 }
 
 @media (max-width: 1650px) {
- section.event .sub-title li .sunnae img {
-     display: none;
+    section.event .sub-title li .sunnae img {
+        display: none;
     }
 }
 
 /* 2. 노트북 및 작은 모니터 (1400px 이하) */
 @media (max-width: 1400px) {
     .event .evimg ul {
-        flex-direction: row; /* 가로 배치 유지하되 크기 줄임 */
+        flex-direction: row;
+        /* 가로 배치 유지하되 크기 줄임 */
         gap: 20px;
     }
 
     .event .evimg ul li a img {
-        width: 45vw; /* 화면 너비에 맞게 유동적으로 조절 */
+        width: 45vw;
+        /* 화면 너비에 맞게 유동적으로 조절 */
         max-width: 600px;
     }
 }
@@ -1943,17 +2185,20 @@ section.event.on .sub-title li .sunnae {
 /* 3. 태블릿 구간 (1024px 이하) - 가로 배치에서 세로 배치로 전환 */
 @media (max-width: 1024px) {
     section.event .sub-title h2 {
-        font-size: 3rem; /* 제목 크기 축소 */
+        font-size: 3rem;
+        /* 제목 크기 축소 */
     }
 
     .event .evimg ul {
-        flex-direction: column; /* 세로로 쌓기 */
+        flex-direction: column;
+        /* 세로로 쌓기 */
         align-items: center;
         gap: 40px;
     }
 
     .event .evimg ul li a img {
-        width: 80vw; /* 태블릿에서 꽉 차게 보이도록 설정 */
+        width: 80vw;
+        /* 태블릿에서 꽉 차게 보이도록 설정 */
         max-width: 700px;
     }
 }
@@ -1965,7 +2210,8 @@ section.event.on .sub-title li .sunnae {
     }
 
     section.event .sub-title li .sunnae img {
-        width: 150px; /* 꼬순내 로고 크기 추가 축소 */
+        width: 150px;
+        /* 꼬순내 로고 크기 추가 축소 */
     }
 
     section.event .sub-title h2 {
@@ -1973,27 +2219,32 @@ section.event.on .sub-title li .sunnae {
     }
 
     .event .evimg ul li a img {
-        width: 90vw; /* 여백을 줄여 이미지 강조 */
+        width: 90vw;
+        /* 여백을 줄여 이미지 강조 */
     }
 }
 
 /* 5. 모바일 세로 (480px 이하) - 최종 최적화 */
 @media (max-width: 480px) {
     section.event .sub-title {
-        margin-top: 50px; /* 상단 마진 줄임 */
+        margin-top: 50px;
+        /* 상단 마진 줄임 */
         margin-bottom: 50px;
     }
 
     section.event .sub-title h2 {
-        font-size: 2rem; /* 모바일 가독성 폰트 크기 */
+        font-size: 2rem;
+        /* 모바일 가독성 폰트 크기 */
     }
 
     section.event .sub-title p {
-        font-size: 1.1rem; /* 설명 텍스트 크기 조절 */
+        font-size: 1.1rem;
+        /* 설명 텍스트 크기 조절 */
     }
 
     section.event .sub-title li .sunnae {
-        position: static; /* 위치 고정 해제 */
+        position: static;
+        /* 위치 고정 해제 */
         display: block;
         margin-bottom: 10px;
     }
@@ -2004,11 +2255,14 @@ section.event.on .sub-title li .sunnae {
     }
 
     .event .evimg ul {
-        gap: 20px; /* 항목 간 간격 좁힘 */
+        gap: 20px;
+        /* 항목 간 간격 좁힘 */
     }
 
     .event .evimg ul li a img {
-        width: 95vw; /* 화면에 거의 꽉 차게 */
-        border-radius: 15px; /* 모바일에 어울리는 둥근 테두리 */
+        width: 95vw;
+        /* 화면에 거의 꽉 차게 */
+        border-radius: 15px;
+        /* 모바일에 어울리는 둥근 테두리 */
     }
 }
