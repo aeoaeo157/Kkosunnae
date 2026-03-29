@@ -2026,6 +2026,7 @@ section.facilities {
 
 /* 슬로건 텍스트 스타일[cite: 2] */
 .footer-slogun .slogun-text {
+   
     position: relative;
     z-index: 10;
     color: #fff;
@@ -2036,8 +2037,15 @@ section.facilities {
     /* ------------------ */
 }
 
+.footer-slogun .slogun-text img {
+    width: 40px;
+    margin-bottom: 20px;
+}
+
 .footer-slogun .slogun-text h2 {
-    font-family: 'Paperozi'; /* 사용 중인 폰트 적용[cite: 2] */
+    font-family: 'Noto Sans KR';
+font-weight: 400;
+letter-spacing: -1px;
     font-size: 2.8rem;
     line-height: 1.4;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* 가독성을 위한 그림자 */

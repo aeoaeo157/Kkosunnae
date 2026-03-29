@@ -107,3 +107,121 @@ header {
 .gnb ul.depth02 li a:hover {
     color: #FAAD6D;
 }
+
+
+
+/* -------------------- Responsive -------------------- */
+
+/* 1. 1000px 미만: 레이아웃 조정 및 메뉴 숨김 준비 */
+@media (max-width: 1000px) {
+    header {
+        height: 80px; /* 헤더 높이 축소 */
+        padding: 0 30px;
+    }
+
+    .header-logo a img {
+        height: 50px;
+        margin-top: 15px;
+    }
+
+    /* 햄버거 버튼 스타일 */
+    .menu-toggle {
+        display: block;
+        float: right;
+        width: 30px;
+        height: 20px;
+        margin-top: 30px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        position: absolute;
+        transition: 0.3s;
+    }
+
+    .menu-toggle span:nth-child(1) { top: 0; }
+    .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .menu-toggle span:nth-child(3) { bottom: 0; }
+
+    /* 메뉴 활성화 시 X 모양 변경 */
+    .menu-toggle.active span:nth-child(1) { top: 50%; transform: rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { bottom: 40%; transform: rotate(-45deg); }
+
+    /* GNB 모바일 스타일 */
+    .gnb {
+        position: fixed;
+        right: -100%; /* 오른쪽으로 숨김 */
+        top: 80px;
+        width: 70%;
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.95);
+        transition: 0.4s;
+        margin-top: 0;
+        padding: 40px 0;
+        overflow-y: auto;
+    }
+
+    .gnb.active {
+        right: 0; /* 슬라이드 인 */
+    }
+
+    .gnb ul.depth01 > li {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 0 40px;
+    }
+
+    .gnb ul.depth01 > li ~ li {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .gnb ul.depth01 > li > a {
+        font-size: 24px;
+        display: block;
+        border-bottom: 1px solid #444;
+        padding-bottom: 10px;
+    }
+
+    /* 서브메뉴(depth02) 모바일 스타일 */
+    .gnb ul.depth02 {
+        position: static;
+        display: block; /* 모바일에서는 펼쳐져 있거나 클릭 시 열리도록 설정 */
+        background: transparent;
+        width: 100%;
+        transform: none;
+        padding: 10px 0 0 15px;
+    }
+
+    .gnb ul.depth02 li a {
+        font-size: 18px;
+        text-align: left;
+        padding: 5px 0;
+    }
+}
+
+/* 2. 768px 미만: 완전한 모바일 대응 */
+@media (max-width: 768px) {
+    header {
+        padding: 0 20px;
+    }
+
+    .gnb {
+        width: 100%; /* 화면 전체 차지 */
+    }
+
+    .gnb ul.depth01 > li > a {
+        font-size: 20px;
+    }
+}
+
+
+
+

@@ -244,6 +244,121 @@ color: #ff953f;
 
 
 
+
+/* footer.css 수정 */
+
+.footer-slogun {
+    /* 1. 기존의 과도한 마진과 절대 위치를 제거합니다 */
+    margin-top: 0; 
+    position: relative;
+    width: 100%;
+    
+    /* 2. 세로 폭을 결정하는 핵심 설정 (원하는 만큼 숫자를 키우세요) */
+    min-height: 500px;      /* 최소 높이 설정 */
+    padding: 370px 0;       /* 위아래 여백을 주어 안쪽 영역을 넓힘 */
+    
+    /* 3. 배경 이미지 및 고정 효과 */
+    background-image: url(../images/footer-img/slogun.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* 스크롤 시 배경 고정 */
+    
+    /* 4. 텍스트 중앙 정렬 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* 상단 곡선 이미지 위치 고정 */
+.footer-slogun .slogun-top-img {
+    position: absolute;
+    top: -1px; /* 위 섹션과의 미세한 틈새 방지 */
+    left: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+/* 슬로건 텍스트 스타일[cite: 2] */
+.footer-slogun .slogun-text {
+   
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+
+    /* --- 추가된 부분 --- */
+    margin-top: 60px;  /* 이 숫자를 키울수록 글씨가 더 아래로 내려갑니다. */
+    /* ------------------ */
+}
+
+.footer-slogun .slogun-text img {
+      text-align: center;
+    width: 40px;
+    margin: 0 auto;
+       margin-bottom: 20px;
+}
+
+.footer-slogun .slogun-text h2 {
+    font-family: 'Noto Sans KR';
+font-weight: 400;
+letter-spacing: -1px;
+    font-size: 2.8rem;
+    line-height: 1.4;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* 가독성을 위한 그림자 */
+}
+
+/* 반응형: 화면이 작아질 때 높이 조절 */
+@media (max-width: 980px) {
+    .footer-slogun {
+        min-height: 300px;
+        padding: 300px 0;
+    }
+    .footer-slogun .slogun-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer-slogun .slogun-text {
+    /* --- 추가된 부분 --- */
+    margin-top: 10px;  /* 이 숫자를 키울수록 글씨가 더 아래로 내려갑니다. */
+    /* ------------------ */
+}
+}
+
+@media (max-width: 800px) {
+    .footer-slogun {
+        min-height: 300px;
+        padding: 240px 0;
+    }
+    .footer-slogun .slogun-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer-slogun .slogun-text {
+    /* --- 추가된 부분 --- */
+    margin-top: -40px;  /* 이 숫자를 키울수록 글씨가 더 아래로 내려갑니다. */
+    /* ------------------ */
+}
+}
+
+@media (max-width: 500px) {
+    .footer-slogun {
+        min-height: 300px;
+        padding: 220px 0;
+    }
+    .footer-slogun .slogun-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .footer-slogun .slogun-text {
+    /* --- 추가된 부분 --- */
+    margin-top: -100px;  /* 이 숫자를 키울수록 글씨가 더 아래로 내려갑니다. */
+    /* ------------------ */
+}
+}
+
+
 #scrollTopBtn {
     display: none; /* 처음엔 숨김 */
     position: fixed;

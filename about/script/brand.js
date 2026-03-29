@@ -1,6 +1,48 @@
 //brand.js
 
 
+// gnb
+
+$(document).ready(function(){
+    // PC 버전: 마우스 호버 (윈도우 너비 1000px 이상일 때만 작동 권장)
+    function gnbEvents() {
+        var winWidth = $(window).width();
+        
+        // 이전에 걸려있던 이벤트 제거
+        $('.gnb .depth01 > li').off();
+        $('.menu-toggle').off();
+
+        if (winWidth > 1000) {
+            // PC용 호버 이벤트
+            $('.gnb .depth01 > li').mouseenter(function(){
+                $(this).find('.depth02').stop().slideDown(300);
+            }).mouseleave(function(){
+                $(this).find('.depth02').stop().slideUp(300);
+            });
+            
+            // PC로 돌아올 때 메뉴 상태 초기화
+            $('.gnb, .menu-toggle').removeClass('active');
+        } else {
+            // 모바일용 클릭 이벤트
+            $('.menu-toggle').click(function(){
+                $(this).toggleClass('active');
+                $('.gnb').toggleClass('active');
+            });
+
+            // 모바일에서 서브메뉴는 기본적으로 보이거나, 
+            // 필요에 따라 클릭 이벤트로 추가 제어 가능
+        }
+    }
+
+    // 초기 실행 및 리사이즈 대응
+    gnbEvents();
+    $(window).resize(function(){
+        gnbEvents();
+    });
+});
+
+
+
 // brand
 $(window).on('scroll', function() {
     var winTop = $(window).scrollTop();

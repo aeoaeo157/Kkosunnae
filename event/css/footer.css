@@ -2,136 +2,118 @@
 
 footer {
     width: 100%;
+    position: relative; /* address 배치를 위한 기준점 */
+    margin-top: -200px;
+}
 
-    margin: 0 auto;
-
-    position: relative;
-
+/* 배경 이미지 */
+footer .footer-ill {
+    width: 100%;
+    line-height: 0; /* 이미지 하단 미세한 틈 제거 */
 }
 
 footer .footer-ill img {
-    display: block;
     width: 100%;
-
-    margin: 0 auto;
-
-
+    height: auto;
+    display: block;
 }
 
+/* 이미지 위에 띄울 정보 */
 footer .address {
-
-    width: 1200px;
-
     position: absolute;
-    left: 20%;
-    top: 9%;
+    top: 30%; /* 이미지 비율에 따라 40%~55% 사이에서 조절해 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
 
-
+/* 로고 반응형 */
+footer .address .add-logo {
+    flex: 0 0 auto;
+    width: 12vw; 
+    max-width: 120px;
+    min-width: 100px;
 }
 
 footer .address .add-logo img {
-    height: 160px;
-    display: block;
-
-
+    width: 100%;
+    height: auto;
 }
 
-footer .address>div {
-    float: left;
-
-    margin: 30px;
-
-
+footer .address > div {
+    /* flex: 1; */
+    margin: 0 15px;
+    flex: 0 0 auto; /* 내용물 크기만큼만 자리를 차지하게 해. */
 }
 
-footer .address>div h2 {
-    font-family: "Noto Sans KR", sans-serif;
-
-    margin-bottom: 18px;
-    font-size: 1.1rem;
+/* 텍스트 스타일 */
+footer .address h2 {
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
     font-weight: 600;
-    color: rgb(30, 30, 30);
-
-
+    margin-bottom: 15px;
 }
 
-footer .address div p {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 0.9rem;
-
-    color: rgb(47, 47, 47);
+footer .address p, footer .address li {
+    font-size: clamp(0.7rem, 1vw, 0.85rem);
     margin-bottom: 5px;
 }
 
-footer .address .sns ul li {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 0.9rem;
-
-    color: rgb(47, 47, 47);
-    margin-bottom: 5px;
-
-    /* 추가: 아이콘과 글자를 가로로 나란히, 세로 중앙 정렬 */
-    display: flex;
-    align-items: center;
-}
-
-footer .address>div .sns ul li {
-    margin-bottom: 10px;
-}
-
+/* 문제의 그 영역: 이제 밖으로 안 나간다 */
 footer .rule {
-    width: 800px;
-
-    position: absolute;
-    left: 34%;
-    bottom: 19px;
+    width: 100%;
+    background-color: #9ac056; /* 이미지 바닥 색상과 일치 필수 */
+    padding: 20px 0;
+    position: relative; /* absolute 해제 */
 }
 
 footer .rule ul {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-
-    color: rgb(47, 47, 47);
-    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
 }
 
-footer .rule ul li {
-    float: left;
-    display: inline-block;
-    margin: 20px;
-
-    position: relative;
-
-    margin-bottom: 5px;
-}
-
-footer .rule ul li~li {
-    margin-left: 10px;
-}
-
-footer .rule ul li::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 14px;
-    background-color: rgb(47, 47, 47);
-
-    position: absolute;
-    left: -16px;
-    bottom: 2px;
-}
-
-footer .rule ul li:first-child::after {
-    display: none;
+footer .rule li {
+    font-size: 0.8rem;
+    color: #2f2f2f;
 }
 
 
 
-footer .address .sns ul li img {
-    /* 기존 &nbsp; 대신 여백(margin)으로 간격 조절 */
-    margin-right: 3px; 
+
+
+/* 반응형: 화면 작아질 때 */
+@media (max-width: 940px) {
+    footer .address {
+        position: relative; /* 이미지 위에서 내려옴 */
+        top: 0; left: 0;
+        transform: none;
+        background-color: #fff;
+        padding: 40px 5%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
     
-    /* 인라인 스타일에서의 어긋남 방지 */
-    display: block; 
+    footer .rule {
+        padding: 15px 0;
+    }
+footer .address div{
+margin-bottom: 20px;
+}
+}
+
+@media (max-width: 470px) {
+
+footer .rule ul {
+    gap: 10px;
+}
+footer .rule ul li{
+    font-size: 10px;
+}
 }
